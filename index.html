@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArcVulcan — AI-Powered Welding Training</title>
+<meta name="description" content="ArcVulcan is an AI-powered adaptive tutoring system for Ontario welding certification. Deterministic, inspectable, and learner-first.">
+<style>
+  :root {
+    --bg:      #000000;
+    --surface: #050508;
+    --cyan:    #00ffff;
+    --magenta: #ff00cc;
+    --purple:  #7700ff;
+    --orange:  #ff6600;
+    --green:   #00ff41;
+    --text:    #ddeeff;
+    --muted:   #6080a0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    line-height:1.6;overflow-x:hidden;
+  }
+
+  /* ── Plasma canvas ────────────────────────────────────────────────────── */
+  #plasma-bg{
+    position:fixed;top:0;left:0;width:100%;height:100%;
+    pointer-events:none;z-index:0;opacity:0.5;
+  }
+
+  /* ── Nav ─────────────────────────────────────────────────────────────── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:1rem 2rem;
+    display:flex;justify-content:space-between;align-items:center;
+    background:rgba(0,0,0,0.82);backdrop-filter:blur(16px);
+    border-bottom:1px solid rgba(0,255,255,0.12);
+  }
+  .logo{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em}
+  .logo .arc{color:var(--cyan);text-shadow:0 0 12px rgba(0,255,255,0.6)}
+  .logo .vulcan{
+    background:linear-gradient(90deg,var(--magenta),var(--purple));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  nav a{color:var(--muted);text-decoration:none;font-size:.875rem;margin-left:2rem;transition:color .2s}
+  nav a:hover{color:var(--cyan)}
+  .nav-cta{
+    border:1px solid var(--cyan);color:var(--cyan)!important;
+    padding:.4rem 1rem;border-radius:6px;font-weight:500;
+    box-shadow:0 0 10px rgba(0,255,255,0.18);
+    transition:box-shadow .2s,background .2s!important;
+  }
+  .nav-cta:hover{background:rgba(0,255,255,0.07)!important;box-shadow:0 0 22px rgba(0,255,255,0.38)!important}
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;
+    padding:6rem 2rem 4rem;position:relative;z-index:1;
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:rgba(0,255,255,0.05);
+    border:1px solid rgba(0,255,255,0.22);
+    color:var(--cyan);padding:.35rem .85rem;border-radius:100px;
+    font-size:.8rem;font-weight:500;margin-bottom:2rem;letter-spacing:.06em;
+    text-shadow:0 0 8px rgba(0,255,255,0.5);
+  }
+  h1{
+    font-size:clamp(2.5rem,7vw,5rem);font-weight:800;
+    letter-spacing:-0.04em;line-height:1.05;margin-bottom:1.5rem;max-width:900px;
+  }
+  h1 .gradient{
+    background:linear-gradient(135deg,var(--cyan) 0%,var(--magenta) 50%,var(--orange) 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    filter:drop-shadow(0 0 18px rgba(0,255,255,0.25));
+  }
+  .hero-sub{font-size:1.2rem;color:var(--muted);max-width:620px;margin-bottom:3rem}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .btn-primary{
+    background:linear-gradient(135deg,var(--cyan),var(--purple));
+    color:#000;padding:.85rem 2rem;border-radius:8px;
+    text-decoration:none;font-weight:700;font-size:1rem;
+    transition:transform .2s,box-shadow .2s;
+    box-shadow:0 0 18px rgba(0,255,255,0.28);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,255,255,0.45)}
+  .btn-outline{
+    border:1px solid rgba(0,255,255,0.28);color:var(--text);
+    padding:.85rem 2rem;border-radius:8px;text-decoration:none;
+    font-weight:500;font-size:1rem;transition:border-color .2s,color .2s;
+  }
+  .btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  /* ── Stats ────────────────────────────────────────────────────────────── */
+  .stats{
+    display:flex;justify-content:center;gap:4rem;padding:2rem;
+    border-top:1px solid rgba(0,255,255,0.07);
+    border-bottom:1px solid rgba(0,255,255,0.07);
+    flex-wrap:wrap;margin-top:2rem;
+  }
+  .stat{text-align:center}
+  .stat-num{
+    font-size:2rem;font-weight:700;
+    background:linear-gradient(135deg,var(--cyan),var(--magenta));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  }
+  .stat-label{font-size:.85rem;color:var(--muted)}
+
+  /* ── Section ──────────────────────────────────────────────────────────── */
+  section{padding:6rem 2rem;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+  .section-label{
+    color:var(--cyan);font-size:.8rem;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem;
+    text-shadow:0 0 8px rgba(0,255,255,0.4);
+  }
+  h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem}
+  .section-sub{color:var(--muted);font-size:1.1rem;max-width:600px;margin-bottom:3rem}
+
+  /* ── Features ─────────────────────────────────────────────────────────── */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+  .feature{
+    background:var(--surface);
+    border:1px solid rgba(0,255,255,0.07);
+    border-radius:12px;padding:2rem;
+    transition:border-color .25s,transform .25s,box-shadow .25s;
+  }
+  .feature:hover{
+    border-color:rgba(0,255,255,0.32);
+    transform:translateY(-4px);
+    box-shadow:0 8px 40px rgba(0,255,255,0.07);
+  }
+  .feature-icon{font-size:2rem;margin-bottom:1rem}
+  .feature h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem;color:var(--cyan)}
+  .feature p{color:var(--muted);font-size:.9rem}
+
+  /* ── Steps ────────────────────────────────────────────────────────────── */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:3rem}
+  .step{position:relative;padding-left:3.5rem}
+  .step-num{
+    position:absolute;left:0;top:0;width:2.5rem;height:2.5rem;
+    background:linear-gradient(135deg,var(--cyan),var(--purple));
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:.9rem;color:#000;
+    box-shadow:0 0 14px rgba(0,255,255,0.38);
+  }
+  .step h3{font-size:1rem;font-weight:600;margin-bottom:.4rem}
+  .step p{color:var(--muted);font-size:.875rem}
+
+  /* ── Tech tags ────────────────────────────────────────────────────────── */
+  .tech{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem}
+  .tag{
+    background:rgba(0,255,255,0.03);
+    border:1px solid rgba(0,255,255,0.13);
+    color:var(--muted);padding:.35rem .85rem;border-radius:100px;font-size:.8rem;
+    transition:border-color .2s,color .2s;
+  }
+  .tag:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  /* ── CTA ──────────────────────────────────────────────────────────────── */
+  .cta-section{
+    background:linear-gradient(135deg,rgba(0,255,255,0.03),rgba(119,0,255,0.05));
+    border:1px solid rgba(0,255,255,0.13);
+    border-radius:20px;padding:4rem 3rem;text-align:center;margin:2rem 0;
+  }
+  .cta-section h2{margin-bottom:1rem}
+  .cta-section p{color:var(--muted);margin-bottom:2rem}
+
+  /* ── Footer ───────────────────────────────────────────────────────────── */
+  footer{
+    border-top:1px solid rgba(0,255,255,0.07);
+    padding:2rem;text-align:center;color:var(--muted);font-size:.875rem;
+    position:relative;z-index:1;
+  }
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--cyan)}
+</style>
+</head>
+<body>
+
+<canvas id="plasma-bg"></canvas>
+
+<nav>
+  <div class="logo"><span class="arc">Arc</span><span class="vulcan">Vulcan</span></div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="nav-cta">Get Access</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">⚡ Short-Circuit Intelligence</div>
+  <h1>The <span class="gradient">Intelligent Tutor</span><br>for Welding Certification</h1>
+  <p class="hero-sub">ArcVulcan adapts to every learner's knowledge graph — diagnosing gaps, sequencing instruction, and delivering Ontario Red Seal–aligned training with deterministic, auditable AI.</p>
+  <div class="hero-btns">
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="btn-primary">Request Early Access</a>
+    <a href="#how-it-works" class="btn-outline">How It Works</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">AI Agent Windows</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Deterministic Replay</div></div>
+    <div class="stat"><div class="stat-num">Ontario</div><div class="stat-label">Red Seal Aligned</div></div>
+    <div class="stat"><div class="stat-num">Real-Time</div><div class="stat-label">Knowledge Graphs</div></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="section-label">⚡ Core System</div>
+  <h2>Not a chatbot. <span style="color:var(--cyan)">A tutoring engine.</span></h2>
+  <p class="section-sub">ArcVulcan makes teaching decisions replayable, auditable, and progressively better — without unbounded AI agency.</p>
+  <div class="features">
+    <div class="feature"><div class="feature-icon">🧠</div><h3>Learner Knowledge Graphs</h3><p>Diagnoses individual node gaps and fragility in real time. Every session updates the graph deterministically.</p></div>
+    <div class="feature"><div class="feature-icon">🎯</div><h3>Signal-Based Sequencing</h3><p>Selects the optimal next target using measurable performance signals, not vibes or generic curricula.</p></div>
+    <div class="feature"><div class="feature-icon">🔍</div><h3>Bedrock Probing</h3><p>Pushes learners until root-level logic is confirmed — not just surface-level recall.</p></div>
+    <div class="feature"><div class="feature-icon">📋</div><h3>Audit-First Architecture</h3><p>Every tutoring decision is schema-validated, logged, and replayable. Built for accountability.</p></div>
+    <div class="feature"><div class="feature-icon">🏭</div><h3>Ontario Red Seal Aligned</h3><p>Content scaffolded to Canadian welding certification standards across GMAW, SMAW, GTAW, and FCAW.</p></div>
+    <div class="feature"><div class="feature-icon">⚡</div><h3>Multi-Agent Workflow</h3><p>18-window autonomous patch farm handles development, validation, and deployment with cycle-locked integrity.</p></div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="section-label">⚡ Workflow</div>
+  <h2>From diagnosis to <span style="color:var(--magenta)">mastery.</span></h2>
+  <p class="section-sub">Four deterministic steps, continuously cycling.</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3>Diagnose</h3><p>Map the learner's existing knowledge graph — nodes, edges, confidence levels, and fragile clusters.</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Select</h3><p>Choose the highest-signal learning target based on gap severity, prerequisite chains, and exam weight.</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Instruct</h3><p>Deliver cognitively-budgeted instruction matched precisely to the learner's current state.</p></div>
+    <div class="step"><div class="step-num">4</div><h3>Update</h3><p>Deterministically update the knowledge graph and repeat — measurably closing the gap each cycle.</p></div>
+  </div>
+  <div class="tech" style="margin-top:4rem">
+    <div class="section-label" style="width:100%">Built with</div>
+    <span class="tag">Python</span>
+    <span class="tag">Claude Opus 4.7</span>
+    <span class="tag">Gemini 2.5 Pro</span>
+    <span class="tag">Qwen3.6-35B</span>
+    <span class="tag">OpenAI o3</span>
+    <span class="tag">JSON Schema Validation</span>
+    <span class="tag">Deterministic Replay</span>
+    <span class="tag">Knowledge Graphs</span>
+    <span class="tag">Ontario Welding Standards</span>
+    <span class="tag">GMAW · SMAW · GTAW · FCAW</span>
+  </div>
+</section>
+
+<section id="contact" style="max-width:900px">
+  <div class="cta-section">
+    <div class="section-label">Early Access</div>
+    <h2>Ready to transform welding education?</h2>
+    <p>ArcVulcan is in active development. Reach out for early access, partnerships, or integration inquiries.</p>
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ArcVulcan (XYZGL Engine) &nbsp;·&nbsp; <a href="mailto:mykhaylogrinchenko30@gmail.com">mykhaylogrinchenko30@gmail.com</a> &nbsp;·&nbsp; Ontario, Canada</p>
+</footer>
+
+<script>
+(function(){
+  const canvas = document.getElementById('plasma-bg');
+  const ctx = canvas.getContext('2d');
+  let W, H, t = 0;
+
+  function resize(){
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Short-circuit plasma: cyan/magenta/purple shifting field
+  function plasmaColor(v){
+    // v in [0,1] — map to electric discharge palette
+    const h1 = Math.sin(v * Math.PI * 2);          // cyan channel
+    const h2 = Math.sin(v * Math.PI * 2 + 2.094);  // magenta channel
+    const h3 = Math.sin(v * Math.PI * 2 + 4.189);  // purple channel
+    const r = Math.round(Math.max(0, h2 * 0.9 + 0.1) * 255);
+    const g = Math.round(Math.max(0, h1 * 0.15)    * 255);
+    const b = Math.round(Math.max(0, h3 * 0.6 + 0.4) * 255);
+    return `rgb(${r},${g},${b})`;
+  }
+
+  const S = 5; // pixel block size
+
+  function draw(){
+    t += 0.015;
+    const cols = Math.ceil(W / S);
+    const rows = Math.ceil(H / S);
+
+    for(let y = 0; y < rows; y++){
+      for(let x = 0; x < cols; x++){
+        const px = x / cols;
+        const py = y / rows;
+        // Plasma field — 4 overlapping sinusoids + radial wave
+        const v = (
+          Math.sin(px * 9  + t) +
+          Math.sin(py * 7  + t * 0.8) +
+          Math.sin((px+py) * 6 + t * 1.4) +
+          Math.sin(Math.sqrt((px-0.5)**2+(py-0.5)**2)*15 - t*1.2)
+        );
+        ctx.fillStyle = plasmaColor((v + 4) / 8);
+        ctx.fillRect(x * S, y * S, S, S);
+      }
+    }
+
+    // Dark vignette overlay — keeps text readable over the plasma
+    const g = ctx.createRadialGradient(W/2,H/2,H*0.05,W/2,H/2,H*0.85);
+    g.addColorStop(0, 'rgba(0,0,0,0.60)');
+    g.addColorStop(1, 'rgba(0,0,0,0.92)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,W,H);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
