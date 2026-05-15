@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArcVulcan — AI-Powered Welding Training</title>
+<meta name="description" content="ArcVulcan is an AI-powered adaptive tutoring system for Ontario welding certification. Deterministic, inspectable, and learner-first.">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --border: #1e1e2e;
+    --accent: #f97316;
+    --accent2: #fb923c;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --glow: rgba(249,115,22,0.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden}
+
+  /* Nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .logo{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;color:var(--accent)}
+  .logo span{color:var(--text)}
+  nav a{color:var(--muted);text-decoration:none;font-size:.875rem;margin-left:2rem;transition:color .2s}
+  nav a:hover{color:var(--text)}
+  .nav-cta{background:var(--accent);color:#fff!important;padding:.4rem 1rem;border-radius:6px;font-weight:500}
+  .nav-cta:hover{background:var(--accent2)!important}
+
+  /* Hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6rem 2rem 4rem;position:relative}
+  .hero::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--glow) 0%,transparent 70%);pointer-events:none}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);color:var(--accent);padding:.35rem .85rem;border-radius:100px;font-size:.8rem;font-weight:500;margin-bottom:2rem;letter-spacing:.05em}
+  h1{font-size:clamp(2.5rem,7vw,5rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;margin-bottom:1.5rem;max-width:900px}
+  h1 span{background:linear-gradient(135deg,var(--accent),#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero-sub{font-size:1.2rem;color:var(--muted);max-width:600px;margin-bottom:3rem}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  .btn-primary{background:var(--accent);color:#fff;padding:.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:1rem;transition:transform .2s,box-shadow .2s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,0.4)}
+  .btn-outline{border:1px solid var(--border);color:var(--text);padding:.85rem 2rem;border-radius:8px;text-decoration:none;font-weight:500;font-size:1rem;transition:border-color .2s}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* Stats bar */
+  .stats{display:flex;justify-content:center;gap:4rem;padding:2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;margin-top:2rem}
+  .stat{text-align:center}
+  .stat-num{font-size:2rem;font-weight:700;color:var(--accent)}
+  .stat-label{font-size:.85rem;color:var(--muted)}
+
+  /* Section */
+  section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+  .section-label{color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.75rem}
+  h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:1rem}
+  .section-sub{color:var(--muted);font-size:1.1rem;max-width:600px;margin-bottom:3rem}
+
+  /* Feature grid */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+  .feature{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2rem;transition:border-color .2s,transform .2s}
+  .feature:hover{border-color:rgba(249,115,22,0.4);transform:translateY(-3px)}
+  .feature-icon{font-size:2rem;margin-bottom:1rem}
+  .feature h3{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+  .feature p{color:var(--muted);font-size:.9rem}
+
+  /* How it works */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:3rem}
+  .step{position:relative;padding-left:3.5rem}
+  .step-num{position:absolute;left:0;top:0;width:2.5rem;height:2.5rem;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:#fff}
+  .step h3{font-size:1rem;font-weight:600;margin-bottom:.4rem}
+  .step p{color:var(--muted);font-size:.875rem}
+
+  /* Tech stack */
+  .tech{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+  .tag{background:var(--surface);border:1px solid var(--border);color:var(--muted);padding:.35rem .85rem;border-radius:100px;font-size:.8rem}
+
+  /* CTA section */
+  .cta-section{background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(251,191,36,0.05));border:1px solid rgba(249,115,22,0.2);border-radius:20px;padding:4rem 3rem;text-align:center;margin:2rem 0}
+  .cta-section h2{margin-bottom:1rem}
+  .cta-section p{color:var(--muted);margin-bottom:2rem}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.875rem}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Arc<span>Vulcan</span></div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="nav-cta">Get Access</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">🔥 AI-Powered Welding Education</div>
+  <h1>The <span>Intelligent Tutor</span> for Welding Certification</h1>
+  <p class="hero-sub">ArcVulcan adapts to every learner's knowledge graph — diagnosing gaps, sequencing instruction, and delivering Ontario Red Seal–aligned training with deterministic, auditable AI.</p>
+  <div class="hero-btns">
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="btn-primary">Request Early Access</a>
+    <a href="#how-it-works" class="btn-outline">How It Works</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">AI Agent Windows</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Deterministic Replay</div></div>
+    <div class="stat"><div class="stat-num">Ontario</div><div class="stat-label">Red Seal Aligned</div></div>
+    <div class="stat"><div class="stat-num">Real-Time</div><div class="stat-label">Knowledge Graphs</div></div>
+  </div>
+</div>
+
+<section id="features">
+  <div class="section-label">Core System</div>
+  <h2>Not a chatbot. A tutoring engine.</h2>
+  <p class="section-sub">ArcVulcan makes teaching decisions replayable, auditable, and progressively better — without unbounded AI agency.</p>
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">🧠</div>
+      <h3>Learner Knowledge Graphs</h3>
+      <p>Diagnoses individual node gaps and fragility in real time. Every session updates the graph deterministically.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🎯</div>
+      <h3>Signal-Based Sequencing</h3>
+      <p>Selects the optimal next target using measurable performance signals, not vibes or generic curricula.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔍</div>
+      <h3>Bedrock Probing</h3>
+      <p>Pushes learners until root-level logic is confirmed — not just surface-level recall.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📋</div>
+      <h3>Audit-First Architecture</h3>
+      <p>Every tutoring decision is schema-validated, logged, and replayable. Built for accountability.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🏭</div>
+      <h3>Ontario Red Seal Aligned</h3>
+      <p>Content scaffolded to Canadian welding certification standards across GMAW, SMAW, GTAW, and FCAW.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>Multi-Agent Workflow</h3>
+      <p>18-window autonomous patch farm handles development, validation, and deployment with cycle-locked integrity.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="section-label">Workflow</div>
+  <h2>From diagnosis to mastery.</h2>
+  <p class="section-sub">Four deterministic steps, continuously cycling.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Diagnose</h3>
+      <p>Map the learner's existing knowledge graph — nodes, edges, confidence levels, and fragile clusters.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Select</h3>
+      <p>Choose the highest-signal learning target based on gap severity, prerequisite chains, and exam weight.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Instruct</h3>
+      <p>Deliver cognitively-budgeted instruction matched precisely to the learner's current state.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Update</h3>
+      <p>Deterministically update the knowledge graph and repeat — measurably closing the gap each cycle.</p>
+    </div>
+  </div>
+
+  <div class="tech" style="margin-top:4rem">
+    <div class="section-label" style="width:100%">Built with</div>
+    <span class="tag">Python</span>
+    <span class="tag">Claude Opus 4.7</span>
+    <span class="tag">Gemini 2.5 Pro</span>
+    <span class="tag">JSON Schema Validation</span>
+    <span class="tag">Deterministic Replay</span>
+    <span class="tag">Knowledge Graphs</span>
+    <span class="tag">Ontario Welding Standards</span>
+    <span class="tag">GMAW · SMAW · GTAW · FCAW</span>
+  </div>
+</section>
+
+<section id="contact" style="max-width:900px">
+  <div class="cta-section">
+    <div class="section-label">Early Access</div>
+    <h2>Ready to transform welding education?</h2>
+    <p>ArcVulcan is in active development. Reach out for early access, partnerships, or integration inquiries.</p>
+    <a href="mailto:mykhaylogrinchenko30@gmail.com" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ArcVulcan (XYZGL Engine) &nbsp;·&nbsp; <a href="mailto:mykhaylogrinchenko30@gmail.com">mykhaylogrinchenko30@gmail.com</a> &nbsp;·&nbsp; Ontario, Canada</p>
+</footer>
+
+</body>
+</html>
