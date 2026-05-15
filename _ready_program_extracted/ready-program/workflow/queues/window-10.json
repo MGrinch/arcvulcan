@@ -1,0 +1,75 @@
+﻿{
+    "window":  10,
+    "name":  "Artifact Roundtrip and Canonical Repair",
+    "area":  "Owns artifact roundtrip strictness, direct-file repair, nested child-run traversal, and canonical run-bundle rewrite bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Roundtrip tooling must repair and validate the entire artifact tree, including nested child runs and strict failure propagation.",
+    "queue_intent":  "These items all protect the strict roundtrip checker from missing or misreporting real bundle defects.",
+    "merge_style":  "Treat strict mode as an end-to-end truth contract, not a best-effort convenience pass.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/artifact_roundtrip.py"
+                        ],
+    "delivery_standard":  [
+                              "Nested child artifacts must participate in traversal and repair.",
+                              "Process-level FAIL must never leave per-file PASS markers behind.",
+                              "Direct-file repair support must match the advertised CLI contract."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  3,
+    "remaining_items":  2,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  11,
+                      "bug_id":  "BUG-79",
+                      "title":  "`tools/artifact_roundtrip.py` ignores nested `child_runs/**/*.json` when given a run directory",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/artifact_roundtrip.py"
+                                     ],
+                      "legacy_window":  10,
+                      "legacy_queue_index":  1,
+                      "mission":  "Traverse nested child_runs JSON files during roundtrip checks and repair. Treat nested artifacts as first-class billable evidence, not optional debris, so full-fidelity run bundles stay dependable.",
+                      "implementation_nexus":  [
+                                                   "Treat nested child_runs as first-class bundle members.",
+                                                   "Use the same traversal rules in validation and fix modes."
+                                               ],
+                      "acceptance_focus":  [
+                                               "artifact_roundtrip sees nested child_runs JSON files.",
+                                               "Directing the tool at a run directory covers nested artifacts end to end."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  13,
+                      "bug_id":  "BUG-94",
+                      "title":  "`artifact_roundtrip.py --strict` can report process-level `FAIL` while leaving changed files marked `PASS`",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/artifact_roundtrip.py"
+                                     ],
+                      "legacy_window":  10,
+                      "legacy_queue_index":  2,
+                      "mission":  "Align strict-mode process verdicts with per-file verdicts. A premium-quality strict report must read like a single coherent judgment, not a contradiction that forces human arbitration.",
+                      "implementation_nexus":  [
+                                                   "Do not let a process-level FAIL coexist with lingering PASS markers on changed files.",
+                                                   "Keep strict-mode reporting internally consistent."
+                                               ],
+                      "acceptance_focus":  [
+                                               "A strict FAIL leaves no contradictory PASS markers on changed files.",
+                                               "The emitted artifact clearly reflects the single final verdict."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

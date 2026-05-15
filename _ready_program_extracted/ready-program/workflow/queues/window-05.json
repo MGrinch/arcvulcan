@@ -1,0 +1,33 @@
+﻿{
+    "window":  5,
+    "name":  "Harness Turn and Artifact Integrity",
+    "area":  "Owns harness_turn behavior, turn artifacts, witness event identity, and turn-facing run path bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Harness turn artifacts must remain canonical and attributable to the exact executed witness path.",
+    "queue_intent":  "This queue stays complete only when single-turn harness outputs are stable, canonical, and attributable.",
+    "merge_style":  "Treat artifact identity fields as contracts, not cosmetic metadata.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/harness_turn.py",
+                            "witness/core.py"
+                        ],
+    "delivery_standard":  [
+                              "The exported bundle must describe the exact run that happened.",
+                              "Identifiers must be stable under replay.",
+                              "Docs, tests, and emitted schemas must agree."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  10,
+    "remaining_items":  0,
+    "items":  [
+
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

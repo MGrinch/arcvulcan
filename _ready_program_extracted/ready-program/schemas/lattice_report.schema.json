@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/lattice_report.schema.json",
+  "title": "LatticeReport (WitnessEvent payload.lattice_report)",
+  "allOf": [
+    {
+      "$ref": "witness_event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "object",
+          "required": [
+            "lattice_report"
+          ],
+          "properties": {
+            "lattice_report": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

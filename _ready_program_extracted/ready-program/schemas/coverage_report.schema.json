@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "coverage_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "line_percent", "branch_percent"],
+  "properties": {
+    "schema_version": {"const": "coverage_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "line_percent": {"type": "number"},
+    "branch_percent": {"type": "number"},
+    "min_line": {"type": "number"},
+    "min_branch": {"type": "number"},
+    "raw": {"type": "object"}
+  },
+  "additionalProperties": true
+}

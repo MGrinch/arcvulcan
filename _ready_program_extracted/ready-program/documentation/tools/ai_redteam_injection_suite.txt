@@ -1,0 +1,14 @@
+redteam_injection_suite
+
+Purpose:
+  Run prompt-injection regression attacks and detect boundary/marker leaks.
+
+Usage:
+  python tools/redteam_injection_suite.py --issue ISSUE-YYYYMMDD-NNN
+
+Outputs:
+  runs/<new_run_id>/redteam_injection_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

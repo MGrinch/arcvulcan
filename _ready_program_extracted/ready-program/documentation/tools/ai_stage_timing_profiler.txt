@@ -1,0 +1,14 @@
+stage_timing_profiler
+
+Purpose:
+  Measure prompt-build and backend generation timings to catch regressions.
+
+Usage:
+  python tools/stage_timing_profiler.py --issue ISSUE-YYYYMMDD-NNN
+
+Outputs:
+  runs/<new_run_id>/stage_timing_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

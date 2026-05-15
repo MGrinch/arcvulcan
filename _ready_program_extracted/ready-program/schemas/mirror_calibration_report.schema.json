@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mirror_calibration_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "n_scored", "scores"],
+  "properties": {
+    "schema_version": {"const": "mirror_calibration_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "path": {"type": "string"},
+    "seed": {"type": "integer"},
+    "n_scored": {"type": "integer"},
+    "avg_jaccard": {"type": "number"},
+    "avg_seqmatch": {"type": "number"},
+    "min_avg": {"type": "number"},
+    "scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["turn_index", "jaccard", "seqmatch"],
+        "properties": {
+          "turn_index": {"type": "integer"},
+          "node_id": {"type": "string"},
+          "jaccard": {"type": "number"},
+          "seqmatch": {"type": "number"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

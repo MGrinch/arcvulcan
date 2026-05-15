@@ -1,0 +1,103 @@
+# AI Backends (Real Tutor + Local Mirror)
+
+This repo supports **two LLM roles** behind a small, auditable interface:
+
+- **Tutor (external fast model)**: `gemini` or `stub`
+- **Mirror (local model)**: `ollama` or `stub`
+
+Harnesses default to `stub` so runs remain deterministic.
+
+Source of truth for dispatch: `xyzgl/backends/registry.py`.
+
+---
+
+## Quick start
+
+### A) Stub-only (default)
+No setup required:
+
+```bash
+python -m xyzgl.cli --seed 123 hello
+```
+
+### B) Real Tutor (Gemini) + optional Mirror (Ollama)
+
+1) Set environment variables:
+
+```bash
+export DAEDALUS_TUTOR_BACKEND=gemini
+export DAEDALUS_GEMINI_API_KEY="..."
+export DAEDALUS_GEMINI_MODEL="gemini-2.5-flash"  # set to whatever you have access to
+
+# Mirror (optional)
+export DAEDALUS_ENABLE_MIRROR=1
+export DAEDALUS_MIRROR_BACKEND=ollama
+export DAEDALUS_OLLAMA_HOST="http://localhost:11434"
+export DAEDALUS_OLLAMA_MODEL="gwen2.5:7b"        # or your installed model name
+```
+
+2) Run:
+
+```bash
+python -m xyzgl.cli --seed 123 "Explain 2F vs 1F"
+```
+
+---
+
+## Environment variables
+
+### Tutor (Gemini)
+- `DAEDALUS_TUTOR_BACKEND=gemini`
+- `DAEDALUS_GEMINI_API_KEY` (or `GOOGLE_API_KEY`)
+- `DAEDALUS_GEMINI_MODEL` (example: `gemini-2.5-flash`)
+
+### Mirror (Ollama)
+- `DAEDALUS_ENABLE_MIRROR=1`
+- `DAEDALUS_MIRROR_BACKEND=ollama`
+- `DAEDALUS_OLLAMA_HOST` (default `http://localhost:11434`)
+- `DAEDALUS_OLLAMA_MODEL` (your local model name)
+
+### Safety / strictness
+- `DAEDALUS_REQUIRE_REAL_BACKENDS=1`:
+  - If set, missing real-backend config raises instead of falling back to stub.
+- `DAEDALUS_ENFORCE_DETERMINISM=1` (default):
+  - Keeps harness defaults deterministic. Real APIs may still vary.
+
+---
+
+## Implementation notes
+
+- Gemini is called via the Generative Language REST API in `xyzgl/backends/gemini.py`.
+- Ollama is called via `POST /api/generate` in `xyzgl/backends/ollama.py`.
+- All network calls use stdlib-only HTTP (`xyzgl/util_http.py`).
+
+---
+
+## Deterministic smoke test (no network)
+
+```bash
+python tools/repro_backends_smoke.py
+```
+
+This validates that misconfigured real backends fall back to stub **unless** strict mode is enabled.
+
+---
+
+## Curriculum grounding + protocol re-grounding (optional)
+
+### Grounding
+```bash
+export DAEDALUS_GROUNDING_MODE=local
+export DAEDALUS_GROUNDING_DIR=curriculum
+```
+
+### Protocol re-grounding
+```bash
+export DAEDALUS_PROTOCOL_PATH=STABLE/ROLE_PROTOCOL.md
+export DAEDALUS_PROTOCOL_REGROUND_EVERY=5
+```
+
+Docs:
+- `documentation/grounding/ai_grounding.md`
+- `documentation/protocols/ai_role_protocol.md`
+

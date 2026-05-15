@@ -1,0 +1,251 @@
+﻿{
+    "audited_utc":  "2026-03-21T02:11:50.9276726Z",
+    "workflow_stage":  "canonical-unresolved-backlog",
+    "summary":  {
+                    "total_worker_items":  149,
+                    "implemented_items":  111,
+                    "remaining_items":  38,
+                    "implemented_percent":  74.5,
+                    "active_worker_round":  1,
+                    "compiler_round":  1,
+                    "active_cycle":  1
+                },
+    "topology":  {
+                     "worker_windows":  [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9,
+                                            10,
+                                            11,
+                                            12,
+                                            13,
+                                            14,
+                                            15
+                                        ],
+                     "precompiler_windows":  [
+                                                 16,
+                                                 17
+                                             ],
+                     "final_window":  18
+                 },
+    "notes":  [
+                  "workflow/queues/ is the only canonical worker backlog and contains only unresolved items for the current cycle.",
+                  "Prefer start_window_turn.ps1 and complete_window_turn.ps1 for the standardized fast path.",
+                  "After each successful window 18 cycle close, publish_cycle_handoff.ps1 must emit a ready-program artifact and a backward-sync patch before the next cycle begins.",
+                  "Cycle seed state records the backward-sync patch that lagging windows must apply before they continue."
+              ],
+    "cycle_seed":  {
+                       "active_cycle":  1,
+                       "seed_package_dir":  null,
+                       "seed_source_window":  null,
+                       "seed_round":  null,
+                       "seed_kind":  null,
+                       "seed_prepared_utc":  null,
+                       "seed_source_final_package_dir":  null,
+                       "seed_backward_sync_dir":  null,
+                       "seed_backward_sync_zip":  null,
+                       "seed_ready_repo_dir":  null,
+                       "seed_ready_repo_zip":  null
+                   },
+    "windows":  [
+                    {
+                        "window":  1,
+                        "name":  "Runtime Router and Sanitization",
+                        "done_count":  9,
+                        "remaining_count":  4,
+                        "total_items":  13,
+                        "queue_file":  "queues/window-01.json",
+                        "next_bug":  "BUG-27",
+                        "next_title":  "Invalid protocol paths silently downgrade to the fallback protocol"
+                    },
+                    {
+                        "window":  2,
+                        "name":  "Grounding and Prompt Assembly",
+                        "done_count":  8,
+                        "remaining_count":  3,
+                        "total_items":  11,
+                        "queue_file":  "queues/window-02.json",
+                        "next_bug":  "BUG-80",
+                        "next_title":  "Whitespace-only blank lines are not treated as paragraph breaks in grounding corpora, so poison and clean context can collapse into one oversized paragraph"
+                    },
+                    {
+                        "window":  3,
+                        "name":  "Graph, Retrieval Bench, and Curriculum Evidence",
+                        "done_count":  7,
+                        "remaining_count":  3,
+                        "total_items":  10,
+                        "queue_file":  "queues/window-03.json",
+                        "next_bug":  "BUG-70",
+                        "next_title":  "Hard no-overlap chunk splitting breaks retrieval at passage boundaries"
+                    },
+                    {
+                        "window":  4,
+                        "name":  "Tutor Runtime and Session Logic",
+                        "done_count":  9,
+                        "remaining_count":  1,
+                        "total_items":  10,
+                        "queue_file":  "queues/window-04.json",
+                        "next_bug":  "BUG-09",
+                        "next_title":  "Session orchestration loses conversational continuity across turns"
+                    },
+                    {
+                        "window":  5,
+                        "name":  "Harness Turn and Artifact Integrity",
+                        "done_count":  10,
+                        "remaining_count":  0,
+                        "total_items":  10,
+                        "queue_file":  "queues/window-05.json",
+                        "next_bug":  null,
+                        "next_title":  null
+                    },
+                    {
+                        "window":  6,
+                        "name":  "Session Harness and Determinism Plumbing",
+                        "done_count":  8,
+                        "remaining_count":  4,
+                        "total_items":  12,
+                        "queue_file":  "queues/window-06.json",
+                        "next_bug":  "BUG-50",
+                        "next_title":  "Mirror enablement and privacy controls are not propagated or auditable across session tooling"
+                    },
+                    {
+                        "window":  7,
+                        "name":  "Replay Diff and Bundle Integrity",
+                        "done_count":  9,
+                        "remaining_count":  2,
+                        "total_items":  11,
+                        "queue_file":  "queues/window-07.json",
+                        "next_bug":  "BUG-90",
+                        "next_title":  "`repro_replay_diff.py` ignores cross-file `run.json.issue_id` drift in turn bundles"
+                    },
+                    {
+                        "window":  8,
+                        "name":  "Sweep Orchestration and Repo Safety",
+                        "done_count":  6,
+                        "remaining_count":  2,
+                        "total_items":  8,
+                        "queue_file":  "queues/window-08.json",
+                        "next_bug":  "BUG-45",
+                        "next_title":  "`targeted_sweep.py` sanitizes child output before extracting run paths"
+                    },
+                    {
+                        "window":  9,
+                        "name":  "Schema Gates and CI Bundle Routing",
+                        "done_count":  6,
+                        "remaining_count":  2,
+                        "total_items":  8,
+                        "queue_file":  "queues/window-09.json",
+                        "next_bug":  "BUG-113",
+                        "next_title":  "Repro smoke tools emit other tools\u0027 report names and schema versions, and `validate_schemas.py` blesses the mismatch as canonical"
+                    },
+                    {
+                        "window":  10,
+                        "name":  "Artifact Roundtrip and Canonical Repair",
+                        "done_count":  3,
+                        "remaining_count":  2,
+                        "total_items":  5,
+                        "queue_file":  "queues/window-10.json",
+                        "next_bug":  "BUG-79",
+                        "next_title":  "`tools/artifact_roundtrip.py` ignores nested `child_runs/**/*.json` when given a run directory"
+                    },
+                    {
+                        "window":  11,
+                        "name":  "Workflow Companion and Prompt Governance",
+                        "done_count":  9,
+                        "remaining_count":  3,
+                        "total_items":  12,
+                        "queue_file":  "queues/window-11.json",
+                        "next_bug":  "BUG-42",
+                        "next_title":  "`grounding_injection_audit.py` is environment-sensitive and can misattribute failures"
+                    },
+                    {
+                        "window":  12,
+                        "name":  "Detectors, Scanners, and Drift Radar",
+                        "done_count":  13,
+                        "remaining_count":  2,
+                        "total_items":  15,
+                        "queue_file":  "queues/window-12.json",
+                        "next_bug":  "BUG-64",
+                        "next_title":  "`tools/secret_scanner.py` silently skips large text files"
+                    },
+                    {
+                        "window":  13,
+                        "name":  "Backend Probes and Fault Injection",
+                        "done_count":  7,
+                        "remaining_count":  2,
+                        "total_items":  9,
+                        "queue_file":  "queues/window-13.json",
+                        "next_bug":  "BUG-91",
+                        "next_title":  "Backend validation tools ignore stdout/stderr side effects and can leak secret-bearing output while reporting green or handled results"
+                    },
+                    {
+                        "window":  14,
+                        "name":  "Fuzzer Core and Coverage Truthfulness",
+                        "done_count":  4,
+                        "remaining_count":  6,
+                        "total_items":  10,
+                        "queue_file":  "queues/window-14.json",
+                        "next_bug":  "BUG-34",
+                        "next_title":  "`property_turn_fuzzer.py` writes non-canonical `run.json`"
+                    },
+                    {
+                        "window":  15,
+                        "name":  "Lattice, Benches, and Adversarial Suites",
+                        "done_count":  3,
+                        "remaining_count":  2,
+                        "total_items":  5,
+                        "queue_file":  "queues/window-15.json",
+                        "next_bug":  "BUG-96",
+                        "next_title":  "`harness_lattice.py` is a false-green sensitivity sweep that never checks whether lattice dimensions change the reply meaningfully"
+                    }
+                ],
+    "compilers":  [
+                      {
+                          "window":  16,
+                          "kind":  "precompile",
+                          "name":  "Runtime and Core Precompiler",
+                          "round":  1,
+                          "upstreams":  [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7
+                                        ]
+                      },
+                      {
+                          "window":  17,
+                          "kind":  "precompile",
+                          "name":  "Tooling and Guardrail Precompiler",
+                          "round":  1,
+                          "upstreams":  [
+                                            8,
+                                            9,
+                                            10,
+                                            11,
+                                            12,
+                                            13,
+                                            14,
+                                            15
+                                        ]
+                      },
+                      {
+                          "window":  18,
+                          "kind":  "final",
+                          "name":  "Final Compiler",
+                          "round":  1,
+                          "upstreams":  [
+                                            16,
+                                            17
+                                        ]
+                      }
+                  ]
+}

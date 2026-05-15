@@ -1,0 +1,77 @@
+﻿{
+    "window":  13,
+    "name":  "Backend Probes and Fault Injection",
+    "area":  "Owns backend contract probes, backend fault injectors, and backend-side validation bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Backend probe tooling must reveal real contract failures and side effects before the system trusts a backend.",
+    "queue_intent":  "This queue keeps backend contract probes and fault injectors fail-closed, side-effect-aware, and network-safe.",
+    "merge_style":  "Validate backend construction prerequisites before backend instantiation and preserve stderr/stdout side effects in the final judgment.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/backend_contract_probe.py",
+                            "tools/backend_fault_injector.py"
+                        ],
+    "delivery_standard":  [
+                              "A PASS result must mean a real probe occurred.",
+                              "Backend-side leaks and side effects must be part of the verdict.",
+                              "Offline gating must happen before any backend object can misclassify the environment."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  7,
+    "remaining_items":  2,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-91",
+                      "title":  "Backend validation tools ignore stdout/stderr side effects and can leak secret-bearing output while reporting green or handled results",
+                      "phase":  "6",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/backend_contract_probe.py",
+                                         "tools/backend_fault_injector.py"
+                                     ],
+                      "legacy_window":  13,
+                      "legacy_queue_index":  1,
+                      "mission":  "Treat stdout/stderr side effects as first-class backend validation evidence. Side-effect truthfulness is what keeps backend certification credible in regulated or customer-hosted environments.",
+                      "implementation_nexus":  [
+                                                   "Capture and judge side effects instead of hiding them behind green or handled outcomes.",
+                                                   "Prevent secret-bearing output from becoming an invisible side channel."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Secret-bearing or unsafe side effects affect the final probe verdict.",
+                                               "Backend validation reports include side-effect-aware reasoning."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-97",
+                      "title":  "`backend_contract_probe.py` misclassifies offline and local backend configuration defects because the no-network gate runs after backend construction",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/backend_contract_probe.py"
+                                     ],
+                      "legacy_window":  13,
+                      "legacy_queue_index":  2,
+                      "mission":  "Run the no-network gate before backend construction can misclassify the environment. Clean defect classification makes the probe more supportable and keeps offline SKUs from looking broken for the wrong reason.",
+                      "implementation_nexus":  [
+                                                   "Move offline/local gating ahead of backend object creation.",
+                                                   "Keep offline misconfiguration distinct from post-construction backend failures."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Offline and local backend defects are classified correctly before backend construction.",
+                                               "The probe no longer mislabels network-gated environments."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

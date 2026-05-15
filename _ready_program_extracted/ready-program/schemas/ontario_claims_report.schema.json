@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ontario_claims_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "findings"],
+  "properties": {
+    "schema_version": {"const": "ontario_claims_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "path": {"type": "string"},
+    "enforced": {"type": "boolean"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "location", "keywords", "has_grounding", "has_citations"],
+        "properties": {
+          "severity": {"type": "string", "enum": ["WARN", "FAIL"]},
+          "location": {"type": "string"},
+          "keywords": {"type": "array", "items": {"type": "string"}},
+          "has_grounding": {"type": "boolean"},
+          "has_citations": {"type": "boolean"},
+          "excerpt": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

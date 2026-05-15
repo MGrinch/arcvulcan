@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/turn_report.schema.json",
+  "title": "TurnReport (WitnessEvent payload.turn_result)",
+  "allOf": [
+    {
+      "$ref": "witness_event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "object",
+          "required": [
+            "turn_result"
+          ],
+          "properties": {
+            "turn_result": {
+              "type": "object",
+              "required": [
+                "config",
+                "input",
+                "seed",
+                "reply",
+                "backend"
+              ],
+              "properties": {
+                "config": {
+                  "type": "object"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "seed": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "reply": {
+                  "type": "string"
+                },
+                "backend": {
+                  "type": "string"
+                },
+                "physics": {
+                  "type": "object",
+                  "properties": {
+                    "mastery": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "resonance": {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    },
+                    "text_similarity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "mastery_delta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": []
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ]
+}

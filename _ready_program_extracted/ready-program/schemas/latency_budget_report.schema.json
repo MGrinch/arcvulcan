@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "latency_budget_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "thresholds", "observed", "samples"],
+  "properties": {
+    "schema_version": {"const": "latency_budget_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "turn_index": {"type": "integer"},
+    "cases": {"type": "integer"},
+    "thresholds": {"type": "object"},
+    "observed": {"type": "object"},
+    "samples": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

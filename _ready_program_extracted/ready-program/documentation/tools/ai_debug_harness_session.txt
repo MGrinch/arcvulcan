@@ -1,0 +1,46 @@
+# ai_debug_harness_session
+
+**IMPLEMENTATION (2026-01-30): tool is runnable**
+
+Runs a deterministic **multi-turn session** through the orchestrator (`xyzgl.orchestrator.session_loop.run_session`) and writes a run bundle.
+
+This harness exists to prove the session loop wiring works *without network credentials*.
+
+## Usage
+
+```bash
+python tools/harness_session.py --issue ISSUE-YYYYMMDD-NNN
+```
+
+Optional:
+```bash
+python tools/harness_session.py --issue ISSUE-YYYYMMDD-NNN --seed 1337 --max-turns 6 --enable-mirror
+```
+
+Enable local grounding (reads `curriculum/manifest.json` + local text passages):
+```bash
+python tools/harness_session.py --issue ISSUE-YYYYMMDD-NNN --grounding
+```
+
+Outputs:
+- `runs/<run_id>/session_report.json` (WitnessEvent containing payload.session_report)
+- `runs/<run_id>/knowledge_graph.json`
+- `runs/<run_id>/session_summary.md`
+- `runs/<run_id>/run.json`
+
+Exit codes:
+- `0` PASS, `1` FAIL, `2` INCOMPLETE
+
+Deterministic:
+- uses `--seed`
+- forces `GWEN_DISABLED=1`
+
+## Recommended follow-ups
+
+Validate outputs:
+```bash
+python tools/validate_schemas.py runs/<run_id>/
+```
+
+Option:
+  --protocol-reground-every N  (default: 5)

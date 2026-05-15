@@ -1,0 +1,21 @@
+Curriculum Corpus Linter
+
+Goal: catch corpus/manifest issues before they silently break grounding.
+
+Checks:
+- curriculum/manifest.json exists and parses; sources list is non-empty.
+- Each source has a unique id and a valid path.
+- Source files exist and are valid UTF-8.
+- Detects duplicate content via SHA-256 fingerprints.
+
+Usage:
+  python tools/curriculum_corpus_linter.py --issue ISSUE-YYYYMMDD-NNN
+
+Outputs:
+- runs/<run_id>/corpus_lint_report.json
+- runs/<run_id>/corpus_lint_summary.md
+- runs/<run_id>/run.json
+
+Exit codes:
+- 0 PASS
+- 1 FAIL

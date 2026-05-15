@@ -1,0 +1,66 @@
+{
+  "window": 8,
+  "name": "Sweep, Verifier, and Run-Path Orchestration",
+  "area": "Owns targeted sweep handoff, cadence verification, run-path orchestration, and repo-safety workflow bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-08.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 5,
+  "remaining_items": 4,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-127",
+      "title": "Several tools hard-code `run.json.deterministic` in ways that do not match their real run identity or replay semantics",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/atheris_fuzz_router.py",
+        "tools/coverage_gate.py",
+        "tools/harness_session.py",
+        "tools/stage_timing_profiler.py",
+        "tools/targeted_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 7,
+      "bug_id": "BUG-31",
+      "title": "`targeted_sweep.py` does not forward `--allow-external-path` to child tools",
+      "phase": "5",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/run_paths.py",
+        "tools/targeted_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 8,
+      "bug_id": "BUG-45",
+      "title": "`targeted_sweep.py` sanitizes child output before extracting run paths",
+      "phase": "5",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/targeted_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-67",
+      "title": "`targeted_sweep.py` contaminates the repo before running `doctor`",
+      "phase": "5",
+      "severity": "High",
+      "files_hint": [
+        "tools/doctor.py",
+        "tools/targeted_sweep.py"
+      ]
+    }
+  ]
+}

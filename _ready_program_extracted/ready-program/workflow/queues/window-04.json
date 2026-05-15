@@ -1,0 +1,55 @@
+﻿{
+    "window":  4,
+    "name":  "Tutor Runtime and Session Logic",
+    "area":  "Owns tutor phases, session loop semantics, learner-state continuity, CLI resume, and policy-close behavior.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "The learner session must remain continuous and auditable across turns.",
+    "queue_intent":  "This queue protects the canonical tutoring loop from losing state or mis-sequencing phase behavior.",
+    "merge_style":  "Prefer state continuity and explicit turn lineage over hidden resets.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "xyzgl/orchestrator/session_loop.py",
+                            "xyzgl/orchestrator/tutor_phases.py"
+                        ],
+    "delivery_standard":  [
+                              "Carry forward the real conversational state that drove the tutor.",
+                              "Keep exported artifacts consistent with the runtime path.",
+                              "Regression tests should span at least two turns."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  9,
+    "remaining_items":  1,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-09",
+                      "title":  "Session orchestration loses conversational continuity across turns",
+                      "phase":  "3",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "xyzgl/orchestrator/session_loop.py",
+                                         "xyzgl/orchestrator/tutor_phases.py"
+                                     ],
+                      "legacy_window":  4,
+                      "legacy_queue_index":  1,
+                      "mission":  "Preserve conversational continuity across turns in the session orchestrator. Make the continuity explicit enough that longitudinal tutoring features and customer-facing session exports can be trusted as a product surface, not just a debug trace.",
+                      "implementation_nexus":  [
+                                                   "Carry forward the learner context and tutor state that the next turn depends on.",
+                                                   "Keep exported artifacts aligned with the actual turn-to-turn state."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Multi-turn tests retain the expected prior-turn context.",
+                                               "Exported session artifacts describe the same continuity the runtime used."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

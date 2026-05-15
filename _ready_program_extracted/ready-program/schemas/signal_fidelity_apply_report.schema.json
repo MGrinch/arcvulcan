@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "signal_fidelity_apply_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "overall", "archive_present", "extractor", "out_root_rel", "copied_files", "skipped_existing"],
+  "properties": {
+    "schema_version": {"const": "signal_fidelity_apply_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "overall": {"type": "string", "enum": ["PASS", "FAIL", "INCOMPLETE"]},
+    "archive_present": {"type": "boolean"},
+    "extractor": {"type": "string"},
+    "archive_rel": {"type": ["string", "null"]},
+    "out_root_rel": {"type": "string"},
+    "out_root_abs": {"type": "string"},
+    "copied_files": {"type": "integer", "minimum": 0},
+    "skipped_existing": {"type": "integer", "minimum": 0},
+    "extractor_rc": {"type": ["integer", "null"]},
+    "extractor_output_tail": {"type": "string"},
+    "notes": {"type": "array", "items": {"type": "string"}},
+    "deterministic": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

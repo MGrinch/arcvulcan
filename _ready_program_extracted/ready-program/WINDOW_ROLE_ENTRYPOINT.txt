@@ -1,0 +1,10 @@
+Use `00_WINDOW_FARM_START_HERE.md` as the root operator entrypoint.
+Then use `workflow/STATUS.md` as the current cold-stop map,
+`workflow/WINDOW_SYSTEM_PROMPTS.md` for the per-window prompt,
+`workflow/CYCLE_ORCHESTRA_PROMPTS.md` for the cycle-order copy sheet,
+and `workflow/UNRESOLVED_EXECUTION_INTELLIGENCE.md` for the backlog strategy layer.
+
+Cycle closes are authoritative only when window 18 emits:
+1. the final package path
+2. the ready-program artifact path
+3. the backward-sync patch path

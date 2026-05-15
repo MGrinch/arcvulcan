@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "mirror_leakage_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "findings"],
+  "properties": {
+    "schema_version": {"const": "mirror_leakage_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "path": {"type": "string"},
+    "seed": {"type": "integer"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["turn_index", "pattern", "excerpt"],
+        "properties": {
+          "turn_index": {"type": "integer"},
+          "node_id": {"type": "string"},
+          "pattern": {"type": "string"},
+          "excerpt": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

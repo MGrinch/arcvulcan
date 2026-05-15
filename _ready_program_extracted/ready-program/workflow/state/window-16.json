@@ -1,0 +1,99 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-15\\round-02__TOOLING-GUARDRAIL-R02",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.6226671Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T22:39:22.7152307Z",
+                                                     "action":  "batch-complete",
+                                                     "item_id":  "TOOLING-GUARDRAIL-R01",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-15\\round-01__TOOLING-GUARDRAIL-R01",
+                                                     "files":  [
+                                                                   "tools/atheris_fuzz_router.py",
+                                                                   "tools/harness_session.py",
+                                                                   "tools/coverage_gate.py",
+                                                                   "tools/stage_timing_profiler.py",
+                                                                   "tools/targeted_sweep.py",
+                                                                   "tools/prompt_snapshot_guard.py",
+                                                                   "tools/node_evolution_diff.py",
+                                                                   "tools/backend_fault_injector.py",
+                                                                   "snapshots/prompt_snapshots.json",
+                                                                   "tests/test_bug125_atheris_fuzz_router_incomplete_without_atheris.py",
+                                                                   "tests/test_bug126_prompt_snapshot_no_protocol_case.py",
+                                                                   "tests/test_bug127_run_metadata_matches_semantics.py",
+                                                                   "tests/test_bug130_node_evolution_diff_canonical_next_action.py",
+                                                                   "tests/test_bug134_artifact_roundtrip_direct_fix.py",
+                                                                   "tests/test_bug30_backend_fault_injector_matrix.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-08\\round-01__BUG-127",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-09\\round-01__BUG-134",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-10\\round-01__BUG-126",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-11\\round-01__BUG-130",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-12\\round-01__BUG-30",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-13\\round-01__BUG-125"
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T23:13:44.0930170Z",
+                                                     "action":  "batch-complete",
+                                                     "item_id":  "TOOLING-GUARDRAIL-R02",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-15\\round-02__TOOLING-GUARDRAIL-R02",
+                                                     "files":  [
+                                                                   "tools/targeted_sweep.py",
+                                                                   "tools/latency_cost_budget_enforcer.py",
+                                                                   "tools/protocol_drift_radar.py",
+                                                                   "tools/backend_contract_probe.py",
+                                                                   "tests/test_bug31_targeted_sweep_external_path_forwarding.py",
+                                                                   "tests/test_bug112_validate_schemas_shipped_outputs.py",
+                                                                   "tests/test_bug41_latency_cost_budget_enforcer_hermetic.py",
+                                                                   "tests/test_bug26_protocol_drift_tail_window_scan.py",
+                                                                   "tests/test_bug57_backend_contract_probe_latency_bool.py",
+                                                                   "tests/test_bug101_cli_validation.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-08\\round-02__BUG-31",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-09\\round-02__BUG-112",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-10\\round-02__BUG-41",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-11\\round-02__BUG-26",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-12\\round-02__BUG-57",
+                                                                             "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-13\\round-02__BUG-101"
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  16,
+    "kind":  "precompile",
+    "name":  "Runtime and Core Precompiler",
+    "area":  "Precompiles worker outputs from windows 1 through 7 into one cumulative runtime stream.",
+    "status":  "idle",
+    "history":  [
+
+                ],
+    "completed_rounds":  0,
+    "current_round":  1,
+    "upstreams":  [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7
+                  ],
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

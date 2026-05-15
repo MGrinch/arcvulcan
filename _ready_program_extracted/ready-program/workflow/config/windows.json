@@ -1,0 +1,205 @@
+﻿{
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "windows":  [
+                    {
+                        "window":  1,
+                        "kind":  "worker",
+                        "name":  "Runtime Router and Sanitization",
+                        "area":  "Owns router, protocol, mirror input-output, fallback, and sanitization runtime bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-01.json",
+                        "output_root":  "out/window-01",
+                        "queue_file":  "queues/window-01.json"
+                    },
+                    {
+                        "window":  2,
+                        "kind":  "worker",
+                        "name":  "Grounding and Prompt Assembly",
+                        "area":  "Owns grounding corpora, prompt assembly, prompt-budget guards, and grounding-path integrity bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-02.json",
+                        "output_root":  "out/window-02",
+                        "queue_file":  "queues/window-02.json"
+                    },
+                    {
+                        "window":  3,
+                        "kind":  "worker",
+                        "name":  "Graph, Retrieval Bench, and Curriculum Evidence",
+                        "area":  "Owns graph persistence, retrieval evidence, retrieval benchmark parity, and curriculum-evidence bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-03.json",
+                        "output_root":  "out/window-03",
+                        "queue_file":  "queues/window-03.json"
+                    },
+                    {
+                        "window":  4,
+                        "kind":  "worker",
+                        "name":  "Tutor Runtime and Session Logic",
+                        "area":  "Owns tutor phases, session loop semantics, learner-state continuity, CLI resume, and policy-close behavior.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-04.json",
+                        "output_root":  "out/window-04",
+                        "queue_file":  "queues/window-04.json"
+                    },
+                    {
+                        "window":  5,
+                        "kind":  "worker",
+                        "name":  "Harness Turn and Artifact Integrity",
+                        "area":  "Owns harness_turn behavior, turn artifacts, witness event identity, and turn-facing run path bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-05.json",
+                        "output_root":  "out/window-05",
+                        "queue_file":  "queues/window-05.json"
+                    },
+                    {
+                        "window":  6,
+                        "kind":  "worker",
+                        "name":  "Session Harness and Determinism Plumbing",
+                        "area":  "Owns harness_session, seed sweep, run path, determinism controls, and session-export auditability bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-06.json",
+                        "output_root":  "out/window-06",
+                        "queue_file":  "queues/window-06.json"
+                    },
+                    {
+                        "window":  7,
+                        "kind":  "worker",
+                        "name":  "Replay Diff and Bundle Integrity",
+                        "area":  "Owns replay-diff behavior, strict replay semantics, and replay-facing bundle integrity bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-07.json",
+                        "output_root":  "out/window-07",
+                        "queue_file":  "queues/window-07.json"
+                    },
+                    {
+                        "window":  8,
+                        "kind":  "worker",
+                        "name":  "Sweep Orchestration and Repo Safety",
+                        "area":  "Owns targeted sweep execution, cadence verification, repo cleanliness, and deterministic run-path orchestration bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-08.json",
+                        "output_root":  "out/window-08",
+                        "queue_file":  "queues/window-08.json"
+                    },
+                    {
+                        "window":  9,
+                        "kind":  "worker",
+                        "name":  "Schema Gates and CI Bundle Routing",
+                        "area":  "Owns canonical artifact schemas, CI gate routing, smoke-report identity, and run-bundle completeness bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-09.json",
+                        "output_root":  "out/window-09",
+                        "queue_file":  "queues/window-09.json"
+                    },
+                    {
+                        "window":  10,
+                        "kind":  "worker",
+                        "name":  "Artifact Roundtrip and Canonical Repair",
+                        "area":  "Owns artifact roundtrip strictness, direct-file repair, nested child-run traversal, and canonical run-bundle rewrite bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-10.json",
+                        "output_root":  "out/window-10",
+                        "queue_file":  "queues/window-10.json"
+                    },
+                    {
+                        "window":  11,
+                        "kind":  "worker",
+                        "name":  "Workflow Companion and Prompt Governance",
+                        "area":  "Owns prompt snapshot guards, citation guards, signal-fidelity tooling, and doc-code workflow contract bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-11.json",
+                        "output_root":  "out/window-11",
+                        "queue_file":  "queues/window-11.json"
+                    },
+                    {
+                        "window":  12,
+                        "kind":  "worker",
+                        "name":  "Detectors, Scanners, and Drift Radar",
+                        "area":  "Owns secret scanning, drift radar, graph invariants, mirror leakage, and detector-fidelity bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-12.json",
+                        "output_root":  "out/window-12",
+                        "queue_file":  "queues/window-12.json"
+                    },
+                    {
+                        "window":  13,
+                        "kind":  "worker",
+                        "name":  "Backend Probes and Fault Injection",
+                        "area":  "Owns backend contract probes, backend fault injectors, and backend-side validation bugs.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-13.json",
+                        "output_root":  "out/window-13",
+                        "queue_file":  "queues/window-13.json"
+                    },
+                    {
+                        "window":  14,
+                        "kind":  "worker",
+                        "name":  "Fuzzer Core and Coverage Truthfulness",
+                        "area":  "Owns property and fuzz harnesses that must report canonical artifacts, real coverage, and replayable failing evidence.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-14.json",
+                        "output_root":  "out/window-14",
+                        "queue_file":  "queues/window-14.json"
+                    },
+                    {
+                        "window":  15,
+                        "kind":  "worker",
+                        "name":  "Lattice, Benches, and Adversarial Suites",
+                        "area":  "Owns sensitivity benches, calibration harnesses, and adversarial suites that must fail closed instead of reporting false green.",
+                        "role_file":  "roles/worker.md",
+                        "state_file":  "state/window-15.json",
+                        "output_root":  "out/window-15",
+                        "queue_file":  "queues/window-15.json"
+                    },
+                    {
+                        "window":  16,
+                        "kind":  "precompile",
+                        "name":  "Runtime and Core Precompiler",
+                        "area":  "Precompiles worker outputs from windows 1 through 7 into one cumulative runtime stream.",
+                        "role_file":  "roles/precompiler.md",
+                        "state_file":  "state/window-16.json",
+                        "output_root":  "out/window-16",
+                        "upstreams":  [
+                                          1,
+                                          2,
+                                          3,
+                                          4,
+                                          5,
+                                          6,
+                                          7
+                                      ]
+                    },
+                    {
+                        "window":  17,
+                        "kind":  "precompile",
+                        "name":  "Tooling and Guardrail Precompiler",
+                        "area":  "Precompiles worker outputs from windows 8 through 15 into one cumulative tooling and guardrail stream.",
+                        "role_file":  "roles/precompiler.md",
+                        "state_file":  "state/window-17.json",
+                        "output_root":  "out/window-17",
+                        "upstreams":  [
+                                          8,
+                                          9,
+                                          10,
+                                          11,
+                                          12,
+                                          13,
+                                          14,
+                                          15
+                                      ]
+                    },
+                    {
+                        "window":  18,
+                        "kind":  "final",
+                        "name":  "Final Compiler",
+                        "area":  "Merges windows 16 and 17 into the final cumulative integrated package stream for the current cycle.",
+                        "role_file":  "roles/final-compiler.md",
+                        "state_file":  "state/window-18.json",
+                        "output_root":  "out/window-18",
+                        "upstreams":  [
+                                          16,
+                                          17
+                                      ]
+                    }
+                ]
+}

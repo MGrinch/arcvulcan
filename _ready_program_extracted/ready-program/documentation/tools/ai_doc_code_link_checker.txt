@@ -1,0 +1,15 @@
+doc_code_link_checker
+
+Purpose:
+  Verify docs/AI_INDEX.json paths exist and tools/<tool>.py have companion docs.
+
+Usage:
+  python tools/doc_code_link_checker.py --issue ISSUE-YYYYMMDD-NNN
+  python tools/doc_code_link_checker.py --issue ISSUE-YYYYMMDD-NNN --enforce
+
+Outputs:
+  runs/<new_run_id>/doc_link_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "seed_sweep_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "seed_range", "unique_replies", "samples"],
+  "properties": {
+    "schema_version": {"const": "seed_sweep_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "turn_index": {"type": "integer"},
+    "seed_range": {
+      "type": "object",
+      "required": ["start", "end"],
+      "properties": {"start": {"type": "integer"}, "end": {"type": "integer"}},
+      "additionalProperties": true
+    },
+    "input": {"type": "string"},
+    "unique_replies": {"type": "integer"},
+    "reply_length": {"type": "object"},
+    "tutor_latency_ms": {"type": "object"},
+    "samples": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

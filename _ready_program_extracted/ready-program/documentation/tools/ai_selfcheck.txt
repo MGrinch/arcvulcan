@@ -1,0 +1,13 @@
+selfcheck
+
+Fast deterministic router sanity check.
+Usage:
+  python tools/selfcheck.py
+  python tools/selfcheck.py --issue ISSUE-YYYYMMDD-NNN [--seed 123]
+
+Issue mode outputs:
+  runs/<run_id>/selfcheck_report.json
+  runs/<run_id>/selfcheck_summary.md
+  runs/<run_id>/run.json
+
+Exit codes: 0 pass, 1 fail, 2 incomplete

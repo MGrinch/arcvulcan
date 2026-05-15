@@ -1,0 +1,16 @@
+Mirror Calibration Bench
+
+Goal: measure how closely Mirror predictions match the learner answers.
+
+Usage:
+  python tools/mirror_calibration_bench.py runs/<run_id> --issue ISSUE-YYYYMMDD-NNN
+  python tools/mirror_calibration_bench.py runs/<run_id> --issue ISSUE-YYYYMMDD-NNN --min-avg 0.35
+
+Outputs:
+  runs/<run_id>/mirror_calibration_report.json
+  runs/<run_id>/run.json
+
+Exit codes:
+  0 PASS
+  1 FAIL
+  2 INCOMPLETE

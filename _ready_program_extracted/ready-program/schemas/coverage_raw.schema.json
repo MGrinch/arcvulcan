@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "coverage_raw",
+  "type": "object",
+  "required": ["meta", "files", "totals"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["format", "version", "timestamp", "branch_coverage", "show_contexts"],
+      "properties": {
+        "format": {"type": "integer"},
+        "version": {"type": "string"},
+        "timestamp": {"type": "string"},
+        "branch_coverage": {"type": "boolean"},
+        "show_contexts": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["executed_lines", "summary", "missing_lines", "excluded_lines", "executed_branches", "missing_branches", "functions", "classes"],
+        "properties": {
+          "executed_lines": {"type": "array", "items": {"type": "integer"}},
+          "summary": {"type": "object"},
+          "missing_lines": {"type": "array", "items": {"type": "integer"}},
+          "excluded_lines": {"type": "array", "items": {"type": "integer"}},
+          "executed_branches": {"type": "array"},
+          "missing_branches": {"type": "array"},
+          "functions": {"type": "object"},
+          "classes": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "covered_lines",
+        "num_statements",
+        "percent_covered",
+        "percent_covered_display",
+        "missing_lines",
+        "excluded_lines",
+        "percent_statements_covered",
+        "percent_statements_covered_display",
+        "num_branches",
+        "num_partial_branches",
+        "covered_branches",
+        "missing_branches",
+        "percent_branches_covered",
+        "percent_branches_covered_display"
+      ],
+      "properties": {
+        "covered_lines": {"type": "integer"},
+        "num_statements": {"type": "integer"},
+        "percent_covered": {"type": "number"},
+        "percent_covered_display": {"type": "string"},
+        "missing_lines": {"type": "integer"},
+        "excluded_lines": {"type": "integer"},
+        "percent_statements_covered": {"type": "number"},
+        "percent_statements_covered_display": {"type": "string"},
+        "num_branches": {"type": "integer"},
+        "num_partial_branches": {"type": "integer"},
+        "covered_branches": {"type": "integer"},
+        "missing_branches": {"type": "integer"},
+        "percent_branches_covered": {"type": "number"},
+        "percent_branches_covered_display": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

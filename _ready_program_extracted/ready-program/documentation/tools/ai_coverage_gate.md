@@ -1,0 +1,28 @@
+# Coverage Gate
+
+**Goal:** enforce a minimum level of exercised code for the core `xyzgl`
+package.
+
+This tool runs a deterministic smoke suite under the `coverage` Python package
+and fails if line/branch coverage drops below thresholds.
+
+## Usage
+```bash
+python tools/coverage_gate.py --issue ISSUE-YYYYMMDD-NNN \
+  --min-line 35 --min-branch 5
+```
+
+## Outputs
+- `runs/<run_id>/coverage_report.json`
+- `runs/<run_id>/coverage_summary.md`
+- `runs/<run_id>/coverage_raw.json`
+- `runs/<run_id>/.coverage`
+- `runs/<run_id>/child_runs/` (nested run bundles from subtools)
+- `runs/<run_id>/run.json`
+
+Known issue: `run.json.outputs` may omit `child_runs/` even when it exists; see `ISSUE-20260202-709`.
+
+## Exit codes
+- 0 PASS (thresholds met)
+- 1 FAIL (thresholds not met)
+- 2 INCOMPLETE (`coverage` missing)

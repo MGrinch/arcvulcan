@@ -1,0 +1,61 @@
+{
+  "window": 12,
+  "name": "Backend Probes and Fault Injection",
+  "area": "Owns backend contract probes, backend fault injectors, and backend-side validation bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-12.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 5,
+  "remaining_items": 4,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-30",
+      "title": "`backend_fault_injector.py` has a false-positive hole and omits key fault scenarios",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/backend_fault_injector.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 7,
+      "bug_id": "BUG-57",
+      "title": "`backend_contract_probe.py` accepts boolean `latency_ms` values as valid integers",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/backend_contract_probe.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 8,
+      "bug_id": "BUG-91",
+      "title": "Backend validation tools ignore stdout/stderr side effects and can leak secret-bearing output while reporting green or handled results",
+      "phase": "6",
+      "severity": "High",
+      "files_hint": [
+        "tools/backend_contract_probe.py",
+        "tools/backend_fault_injector.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-97",
+      "title": "`backend_contract_probe.py` misclassifies offline and local backend configuration defects because the no-network gate runs after backend construction",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/backend_contract_probe.py"
+      ]
+    }
+  ]
+}

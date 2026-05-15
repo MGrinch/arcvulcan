@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "lattice_crash",
+  "type": "object",
+  "required": ["error", "run_id", "issue_id"],
+  "properties": {
+    "error": {"type": "string"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"}
+  },
+  "additionalProperties": true
+}

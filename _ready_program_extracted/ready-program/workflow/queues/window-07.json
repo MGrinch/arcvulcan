@@ -1,0 +1,75 @@
+﻿{
+    "window":  7,
+    "name":  "Replay Diff and Bundle Integrity",
+    "area":  "Owns replay-diff behavior, strict replay semantics, and replay-facing bundle integrity bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Replay-diff tools must detect drift across the full bundle, not just the most obvious top-level files.",
+    "queue_intent":  "These fixes keep replay comparison strict enough to catch hidden schema or identity regressions.",
+    "merge_style":  "Compare cross-file identities and inner payload fields, not only filenames.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/repro_replay_diff.py"
+                        ],
+    "delivery_standard":  [
+                              "Bundle diffing must detect nested metadata drift.",
+                              "A green replay result must mean semantic parity, not superficial filename parity.",
+                              "Tests should include mutated inner fields."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  9,
+    "remaining_items":  2,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-90",
+                      "title":  "`repro_replay_diff.py` ignores cross-file `run.json.issue_id` drift in turn bundles",
+                      "phase":  "5",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/repro_replay_diff.py"
+                                     ],
+                      "legacy_window":  7,
+                      "legacy_queue_index":  1,
+                      "mission":  "Catch run.json issue_id drift across files inside replay bundles. Replay verdicts should be strong enough that teams can trust a green status in paid support and regression review workflows.",
+                      "implementation_nexus":  [
+                                                   "Compare cross-file issue identity, not only local file content.",
+                                                   "Keep bundle validation strict across nested artifacts."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Replay diff flags mismatched issue ids anywhere in the bundle.",
+                                               "A green result requires cross-file identity parity."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  11,
+                      "bug_id":  "BUG-104",
+                      "title":  "`repro_replay_diff.py` ignores inner `payload.session_report.schema_version` drift in session bundles",
+                      "phase":  "5",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/repro_replay_diff.py"
+                                     ],
+                      "legacy_window":  7,
+                      "legacy_queue_index":  2,
+                      "mission":  "Catch schema-version drift hidden inside session bundle payloads. Make semantic drift visible early so bundle consumers and downstream integrations do not discover incompatibilities after shipment.",
+                      "implementation_nexus":  [
+                                                   "Inspect inner payload.session_report.schema_version values.",
+                                                   "Do not stop at top-level file naming parity."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Replay diff flags inner schema_version drift.",
+                                               "Nested payload metadata participates in semantic diffing."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

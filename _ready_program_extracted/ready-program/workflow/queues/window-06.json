@@ -1,0 +1,129 @@
+﻿{
+    "window":  6,
+    "name":  "Session Harness and Determinism Plumbing",
+    "area":  "Owns harness_session, seed sweep, run path, determinism controls, and session-export auditability bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Session tooling must preserve determinism, privacy controls, and truthful run provenance across every exported artifact.",
+    "queue_intent":  "These fixes protect seed lineage, mirror governance, run-root resolution, and learner-state truthfulness.",
+    "merge_style":  "Favor auditable provenance over convenience defaults tied to cwd or CLI shortcuts.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/harness_session.py",
+                            "tools/seed_sweep.py",
+                            "tools/run_paths.py",
+                            "xyzgl/orchestrator/session_loop.py"
+                        ],
+    "delivery_standard":  [
+                              "Run identity must reflect the real workload, not a brittle placeholder.",
+                              "Privacy and mirror controls must propagate through all tooling layers.",
+                              "Artifacts must tell the truth about the learner state that actually drove tutoring."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  8,
+    "remaining_items":  4,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-50",
+                      "title":  "Mirror enablement and privacy controls are not propagated or auditable across session tooling",
+                      "phase":  "4",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/harness_session.py",
+                                         "tools/seed_sweep.py",
+                                         "xyzgl/orchestrator/mirror.py"
+                                     ],
+                      "legacy_window":  6,
+                      "legacy_queue_index":  1,
+                      "mission":  "Propagate mirror enablement and privacy controls through every session tool and artifact. Treat those controls as billable trust features whose effective state must stay inspectable from CLI to final export.",
+                      "implementation_nexus":  [
+                                                   "Push mirror/privacy flags through harness_session, seed_sweep, and runtime plumbing.",
+                                                   "Record those controls in exported artifacts so auditors can verify them."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Mirror/privacy settings survive tool-to-tool handoff.",
+                                               "Artifacts show the effective mirror/privacy state that drove execution."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-52",
+                      "title":  "`seed_sweep.py` run identity is predictably tied to `--seed`, not to the actual sweep workload",
+                      "phase":  "4",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/run_paths.py",
+                                         "tools/seed_sweep.py"
+                                     ],
+                      "legacy_window":  6,
+                      "legacy_queue_index":  2,
+                      "mission":  "Make sweep run identity depend on the actual workload, not only the seed integer. Stable but truthful run identity makes comparison dashboards, customer reports, and support escalations materially more useful.",
+                      "implementation_nexus":  [
+                                                   "Derive run identity from workload shape as well as seed.",
+                                                   "Keep deterministic replay stable for the same workload."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Changing workload with the same seed changes run identity appropriately.",
+                                               "Re-running the same workload and seed keeps the same identity."
+                                           ]
+                  },
+                  {
+                      "queue_index":  3,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-55",
+                      "title":  "`run_paths.py` resolves default and relative runs roots against the caller\u0027s current working directory",
+                      "phase":  "4",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/harness_session.py",
+                                         "tools/run_paths.py",
+                                         "tools/runs/",
+                                         "tools/seed_sweep.py"
+                                     ],
+                      "legacy_window":  6,
+                      "legacy_queue_index":  3,
+                      "mission":  "Resolve runs roots against the tool contract instead of the caller\u0027s cwd. That path contract should be reliable enough for scheduled jobs, CI runners, and customer-hosted automation to use without wrapper scripts.",
+                      "implementation_nexus":  [
+                                                   "Anchor default and relative run roots to a stable base path.",
+                                                   "Keep tooling behavior portable across invocation contexts."
+                                               ],
+                      "acceptance_focus":  [
+                                               "The same command resolves the same run root from different cwd values.",
+                                               "Harness and sweep tools agree on where runs live."
+                                           ]
+                  },
+                  {
+                      "queue_index":  4,
+                      "original_queue_index":  11,
+                      "bug_id":  "BUG-82",
+                      "title":  "Session artifacts misreport the learner state that actually drove tutoring, and the `flow` vs `frustrated` stub-tutor branch is behaviorally dead in exported output",
+                      "phase":  "3",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/harness_session.py",
+                                         "xyzgl/orchestrator/session_loop.py"
+                                     ],
+                      "legacy_window":  6,
+                      "legacy_queue_index":  4,
+                      "mission":  "Tell the truth about the learner state and active tutoring branch in session artifacts. The exported narrative should be accurate enough to power premium analytics, instructor review, and customer success triage.",
+                      "implementation_nexus":  [
+                                                   "Export the learner state that actually drove tutoring.",
+                                                   "Revive or remove dead stub-tutor branches so artifacts cannot claim nonexistent behavior."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Session artifacts report the real learner state and branch taken.",
+                                               "The flow vs frustrated branch is either exercised truthfully or no longer falsely implied."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

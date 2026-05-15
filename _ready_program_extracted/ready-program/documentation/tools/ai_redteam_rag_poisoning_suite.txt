@@ -1,0 +1,15 @@
+redteam_rag_poisoning_suite
+
+Purpose:
+  Ensure poisoned grounding content cannot escape its delimiters or reorder the
+  protocol/grounding/USER prompt blocks.
+
+Usage:
+  python tools/redteam_rag_poisoning_suite.py --issue ISSUE-YYYYMMDD-NNN
+
+Outputs:
+  runs/<new_run_id>/redteam_rag_poison_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

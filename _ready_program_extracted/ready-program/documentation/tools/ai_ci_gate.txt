@@ -1,0 +1,17 @@
+CI Gate
+
+Goal: run a deterministic battery of checks that exercises the full session loop.
+
+Usage:
+  python tools/ci_gate.py --issue ISSUE-YYYYMMDD-NNN
+
+Outputs:
+  runs/<run_id>/ci_gate_report.json
+  runs/<run_id>/run.json
+
+Exit codes:
+  0 PASS
+  1 FAIL
+  2 INCOMPLETE
+
+Pipeline includes doctor, selfcheck, backend_contract_probe, harness_session, validate_schemas, protocol_drift_radar, mirror guards, and ontario_claims guard.

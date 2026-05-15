@@ -1,0 +1,19 @@
+Seed Sweep
+
+Goal: detect variance/nondeterminism by running the same input across many seeds.
+
+Checks:
+- Counts unique replies across the seed range.
+- Summarizes reply length distribution and p95 latency.
+
+Usage:
+  python tools/seed_sweep.py --issue ISSUE-YYYYMMDD-NNN --text "Explain 2F vs 1F" --seed-start 1 --seed-end 50
+
+Outputs:
+- runs/<run_id>/seed_sweep_report.json
+- runs/<run_id>/seed_sweep_summary.md
+- runs/<run_id>/run.json
+
+Exit codes:
+- 0 PASS (unique replies within threshold)
+- 1 FAIL (too many unique replies)

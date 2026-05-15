@@ -1,0 +1,566 @@
+{
+  "archive": "EXTERNAL:XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED.rar (not shipped in lean build)",
+  "entries": [
+    {
+      "CRC": 2673948966,
+      "compress_size": 2253,
+      "file_size": 5671,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/biology.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 2151212405,
+      "compress_size": 833,
+      "file_size": 1594,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/cadence.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 1059199032,
+      "compress_size": 359,
+      "file_size": 531,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/chronicle.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 522520864,
+      "compress_size": 3564,
+      "file_size": 9141,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/core.py",
+      "mtime": "2026-01-04T15:28:24",
+      "type": "file"
+    },
+    {
+      "CRC": 1605277456,
+      "compress_size": 621,
+      "file_size": 1242,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/cosmology.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 2514388137,
+      "compress_size": 94,
+      "file_size": 94,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/cycle_state.json",
+      "mtime": "2026-01-05T18:18:03",
+      "type": "file"
+    },
+    {
+      "CRC": 3888430066,
+      "compress_size": 782,
+      "file_size": 1982,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/cycle_state.py",
+      "mtime": "2026-01-05T18:13:50",
+      "type": "file"
+    },
+    {
+      "CRC": 1091708661,
+      "compress_size": 524,
+      "file_size": 1098,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/debug_last.py",
+      "mtime": "2026-01-04T15:29:59",
+      "type": "file"
+    },
+    {
+      "CRC": 3138512305,
+      "compress_size": 454,
+      "file_size": 857,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/demo_guard.py",
+      "mtime": "2026-01-05T18:14:48",
+      "type": "file"
+    },
+    {
+      "CRC": 3635513073,
+      "compress_size": 988,
+      "file_size": 2159,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics/CRASH_20260104_153225_f2570ff6d49c_submit_interaction.json",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 165763551,
+      "compress_size": 344,
+      "file_size": 436,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics/CRASH_20260104_153225_f2570ff6d49c_submit_interaction.txt",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 3635513073,
+      "compress_size": 988,
+      "file_size": 2159,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics/LATEST.json",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 165763551,
+      "compress_size": 344,
+      "file_size": 436,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics/LATEST.txt",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 1707856009,
+      "compress_size": 2438,
+      "file_size": 6379,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics.py",
+      "mtime": "2026-01-04T15:26:45",
+      "type": "file"
+    },
+    {
+      "CRC": 3915164127,
+      "compress_size": 347,
+      "file_size": 510,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/genesis.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 2662272076,
+      "compress_size": 3935,
+      "file_size": 11203,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/genesis_sovereign.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 3619243611,
+      "compress_size": 768,
+      "file_size": 1588,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/gwen_ping.py",
+      "mtime": "2026-01-04T14:56:56",
+      "type": "file"
+    },
+    {
+      "CRC": 2577174181,
+      "compress_size": 2276,
+      "file_size": 5183,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/law.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 2390246369,
+      "compress_size": 1073,
+      "file_size": 2895,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/lithosphere.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 3681762642,
+      "compress_size": 1656,
+      "file_size": 4054,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/MANIFEST.json",
+      "mtime": "2026-01-04T15:01:28",
+      "type": "file"
+    },
+    {
+      "CRC": 3118704771,
+      "compress_size": 581,
+      "file_size": 1219,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/navigator.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 3739544368,
+      "compress_size": 722,
+      "file_size": 1343,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/neurovector.py",
+      "mtime": "2026-01-04T15:29:32",
+      "type": "file"
+    },
+    {
+      "CRC": 895914256,
+      "compress_size": 352,
+      "file_size": 514,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/patch.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 2446187224,
+      "compress_size": 1632,
+      "file_size": 3746,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/phantom_feature_analyzer.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 853349667,
+      "compress_size": 900,
+      "file_size": 1473,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/PHANTOM_REPORT.md",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 3874239378,
+      "compress_size": 749,
+      "file_size": 1558,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/protocol_guard.py",
+      "mtime": "2026-01-05T18:14:24",
+      "type": "file"
+    },
+    {
+      "CRC": 2233115238,
+      "compress_size": 864,
+      "file_size": 1498,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/README.md",
+      "mtime": "2026-01-04T15:32:59",
+      "type": "file"
+    },
+    {
+      "CRC": 3803024078,
+      "compress_size": 900,
+      "file_size": 1687,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/renderer.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 1863803721,
+      "compress_size": 14,
+      "file_size": 14,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/requirements.txt",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 3085897650,
+      "compress_size": 541,
+      "file_size": 953,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/seed_truths_gwen.py",
+      "mtime": "2026-01-04T15:00:40",
+      "type": "file"
+    },
+    {
+      "CRC": 2034320835,
+      "compress_size": 2099,
+      "file_size": 5285,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/simulate_cycles.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 31014536,
+      "compress_size": 96212,
+      "file_size": 573830,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage/atomic_history.wal",
+      "mtime": "2026-01-04T23:05:36",
+      "type": "file"
+    },
+    {
+      "CRC": 2001894276,
+      "compress_size": 31542,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage/dna_geometry.bin",
+      "mtime": "2026-01-04T15:31:04",
+      "type": "file"
+    },
+    {
+      "CRC": 2051744165,
+      "compress_size": 3110,
+      "file_size": 5285,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage2/atomic_history.wal",
+      "mtime": "2026-01-04T14:57:32",
+      "type": "file"
+    },
+    {
+      "CRC": 1605224610,
+      "compress_size": 31536,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage2/dna_geometry.bin",
+      "mtime": "2026-01-04T14:57:32",
+      "type": "file"
+    },
+    {
+      "CRC": 2654117447,
+      "compress_size": 7408,
+      "file_size": 13521,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage3/atomic_history.wal",
+      "mtime": "2026-01-04T15:00:50",
+      "type": "file"
+    },
+    {
+      "CRC": 3131363884,
+      "compress_size": 31550,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage3/dna_geometry.bin",
+      "mtime": "2026-01-04T15:00:50",
+      "type": "file"
+    },
+    {
+      "CRC": 2178285619,
+      "compress_size": 7016,
+      "file_size": 13231,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage4/atomic_history.wal",
+      "mtime": "2026-01-04T15:01:14",
+      "type": "file"
+    },
+    {
+      "CRC": 3649304080,
+      "compress_size": 31531,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage4/dna_geometry.bin",
+      "mtime": "2026-01-04T15:01:14",
+      "type": "file"
+    },
+    {
+      "CRC": 2044489878,
+      "compress_size": 36,
+      "file_size": 36,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test/atomic_history.wal",
+      "mtime": "2026-01-04T15:31:28",
+      "type": "file"
+    },
+    {
+      "CRC": 155070745,
+      "compress_size": 31530,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test/dna_geometry.bin",
+      "mtime": "2026-01-04T15:31:28",
+      "type": "file"
+    },
+    {
+      "CRC": 3315945335,
+      "compress_size": 36,
+      "file_size": 36,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test2/atomic_history.wal",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 44703960,
+      "compress_size": 31531,
+      "file_size": 33792,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test2/dna_geometry.bin",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 2705402242,
+      "compress_size": 2372,
+      "file_size": 5413,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/telemetry.py",
+      "mtime": "2026-01-04T15:32:05",
+      "type": "file"
+    },
+    {
+      "CRC": 663418756,
+      "compress_size": 106,
+      "file_size": 905,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/truths_gwen.json",
+      "mtime": "2026-01-04T14:56:40",
+      "type": "file"
+    },
+    {
+      "CRC": 3661615482,
+      "compress_size": 779,
+      "file_size": 1983,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/truths_mig.json",
+      "mtime": "2026-01-04T14:56:40",
+      "type": "file"
+    },
+    {
+      "CRC": 1857324543,
+      "compress_size": 5276,
+      "file_size": 15640,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/vessel.py",
+      "mtime": "2026-01-04T15:00:26",
+      "type": "file"
+    },
+    {
+      "CRC": 911932121,
+      "compress_size": 554,
+      "file_size": 984,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/vessel_test.py",
+      "mtime": "2026-01-04T14:52:42",
+      "type": "file"
+    },
+    {
+      "CRC": 1444274256,
+      "compress_size": 3839,
+      "file_size": 7200,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/biology.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 1197489905,
+      "compress_size": 1375,
+      "file_size": 2212,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/cadence.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 1461803493,
+      "compress_size": 6641,
+      "file_size": 13273,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/core.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 3062328987,
+      "compress_size": 1665,
+      "file_size": 2977,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/cosmology.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 2499550449,
+      "compress_size": 2086,
+      "file_size": 4266,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/cycle_state.cpython-311.pyc",
+      "mtime": "2026-01-05T18:15:03",
+      "type": "file"
+    },
+    {
+      "CRC": 620363145,
+      "compress_size": 5822,
+      "file_size": 11774,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/diagnostics.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 1457166701,
+      "compress_size": 3549,
+      "file_size": 6538,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/law.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 1049490340,
+      "compress_size": 3207,
+      "file_size": 7191,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/lithosphere.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 1948493284,
+      "compress_size": 1483,
+      "file_size": 2450,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/navigator.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 517090197,
+      "compress_size": 1420,
+      "file_size": 2542,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/neurovector.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": 3231767007,
+      "compress_size": 1580,
+      "file_size": 2674,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/protocol_guard.cpython-311.pyc",
+      "mtime": "2026-01-05T18:15:03",
+      "type": "file"
+    },
+    {
+      "CRC": 859257832,
+      "compress_size": 3686,
+      "file_size": 6419,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/telemetry.cpython-311.pyc",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "file"
+    },
+    {
+      "CRC": 2408004530,
+      "compress_size": 10175,
+      "file_size": 21131,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/vessel.cpython-311.pyc",
+      "mtime": "2026-01-04T15:30:18",
+      "type": "file"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/diagnostics/",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage/",
+      "mtime": "2026-01-04T15:31:04",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage2/",
+      "mtime": "2026-01-04T15:22:06",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage3/",
+      "mtime": "2026-01-04T15:22:06",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage4/",
+      "mtime": "2026-01-04T15:22:06",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test/",
+      "mtime": "2026-01-04T15:31:28",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/sim_storage_test2/",
+      "mtime": "2026-01-04T15:32:25",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/__pycache__/",
+      "mtime": "2026-01-05T18:15:03",
+      "type": "dir"
+    },
+    {
+      "CRC": null,
+      "compress_size": 0,
+      "file_size": 0,
+      "filename": "XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/",
+      "mtime": "2026-01-05T18:18:03",
+      "type": "dir"
+    }
+  ],
+  "rar_format": "RAR5"
+}

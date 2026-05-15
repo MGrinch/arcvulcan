@@ -1,0 +1,78 @@
+﻿{
+    "window":  12,
+    "name":  "Detectors, Scanners, and Drift Radar",
+    "area":  "Owns secret scanning, drift radar, graph invariants, mirror leakage, and detector-fidelity bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Detector suites must surface the highest-signal failures without leaking secrets, paths, or false-green assurances.",
+    "queue_intent":  "These fixes harden scanners and drift detectors against blind spots, stale regexes, and severity inversions.",
+    "merge_style":  "Fail closed on malformed evidence and preserve severity ordering when truncating reports.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/secret_scanner.py",
+                            "tools/protocol_drift_radar.py",
+                            "tools/graph_invariant_checker.py",
+                            "tools/mirror_leakage_detector.py"
+                        ],
+    "delivery_standard":  [
+                              "Large or oddly formatted files must still be scanned intentionally.",
+                              "Severity caps must not hide later HIGH findings.",
+                              "Reports must not trust user-provided labels over embedded artifact truth."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  13,
+    "remaining_items":  2,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-64",
+                      "title":  "`tools/secret_scanner.py` silently skips large text files",
+                      "phase":  "6",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/secret_scanner.py"
+                                     ],
+                      "legacy_window":  12,
+                      "legacy_queue_index":  1,
+                      "mission":  "Scan large text files intentionally instead of silently skipping them. Large-corpus trust is part of the commercial value proposition, so the scanner must never fail open on the files customers care about most.",
+                      "implementation_nexus":  [
+                                                   "Replace the silent size skip with bounded scanning or an explicit surfaced verdict.",
+                                                   "Keep performance controls observable rather than invisible."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Large text files no longer disappear from secret scanning without a verdict.",
+                                               "Regression proves the scanner still handles large files predictably."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  13,
+                      "bug_id":  "BUG-73",
+                      "title":  "`protocol_drift_radar.py` ignores `session_summary.md` in directory scans",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/protocol_drift_radar.py"
+                                     ],
+                      "legacy_window":  12,
+                      "legacy_queue_index":  2,
+                      "mission":  "Teach protocol_drift_radar to inspect session_summary.md when scanning directories. Expand the scan so the summary surface becomes a dependable review artifact rather than a blind spot in premium audit workflows.",
+                      "implementation_nexus":  [
+                                                   "Include session_summary.md in the directory scan artifact set.",
+                                                   "Keep the added surface aligned with existing drift heuristics."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Directory scans include session_summary.md findings.",
+                                               "The added coverage does not break existing scan semantics."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

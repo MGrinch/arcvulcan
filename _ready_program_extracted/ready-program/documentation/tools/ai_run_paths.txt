@@ -1,0 +1,1 @@
+run_paths: internal helper module (no CLI). Provides runs_root() + allocate_run_dir().

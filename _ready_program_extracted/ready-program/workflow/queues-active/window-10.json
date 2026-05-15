@@ -1,0 +1,89 @@
+{
+  "window": 10,
+  "name": "Workflow Companion and Audit Guards",
+  "area": "Owns prompt snapshots, citation guards, signal-fidelity tools, doc-code workflow tooling, and audit guardrails.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-10.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 7,
+  "remaining_items": 6,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-126",
+      "title": "`prompt_snapshot_guard.py` does not actually snapshot a no-protocol prompt for its canonical `no_protocol_no_grounding` case",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/prompt_snapshot_guard.py",
+        "xyzgl/protocols.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 7,
+      "bug_id": "BUG-41",
+      "title": "`latency_cost_budget_enforcer.py` is not hermetic",
+      "phase": "6",
+      "severity": "High",
+      "files_hint": [
+        "tools/latency_cost_budget_enforcer.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 8,
+      "bug_id": "BUG-42",
+      "title": "`grounding_injection_audit.py` is environment-sensitive and can misattribute failures",
+      "phase": "6",
+      "severity": "High",
+      "files_hint": [
+        "tools/grounding_injection_audit.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-53",
+      "title": "`tools/signal_fidelity_port.py` is missing required companion docs",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "documentation/tools/ai_",
+        "documentation/tools/ai_signal_fidelity_port.md",
+        "documentation/tools/ai_signal_fidelity_port.txt",
+        "tools/doc_code_link_checker.py",
+        "tools/signal_fidelity_port.py"
+      ]
+    },
+    {
+      "queue_index": 5,
+      "original_queue_index": 10,
+      "bug_id": "BUG-77",
+      "title": "`tools/apply_signal_fidelity_overlay.py` defaults to an overlay archive that is not actually shipped",
+      "phase": "6",
+      "severity": "Low",
+      "files_hint": [
+        "documentation/tools/ai_apply_signal_fidelity_overlay.md",
+        "tools/apply_signal_fidelity_overlay.py"
+      ]
+    },
+    {
+      "queue_index": 6,
+      "original_queue_index": 11,
+      "bug_id": "BUG-96",
+      "title": "`harness_lattice.py` is a false-green sensitivity sweep that never checks whether lattice dimensions change the reply meaningfully",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_lattice.py",
+        "tools/lattice_lib.py"
+      ]
+    }
+  ]
+}

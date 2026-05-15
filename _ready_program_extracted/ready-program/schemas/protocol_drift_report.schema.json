@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "protocol_drift_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "target", "findings"],
+  "properties": {
+    "schema_version": {"const": "protocol_drift_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "target": {"type": "string"},
+    "items_scanned": {"type": "integer"},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "message"],
+        "properties": {
+          "severity": {"type": "string"},
+          "turn_index": {"type": "integer"},
+          "role": {"type": "string"},
+          "message": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

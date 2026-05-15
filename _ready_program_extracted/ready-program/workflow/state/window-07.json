@@ -1,0 +1,61 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-07\\round-02__BUG-65\\round-02__BUG-65",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.4973481Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:11:06.811092Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-111",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-07\\round-01__BUG-111\\round-01__BUG-111",
+                                                     "files":  [
+                                                                   "tools/repro_replay_diff.py",
+                                                                   "tests/test_bug111_repro_replay_diff_witness_identity.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:25:20.645969Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-65",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-07\\round-02__BUG-65\\round-02__BUG-65",
+                                                     "files":  [
+                                                                   "tools/repro_replay_diff.py",
+                                                                   "tests/test_bug65_repro_replay_diff_turn_summary_input_drift.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  7,
+    "kind":  "worker",
+    "name":  "Replay Diff and Bundle Integrity",
+    "area":  "Owns replay-diff behavior, strict replay semantics, and replay-facing bundle integrity bugs.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  2,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

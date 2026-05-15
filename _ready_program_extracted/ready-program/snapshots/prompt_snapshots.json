@@ -1,0 +1,46 @@
+{
+  "cases": {
+    "grounding_only": {
+      "length": 1082,
+      "meta": {
+        "grounding_enabled": true,
+        "protocol_regrounded": false
+      },
+      "sha256": "514452b5bcd8b071a6508f7481abfec8cc7ef9a2187e83d68222aa0bb044fb14"
+    },
+    "no_protocol_no_grounding": {
+      "length": 296,
+      "meta": {
+        "grounding_enabled": false,
+        "protocol_regrounded": false
+      },
+      "sha256": "5ec6d7a8ce43131a8dbcc5fdb508fbf36fbe7aa7b986e21e05962580a07a69d1"
+    },
+    "protocol_and_grounding": {
+      "length": 4186,
+      "meta": {
+        "grounding_enabled": true,
+        "protocol_regrounded": true
+      },
+      "sha256": "b0653c3d9df7ed405fad00d9ac93e59ced197c7862ff6448c80285cb078344aa"
+    },
+    "protocol_only": {
+      "length": 2013,
+      "meta": {
+        "grounding_enabled": false,
+        "protocol_regrounded": true
+      },
+      "sha256": "616b412401a7fe06adbcf5b048e6835cbe08fa34e7bfb7346ce6dda9c0836dc4"
+    },
+    "protocol_periodic_off_turn": {
+      "length": 281,
+      "meta": {
+        "grounding_enabled": false,
+        "protocol_regrounded": false
+      },
+      "sha256": "b73db472b1e4e0159231a1dbe1a041c057adc97270423c065b6192f9660964f6"
+    }
+  },
+  "generated_at": "2026-03-19T18:23:49Z",
+  "schema_version": "prompt_snapshots@1"
+}

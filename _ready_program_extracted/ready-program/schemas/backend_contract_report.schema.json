@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "backend_contract_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "results"],
+  "properties": {
+    "schema_version": {"const": "backend_contract_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "allow_network": {"type": "boolean"},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "backend", "status"],
+        "properties": {
+          "role": {"type": "string", "enum": ["tutor", "mirror"]},
+          "backend": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "FAIL", "INCOMPLETE"]},
+          "error": {"type": "string"},
+          "meta": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "doc_link_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "overall"],
+  "properties": {
+    "schema_version": {"const": "doc_link_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "overall": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "problems": {"type": "array"},
+    "warnings": {"type": "array"},
+    "missing_tools": {"type": "array"}
+  },
+  "additionalProperties": true
+}

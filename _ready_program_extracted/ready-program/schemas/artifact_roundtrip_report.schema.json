@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "artifact_roundtrip_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "files"],
+  "properties": {
+    "schema_version": {"const": "artifact_roundtrip_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "path": {"type": "string"},
+    "fixed": {"type": "boolean"},
+    "strict": {"type": "boolean"},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "status"],
+        "properties": {
+          "file": {"type": "string"},
+          "status": {"type": "string", "enum": ["PASS", "FAIL"]},
+          "error": {"type": "string"},
+          "changed": {"type": "boolean"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

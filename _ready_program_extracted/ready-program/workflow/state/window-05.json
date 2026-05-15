@@ -1,0 +1,80 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-05\\round-03__BUG-62\\round-03__BUG-62",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.4598188Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:27:00.101894Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-23",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-05\\round-01__BUG-23\\round-01__BUG-23",
+                                                     "files":  [
+                                                                   "tools/harness_turn.py",
+                                                                   "xyzgl/prompting.py",
+                                                                   "xyzgl/router.py",
+                                                                   "tests/test_bug23_harness_turn_input_lineage.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:24:12.932778Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-86",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-05\\round-02__BUG-86\\round-02__BUG-86",
+                                                     "files":  [
+                                                                   "witness/core.py",
+                                                                   "tests/test_bug86_harness_turn_event_id_stability.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-20T02:58:23Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-62",
+                                                     "round":  3,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-05\\round-03__BUG-62\\round-03__BUG-62",
+                                                     "files":  [
+                                                                   "tools/harness_turn.py",
+                                                                   "tests/test_bug62_harness_turn_runtime_controls.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  5,
+    "kind":  "worker",
+    "name":  "Harness Turn and Artifact Integrity",
+    "area":  "Owns harness_turn behavior, turn artifacts, witness event identity, and turn-facing run path bugs.",
+    "status":  "complete",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  0,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

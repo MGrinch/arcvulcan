@@ -1,0 +1,15 @@
+reground_cadence_verifier
+
+Purpose:
+  Verify ROLE_PROTOCOL re-grounding happens at turn 0 and then every N turns.
+
+Usage:
+  python tools/reground_cadence_verifier.py --issue ISSUE-YYYYMMDD-NNN --every 5 runs/<run_id>/
+
+Outputs:
+  runs/<new_run_id>/reground_cadence_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL
+  2 INCOMPLETE

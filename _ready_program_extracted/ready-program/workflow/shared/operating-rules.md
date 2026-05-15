@@ -1,0 +1,31 @@
+# Operating Rules
+
+- Each chat window owns its own copy of this repo and works cumulatively inside that copy.
+- One user `next` means exactly one unit of work:
+  - one bug for windows `1` to `15`
+  - one compile batch for windows `16` to `18`
+- Before executing any task, open `workflow/STATUS.md` and treat `workflow/config/windows.json` plus the current getter output as the only legal task selector. Zip names, chat memory, and historical backlog positions are never authoritative.
+- Prefer the standard wrappers over hand-running multiple low-level commands:
+  - `workflow/scripts/start_window_turn.ps1` for legal turn selection plus optional seed application
+  - `workflow/scripts/complete_window_turn.ps1` for packaging, verification, state update, and optional cycle close
+- `workflow/queues/` is the only executable worker backlog. Already-accomplished work must be removed from those queue files immediately, and any history may survive only as metadata such as `completed_items_removed`, `legacy_window`, and `original_queue_index`.
+- `workflow/UNRESOLVED_EXECUTION_INTELLIGENCE.md` is the strategy layer for the remaining backlog. Workers must use it together with the bug body and their queue doctrine instead of relying on chat memory.
+- After every successful window `18` final compile, run `workflow/scripts/publish_cycle_handoff.ps1`. That handoff must emit a ready-program artifact, emit a backward-sync patch, promote the cycle seed, trim completed worker items from the queues, archive the completed round history, reset compiler rounds to the new cold stop, rewrite `workflow/STATUS.md` plus `workflow/BACKLOG_STATUS.json`, and finish with a clean `workflow/scripts/validate_workflow_grounding.ps1` report.
+- After any integrated merge or backlog audit, no new window may begin until `workflow/STATUS.md`, `workflow/BACKLOG_STATUS.json`, `workflow/config/windows.json`, and the affected `workflow/state/*.json` files have been rewritten to the current cold-stop position.
+- Always read the current local state file before acting.
+- At the start of each session, reground before working. The best cadence is once at session start and again after any cycle-seed change, not after every single `next`.
+- If `get_next_worker_item.ps1` or `get_next_merge_batch.ps1` returns `seed-required`, apply the current cycle seed before doing any new work.
+- Workers may touch only the files needed for the current bug. Stay inside the assigned area unless the current bug section explicitly requires a nearby contract fix.
+- Read the full local bug body for the current bug with `workflow/scripts/get_bug_section.ps1` before editing.
+- Read the queue doctrine for the current window before editing: `true_north`, `queue_intent`, `merge_style`, `preflight_reads`, `delivery_standard`, and the active item's `mission`, `implementation_nexus`, and `acceptance_focus`.
+- Bias fixes toward stronger operator trust, supportability, auditability, and monetizable feature quality rather than short-lived symptom suppression.
+- Package immediately after each completed bug or merge batch.
+- Verify every emitted package with `workflow/scripts/verify_package_manifest.ps1` before updating state.
+- Update the local state file immediately after package verification.
+- The ready-program artifact emitted by `publish_cycle_handoff.ps1` must be copied after the cycle seed and cold-stop files are rewritten, so fresh windows open the real next-cycle state rather than a stale pre-reset snapshot.
+- Successful worker and precompiler replies must include the explicit absolute filesystem link to the produced package directory and no extra summary text.
+- Successful window `18` replies must use three lines and no extra summary text:
+  - line 1: final package directory
+  - line 2: ready-program artifact path
+  - line 3: backward-sync patch path
+- If you are blocked, reply with one short blocker or wait line that names the file or upstream window causing the stop, and also include the explicit absolute filesystem link to the most relevant existing package or input file used in that compute step.

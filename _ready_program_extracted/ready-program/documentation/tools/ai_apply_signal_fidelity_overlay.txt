@@ -1,0 +1,10 @@
+apply_signal_fidelity_overlay
+
+Applies the shipped Signal Fidelity overlay into signal_fidelity_src/ without overwriting repo files.
+Default source: signal_fidelity_src/XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/
+
+Usage:
+  python tools/apply_signal_fidelity_overlay.py --issue ISSUE-YYYYMMDD-NNN
+
+RAR archives are optional and must be provided explicitly with --overlay ...rar --allow-external-rar.
+Exit codes: 0 ok, 2 incomplete (missing source / disabled external RAR extraction)

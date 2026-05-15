@@ -1,0 +1,167 @@
+﻿{
+    "window":  14,
+    "name":  "Fuzzer Core and Coverage Truthfulness",
+    "area":  "Owns property and fuzz harnesses that must report canonical artifacts, real coverage, and replayable failing evidence.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Fuzzer outputs must be canonical, coverage claims must be honest, and failing evidence must remain replayable.",
+    "queue_intent":  "This queue hardens property and fuzz harnesses so they expose the real exercised space instead of a flattering approximation.",
+    "merge_style":  "Bias toward truthful failing artifacts and explicit counterexamples over optimistic coverage headlines.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/property_turn_fuzzer.py",
+                            "tools/atheris_fuzz_router.py",
+                            "xyzgl/router.py"
+                        ],
+    "delivery_standard":  [
+                              "Run bundles must remain canonical even on incomplete or failing paths.",
+                              "Coverage metrics must correspond to the true exercised branch space.",
+                              "Counterexamples and failing payloads must survive export."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  4,
+    "remaining_items":  6,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  7,
+                      "bug_id":  "BUG-34",
+                      "title":  "`property_turn_fuzzer.py` writes non-canonical `run.json`",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/property_turn_fuzzer.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  1,
+                      "mission":  "Make property_turn_fuzzer emit canonical run.json artifacts. The emitted bundle should be production-grade evidence that can flow through the same tooling, dashboards, and paid assurance workflows as any other run.",
+                      "implementation_nexus":  [
+                                                   "Align the fuzzer\u0027s bundle writer with canonical run.json expectations.",
+                                                   "Keep incomplete or failing paths canonical as well."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Fuzzer run.json matches canonical schema and field expectations.",
+                                               "Roundtrip or schema validation accepts the emitted bundle without fix-up."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-35",
+                      "title":  "Turn fuzzer cannot reach the welding-specific single-turn branch",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/property_turn_fuzzer.py",
+                                         "xyzgl/router.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  2,
+                      "mission":  "Reach the welding-specific single-turn branch from the turn fuzzer. Create proof that the domain-critical branch is truly exercised, so the coverage story maps to the product customers are buying.",
+                      "implementation_nexus":  [
+                                                   "Generate inputs that can actually drive the welding-specific branch.",
+                                                   "Keep the route selection explicit in the produced evidence."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Fuzzer coverage includes the welding-specific single-turn branch.",
+                                               "Artifacts prove the targeted branch was exercised."
+                                           ]
+                  },
+                  {
+                      "queue_index":  3,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-36",
+                      "title":  "Turn fuzzer cannot generate known control and Unicode stressors",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/property_turn_fuzzer.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  3,
+                      "mission":  "Generate the known control and Unicode stressors that the fuzzer currently misses. This should harden the tutor for messy real-world inputs that show up in international and enterprise deployments.",
+                      "implementation_nexus":  [
+                                                   "Expand case generation to cover control and Unicode edge inputs.",
+                                                   "Preserve determinism for the same seed and generator config."
+                                               ],
+                      "acceptance_focus":  [
+                                               "The fuzzer now emits the targeted control and Unicode stressors.",
+                                               "Generated evidence remains replayable and deterministic."
+                                           ]
+                  },
+                  {
+                      "queue_index":  4,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-44",
+                      "title":  "`property_turn_fuzzer.py` truncates evidence and changes schema on incomplete path",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/property_turn_fuzzer.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  4,
+                      "mission":  "Keep evidence and schema canonical even on incomplete fuzzer paths. Failed paths should still produce support-ready artifacts that accelerate debugging instead of becoming expensive dead ends.",
+                      "implementation_nexus":  [
+                                                   "Do not truncate away the failing evidence needed for replay.",
+                                                   "Preserve canonical schema shape on incomplete execution."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Incomplete fuzzer paths still emit canonical schema.",
+                                               "Exported evidence retains the information needed to reproduce the failure."
+                                           ]
+                  },
+                  {
+                      "queue_index":  5,
+                      "original_queue_index":  11,
+                      "bug_id":  "BUG-63",
+                      "title":  "`ai_property_turn_fuzzer.md` is out of sync with actual tool outputs",
+                      "phase":  "6",
+                      "severity":  "Low",
+                      "files_hint":  [
+                                         "documentation/tools/ai_property_turn_fuzzer.md",
+                                         "tools/property_turn_fuzzer.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  5,
+                      "mission":  "Bring ai_property_turn_fuzzer.md back into sync with real tool outputs. Make the documentation good enough to sell the feature and onboard a new operator without side-channel explanation.",
+                      "implementation_nexus":  [
+                                                   "Update the docs to reflect the actual shipped output contract after the code fix.",
+                                                   "Keep doc drift from reappearing by checking the real output surface."
+                                               ],
+                      "acceptance_focus":  [
+                                               "The doc examples and field descriptions match the tool\u0027s actual outputs.",
+                                               "Doc-code drift tests or checks stay green."
+                                           ]
+                  },
+                  {
+                      "queue_index":  6,
+                      "original_queue_index":  12,
+                      "bug_id":  "BUG-68",
+                      "title":  "`property_turn_fuzzer.py` overstates coverage when `--max-len=0`",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/property_turn_fuzzer.py"
+                                     ],
+                      "legacy_window":  14,
+                      "legacy_queue_index":  6,
+                      "mission":  "Stop overstating coverage when max-len is zero. Honest coverage claims are part of the product\u0027s credibility, especially when the artifact may be shown to customers, auditors, or buyers.",
+                      "implementation_nexus":  [
+                                                   "Treat max-len=0 as a distinct edge case with honest coverage reporting.",
+                                                   "Do not let skipped generation masquerade as exercised space."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Coverage claims for max-len=0 reflect the actual generated workload.",
+                                               "The tool no longer reports inflated coverage from a degenerate case."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "curriculum_manifest_v1",
+  "sources": [
+    {
+      "id": "demo_fitup",
+      "title": "Demo: Fit-up, tack welds, and common defects",
+      "path": "sources/demo_fitup.md",
+      "tags": [
+        "fit-up",
+        "tack",
+        "gap",
+        "alignment",
+        "defects"
+      ],
+      "license": "internal-demo"
+    },
+    {
+      "id": "demo_arc_control",
+      "title": "Demo: Arc length, angle, and undercut control",
+      "path": "sources/demo_arc_control.md",
+      "tags": [
+        "arc-length",
+        "travel-angle",
+        "undercut",
+        "toe",
+        "heat-input"
+      ],
+      "license": "internal-demo"
+    },
+    {
+      "id": "demo_distortion",
+      "title": "Demo: Distortion control and balanced tack sequence",
+      "path": "sources/demo_distortion.md",
+      "tags": [
+        "distortion",
+        "sequence",
+        "backstep",
+        "skip-weld",
+        "restraint"
+      ],
+      "license": "internal-demo"
+    }
+  ]
+}

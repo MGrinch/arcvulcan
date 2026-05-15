@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "corpus_lint_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "pass", "problems"],
+  "properties": {
+    "schema_version": {"const": "corpus_lint_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "grounding_dir": {"type": "string"},
+    "manifest": {"type": "string"},
+    "sources_total": {"type": "integer"},
+    "sources_checked": {"type": "integer"},
+    "pass": {"type": "boolean"},
+    "problems": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "sources": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

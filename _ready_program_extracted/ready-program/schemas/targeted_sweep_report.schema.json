@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "targeted_sweep_report@1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "issue_id",
+    "overall",
+    "steps"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "targeted_sweep_report@1"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "issue_id": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "overall": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "INCOMPLETE"
+      ]
+    },
+    "runs_root": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "object"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "exit_code"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "stdout_tail": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

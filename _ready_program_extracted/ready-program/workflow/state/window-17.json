@@ -1,0 +1,27 @@
+﻿{
+    "last_package_dir":  null,
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  null,
+    "window":  17,
+    "kind":  "precompile",
+    "name":  "Tooling and Guardrail Precompiler",
+    "area":  "Precompiles worker outputs from windows 8 through 15 into one cumulative tooling and guardrail stream.",
+    "status":  "idle",
+    "history":  [
+
+                ],
+    "completed_rounds":  0,
+    "current_round":  1,
+    "upstreams":  [
+                      8,
+                      9,
+                      10,
+                      11,
+                      12,
+                      13,
+                      14,
+                      15
+                  ],
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

@@ -1,0 +1,61 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-12\\round-02__BUG-57",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.5936694Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:24:53.228643Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-30",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-12\\round-01__BUG-30",
+                                                     "files":  [
+                                                                   "tools/backend_fault_injector.py",
+                                                                   "tests/test_bug30_backend_fault_injector_matrix.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:21:20.954228Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-57",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-12\\round-02__BUG-57",
+                                                     "files":  [
+                                                                   "tools/backend_contract_probe.py",
+                                                                   "tests/test_bug57_backend_contract_probe_latency_bool.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  12,
+    "kind":  "worker",
+    "name":  "Detectors, Scanners, and Drift Radar",
+    "area":  "Owns secret scanning, drift radar, graph invariants, mirror leakage, and detector-fidelity bugs.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  2,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

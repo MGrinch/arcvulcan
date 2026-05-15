@@ -1,0 +1,12 @@
+mutation_suite
+
+Mutation testing wrapper (cosmic-ray recommended).
+Usage:
+  python tools/mutation_suite.py --issue ISSUE-YYYYMMDD-NNN --engine cosmic-ray [--dry-run]
+
+Outputs:
+  runs/<run_id>/mutation_report.json
+  runs/<run_id>/mutation_summary.md
+  runs/<run_id>/run.json
+
+Exit codes: 0 pass, 1 fail, 2 incomplete

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "atheris_fuzz_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "status"],
+  "properties": {
+    "schema_version": {"const": "atheris_fuzz_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "seconds": {"type": "integer"},
+    "pass": {"type": "boolean"},
+    "status": {"type": "string"},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

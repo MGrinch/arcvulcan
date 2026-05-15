@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "backend_fault_report@1",
+  "type": "object",
+  "required": ["schema_version", "tool", "run_id", "issue_id", "scenarios"],
+  "properties": {
+    "schema_version": {"const": "backend_fault_report@1"},
+    "tool": {"const": "backend_fault_injector"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "scenarios_total": {"type": "integer"},
+    "scenarios_passed": {"type": "integer"},
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "pass"],
+        "properties": {
+          "name": {"type": "string"},
+          "expect_raise": {"type": "boolean"},
+          "pass": {"type": "boolean"},
+          "observed": {"type": "object"},
+          "details": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

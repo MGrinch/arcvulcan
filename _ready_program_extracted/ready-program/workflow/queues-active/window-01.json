@@ -1,0 +1,92 @@
+{
+  "window": 1,
+  "name": "Runtime Router and Sanitization",
+  "area": "Owns router, protocol, mirror input-output, fallback, and sanitization runtime bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-01.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 7,
+  "remaining_items": 6,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-01",
+      "title": "Non-strict tutor backend fallback is unreachable",
+      "phase": "1",
+      "severity": "High",
+      "files_hint": [
+        "xyzgl/orchestrator/tutor_phases.py",
+        "xyzgl/router.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 6,
+      "bug_id": "BUG-06",
+      "title": "Raw mirror mode permits delimiter injection",
+      "phase": "1",
+      "severity": "High",
+      "files_hint": [
+        "xyzgl/backends/stub.py",
+        "xyzgl/router.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 7,
+      "bug_id": "BUG-27",
+      "title": "Invalid protocol paths silently downgrade to the fallback protocol",
+      "phase": "1",
+      "severity": "High",
+      "files_hint": [
+        "xyzgl/prompting.py",
+        "xyzgl/protocols.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-54",
+      "title": "Empty tutor output is silently accepted in `run_probe_phase()` and `run_eval_phase()`",
+      "phase": "1",
+      "severity": "High",
+      "files_hint": [
+        "xyzgl/orchestrator/parsing.py",
+        "xyzgl/orchestrator/tutor_phases.py"
+      ]
+    },
+    {
+      "queue_index": 5,
+      "original_queue_index": 11,
+      "bug_id": "BUG-83",
+      "title": "Runtime paths accept semantically invalid backend metadata values as success, so strict mode is bypassed on non-exception contract violations",
+      "phase": "1",
+      "severity": "High",
+      "files_hint": [
+        "xyzgl/orchestrator/mirror.py",
+        "xyzgl/orchestrator/tutor_phases.py",
+        "xyzgl/router.py"
+      ]
+    },
+    {
+      "queue_index": 6,
+      "original_queue_index": 13,
+      "bug_id": "BUG-103",
+      "title": "Backend validation and fallback tooling accept non-UTF-8-safe backend strings, so probes can PASS while artifact emission still crashes",
+      "phase": "1 and 6",
+      "severity": "High",
+      "files_hint": [
+        "tools/backend_contract_probe.py",
+        "tools/backend_fault_injector.py",
+        "tools/harness_turn.py",
+        "witness/core.py",
+        "xyzgl/router.py"
+      ]
+    }
+  ]
+}

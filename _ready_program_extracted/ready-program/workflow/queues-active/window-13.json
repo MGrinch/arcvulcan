@@ -1,0 +1,120 @@
+{
+  "window": 13,
+  "name": "Fuzzers, Benches, and Redteam",
+  "area": "Owns fuzzers, calibration benches, sensitivity sweeps, and redteam suite bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-13.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 4,
+  "remaining_items": 9,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-125",
+      "title": "`atheris_fuzz_router.py` reports `PASS` even when Atheris never ran and the tool silently downgraded to the fallback loop",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/atheris_fuzz_router.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 5,
+      "bug_id": "BUG-101",
+      "title": "Multiple standalone tools accept semantically invalid CLI parameters and then coerce, crash, or emit internally inconsistent artifacts",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/atheris_fuzz_router.py",
+        "tools/mirror_calibration_bench.py",
+        "tools/mutation_suite.py",
+        "tools/seed_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 7,
+      "bug_id": "BUG-34",
+      "title": "`property_turn_fuzzer.py` writes non-canonical `run.json`",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/property_turn_fuzzer.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 8,
+      "bug_id": "BUG-35",
+      "title": "Turn fuzzer cannot reach the welding-specific single-turn branch",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/property_turn_fuzzer.py",
+        "xyzgl/router.py"
+      ]
+    },
+    {
+      "queue_index": 5,
+      "original_queue_index": 9,
+      "bug_id": "BUG-36",
+      "title": "Turn fuzzer cannot generate known control and Unicode stressors",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/property_turn_fuzzer.py"
+      ]
+    },
+    {
+      "queue_index": 6,
+      "original_queue_index": 10,
+      "bug_id": "BUG-44",
+      "title": "`property_turn_fuzzer.py` truncates evidence and changes schema on incomplete path",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/property_turn_fuzzer.py"
+      ]
+    },
+    {
+      "queue_index": 7,
+      "original_queue_index": 11,
+      "bug_id": "BUG-63",
+      "title": "`ai_property_turn_fuzzer.md` is out of sync with actual tool outputs",
+      "phase": "6",
+      "severity": "Low",
+      "files_hint": [
+        "documentation/tools/ai_property_turn_fuzzer.md",
+        "tools/property_turn_fuzzer.py"
+      ]
+    },
+    {
+      "queue_index": 8,
+      "original_queue_index": 12,
+      "bug_id": "BUG-68",
+      "title": "`property_turn_fuzzer.py` overstates coverage when `--max-len=0`",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/property_turn_fuzzer.py"
+      ]
+    },
+    {
+      "queue_index": 9,
+      "original_queue_index": 13,
+      "bug_id": "BUG-98",
+      "title": "`redteam_rag_poisoning_suite.py` boundary checks accept malformed structured prompt layouts as PASS",
+      "phase": "6",
+      "severity": "High",
+      "files_hint": [
+        "tools/redteam_rag_poisoning_suite.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "window": 6,
+  "name": "Session Harness and Determinism Plumbing",
+  "area": "Owns harness_session, seed sweep, run path, determinism controls, and session-export auditability bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-06.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 6,
+  "remaining_items": 6,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-12",
+      "title": "Session harness does not exercise PROBE and simulated learner ignores context",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_session.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 6,
+      "bug_id": "BUG-33",
+      "title": "`harness_session` ignores env-backed protocol and grounding paths",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_session.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 8,
+      "bug_id": "BUG-50",
+      "title": "Mirror enablement and privacy controls are not propagated or auditable across session tooling",
+      "phase": "4",
+      "severity": "High",
+      "files_hint": [
+        "tools/harness_session.py",
+        "tools/seed_sweep.py",
+        "xyzgl/orchestrator/mirror.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-52",
+      "title": "`seed_sweep.py` run identity is predictably tied to `--seed`, not to the actual sweep workload",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/run_paths.py",
+        "tools/seed_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 5,
+      "original_queue_index": 10,
+      "bug_id": "BUG-55",
+      "title": "`run_paths.py` resolves default and relative runs roots against the caller's current working directory",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_session.py",
+        "tools/run_paths.py",
+        "tools/runs/",
+        "tools/seed_sweep.py"
+      ]
+    },
+    {
+      "queue_index": 6,
+      "original_queue_index": 11,
+      "bug_id": "BUG-82",
+      "title": "Session artifacts misreport the learner state that actually drove tutoring, and the `flow` vs `frustrated` stub-tutor branch is behaviorally dead in exported output",
+      "phase": "3",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_session.py",
+        "xyzgl/orchestrator/session_loop.py"
+      ]
+    }
+  ]
+}

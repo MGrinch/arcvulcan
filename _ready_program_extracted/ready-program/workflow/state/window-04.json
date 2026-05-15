@@ -1,0 +1,63 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-04\\round-02__BUG-07\\round-02__BUG-07",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.4398048Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:23:39.845729+00:00",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-129",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-04\\round-01__BUG-129\\round-01__BUG-129",
+                                                     "files":  [
+                                                                   "xyzgl/orchestrator/session_loop.py",
+                                                                   "tests/test_bug129_session_report_turn_fidelity.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T22:25:24.822879+00:00",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-07",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-04\\round-02__BUG-07\\round-02__BUG-07",
+                                                     "files":  [
+                                                                   "xyzgl/orchestrator/session_loop.py",
+                                                                   "tools/harness_session.py",
+                                                                   "tests/test_bug07_graph_complete_termination.py",
+                                                                   "tests/test_bug07_harness_completion_guard.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  4,
+    "kind":  "worker",
+    "name":  "Tutor Runtime and Session Logic",
+    "area":  "Owns tutor phases, session loop semantics, learner-state continuity, CLI resume, and policy-close behavior.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  1,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

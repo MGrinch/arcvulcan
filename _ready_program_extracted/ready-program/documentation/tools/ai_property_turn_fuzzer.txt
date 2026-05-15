@@ -1,0 +1,16 @@
+property_turn_fuzzer
+
+Purpose:
+  Property-style fuzzing for xyzgl.router.route_turn().
+
+Usage:
+  python tools/property_turn_fuzzer.py --issue ISSUE-YYYYMMDD-NNN --cases 200
+  python tools/property_turn_fuzzer.py --issue ISSUE-YYYYMMDD-NNN --hypothesis
+
+Outputs:
+  runs/<new_run_id>/property_fuzz_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL
+  2 INCOMPLETE

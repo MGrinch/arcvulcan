@@ -1,0 +1,17 @@
+prompt_snapshot_guard
+
+Purpose:
+  Prevent silent prompt drift by hashing canonical prompt builds and comparing
+  to snapshots/prompt_snapshots.json.
+
+Usage:
+  python tools/prompt_snapshot_guard.py --issue ISSUE-YYYYMMDD-NNN
+  python tools/prompt_snapshot_guard.py --issue ISSUE-YYYYMMDD-NNN --update
+
+Outputs:
+  snapshots/prompt_snapshots.json
+  runs/<new_run_id>/prompt_snapshot_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

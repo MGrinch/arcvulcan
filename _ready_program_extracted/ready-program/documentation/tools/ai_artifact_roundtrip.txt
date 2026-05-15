@@ -1,0 +1,19 @@
+Artifact Round-Trip
+
+Goal: sanity-check JSON artifacts for parseability and stable serialization.
+
+Usage:
+  python tools/artifact_roundtrip.py runs/<run_id> --issue ISSUE-YYYYMMDD-NNN
+  python tools/artifact_roundtrip.py runs/<run_id>/turn_report.json --issue ISSUE-YYYYMMDD-NNN
+
+Options:
+  --strict  fail if canonical serialization differs
+  --fix     rewrite files to canonical JSON
+
+Outputs:
+  runs/<run_id>/artifact_roundtrip_report.json
+  runs/<run_id>/run.json
+
+Exit codes:
+  0 PASS
+  1 FAIL

@@ -1,0 +1,44 @@
+﻿{
+    "last_package_dir":  "C:\\w01s2_import\\rebuild_w01\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-01\\round-02__BUG-06",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.3688076Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:22:35.184938+00:00",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-01",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-01\\round-01__BUG-01\\round-01__BUG-01",
+                                                     "files":  [
+                                                                   "xyzgl/orchestrator/tutor_phases.py",
+                                                                   "tests/test_bug01_non_strict_tutor_fallback.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  1,
+    "kind":  "worker",
+    "name":  "Runtime Router and Sanitization",
+    "area":  "Owns router, protocol, mirror input-output, fallback, and sanitization runtime bugs.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  4,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

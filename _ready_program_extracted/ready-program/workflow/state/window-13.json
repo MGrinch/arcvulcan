@@ -1,0 +1,60 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-13\\round-02__BUG-101",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.6036476Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:34:02.6070381Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-125",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-13\\round-01__BUG-125",
+                                                     "files":  [
+                                                                   "tools/atheris_fuzz_router.py",
+                                                                   "tests/test_bug125_atheris_fuzz_router_incomplete_without_atheris.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:25:39.0926635Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-101",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-13\\round-02__BUG-101",
+                                                     "files":  [
+                                                                   "tests/test_bug101_cli_validation.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  13,
+    "kind":  "worker",
+    "name":  "Backend Probes and Fault Injection",
+    "area":  "Owns backend contract probes, backend fault injectors, and backend-side validation bugs.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  2,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

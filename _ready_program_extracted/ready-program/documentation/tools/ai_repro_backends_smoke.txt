@@ -1,0 +1,7 @@
+repro_backends_smoke
+
+Backend wiring smoke test (prefers network-free behavior).
+Usage:
+  python tools/repro_backends_smoke.py
+
+Exit codes: 0 pass, 1 fail, 2 incomplete

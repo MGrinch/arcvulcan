@@ -1,0 +1,218 @@
+{
+  "tools/apply_signal_fidelity_overlay.py": [
+    "tools/run_paths.py",
+    "tools/json_canon.py"
+  ],
+  "tools/artifact_roundtrip.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/atheris_fuzz_router.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/backend_contract_probe.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/backend_fault_injector.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/ci_gate.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/coverage_gate.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/curriculum_corpus_linter.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/doc_code_link_checker.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/doctor.py": [
+    "xyzgl/router.py"
+  ],
+  "tools/graph_invariant_checker.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/grounding_injection_audit.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/harness_lattice.py": [
+    "xyzgl/router.py",
+    "witness/core.py",
+    "tools/lattice_lib.py",
+    "tools/run_paths.py"
+  ],
+  "tools/harness_session.py": [
+    "xyzgl/orchestrator/session_loop.py",
+    "xyzgl/config.py",
+    "xyzgl/knowledge/graph.py",
+    "witness/core.py",
+    "tools/run_paths.py"
+  ],
+  "tools/harness_turn.py": [
+    "xyzgl/router.py",
+    "witness/core.py",
+    "tools/run_paths.py"
+  ],
+  "tools/latency_cost_budget_enforcer.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/lattice_lib.py": [],
+  "tools/mirror_calibration_bench.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/mirror_leakage_detector.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/mutation_suite.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/node_evolution_diff.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/ontario_claims_citation_guard.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/prompt_snapshot_guard.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/property_turn_fuzzer.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/protocol_drift_radar.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/redteam_injection_suite.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/redteam_rag_poisoning_suite.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/reground_cadence_verifier.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/repro_backends_smoke.py": [
+    "xyzgl/router.py",
+    "tools/run_paths.py"
+  ],
+  "tools/repro_grounding_protocol_smoke.py": [
+    "xyzgl/router.py",
+    "xyzgl/config.py",
+    "tools/run_paths.py"
+  ],
+  "tools/repro_replay_diff.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/repro_session_smoke.py": [
+    "xyzgl/orchestrator/session_loop.py",
+    "xyzgl/config.py",
+    "xyzgl/knowledge/graph.py"
+  ],
+  "tools/retrieval_eval_bench.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/run_paths.py": [],
+  "tools/secret_scanner.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/seed_sweep.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/selfcheck.py": [
+    "tools/repro_backends_smoke.py",
+    "tools/repro_grounding_protocol_smoke.py",
+    "tools/repro_session_smoke.py",
+    "xyzgl/router.py"
+  ],
+  "tools/stage_timing_profiler.py": [
+    "tools/run_paths.py"
+  ],
+  "tools/targeted_sweep.py": [
+    "tools/run_paths.py",
+    "tools/json_canon.py"
+  ],
+  "tools/validate_schemas.py": [
+    "schemas/*.schema.json"
+  ],
+  "xyzgl/backends/gemini.py": [
+    "xyzgl/backends/base.py",
+    "xyzgl/util_http.py"
+  ],
+  "xyzgl/backends/ollama.py": [
+    "xyzgl/backends/base.py",
+    "xyzgl/util_http.py"
+  ],
+  "xyzgl/backends/registry.py": [
+    "xyzgl/config.py",
+    "xyzgl/backends/stub.py",
+    "xyzgl/backends/ollama.py",
+    "xyzgl/backends/gemini.py"
+  ],
+  "xyzgl/backends/stub.py": [
+    "xyzgl/welding_tutor.py",
+    "xyzgl/backends/base.py"
+  ],
+  "xyzgl/cli.py": [
+    "xyzgl/config.py",
+    "xyzgl/router.py",
+    "xyzgl/session.py"
+  ],
+  "xyzgl/grounding/corpus.py": [],
+  "xyzgl/grounding/prompting.py": [
+    "xyzgl/grounding/corpus.py",
+    "xyzgl/grounding/retrieval.py"
+  ],
+  "xyzgl/grounding/retrieval.py": [
+    "xyzgl/grounding/corpus.py"
+  ],
+  "xyzgl/knowledge/graph.py": [],
+  "xyzgl/knowledge/heuristics.py": [
+    "xyzgl/knowledge/graph.py"
+  ],
+  "xyzgl/knowledge/update.py": [
+    "xyzgl/knowledge/graph.py"
+  ],
+  "xyzgl/orchestrator/parsing.py": [],
+  "xyzgl/orchestrator/policies.py": [],
+  "xyzgl/orchestrator/session_loop.py": [
+    "xyzgl/config.py",
+    "xyzgl/orchestrator/turn.py",
+    "xyzgl/orchestrator/policies.py",
+    "xyzgl/knowledge/graph.py",
+    "xyzgl/knowledge/heuristics.py",
+    "xyzgl/knowledge/update.py",
+    "xyzgl/knowledge/lithosphere.py",
+    "xyzgl/knowledge/embeddings.py",
+    "xyzgl/persona.py"
+  ],
+  "xyzgl/orchestrator/turn.py": [
+    "xyzgl/config.py",
+    "xyzgl/prompting.py",
+    "xyzgl/backends/registry.py",
+    "xyzgl/orchestrator/parsing.py",
+    "xyzgl/orchestrator/policies.py"
+  ],
+  "xyzgl/prompting.py": [
+    "xyzgl/config.py",
+    "xyzgl/protocols.py",
+    "xyzgl/grounding/prompting.py"
+  ],
+  "xyzgl/protocols.py": [],
+  "xyzgl/router.py": [
+    "xyzgl/config.py",
+    "xyzgl/prompting.py",
+    "xyzgl/backends/registry.py",
+    "xyzgl/knowledge/lithosphere.py",
+    "xyzgl/knowledge/embeddings.py",
+    "xyzgl/persona.py"
+  ],
+  "xyzgl/session.py": [],
+  "xyzgl/knowledge/embeddings.py": [],
+  "xyzgl/persona.py": [],
+  "xyzgl/knowledge/lithosphere.py": [
+    "xyzgl/knowledge/embeddings.py"
+  ],
+  "xyzgl/orchestrator/tutor_phases.py": [
+    "xyzgl/persona.py"
+  ]
+}

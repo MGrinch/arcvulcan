@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "repro_grounding_protocol_smoke_report@1",
+  "type": "object",
+  "required": ["schema_version", "tool", "run_id", "issue_id", "steps"],
+  "properties": {
+    "schema_version": {"const": "repro_grounding_protocol_smoke_report@1"},
+    "tool": {"const": "repro_grounding_protocol_smoke"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "overall": {"type": "string", "enum": ["PASS", "FAIL", "INCOMPLETE"]},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "exit_code"],
+        "properties": {
+          "name": {"type": "string"},
+          "exit_code": {"type": "integer"},
+          "stdout_tail": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "meta": {"type": "object"}
+  },
+  "additionalProperties": true
+}

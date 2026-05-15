@@ -1,0 +1,21 @@
+{
+  "schema_version": "retrieval_bench@1",
+  "cases": [
+    {
+      "query": "uneven root opening and mismatched joint edges before welding",
+      "expect_source_ids": ["demo_fitup"]
+    },
+    {
+      "query": "fit-up is correct but undercut still forms at the toe because the arc is long",
+      "expect_source_ids": ["demo_arc_control"]
+    },
+    {
+      "query": "panel shrinks and distorts so use a skip weld or backstep sequence",
+      "expect_source_ids": ["demo_distortion"]
+    },
+    {
+      "query": "a tack pulls the joint out of position so remove it and re-align before welding",
+      "expect_source_ids": ["demo_fitup"]
+    }
+  ]
+}

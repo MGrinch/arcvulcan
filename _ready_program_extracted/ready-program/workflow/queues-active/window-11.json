@@ -1,0 +1,60 @@
+{
+  "window": 11,
+  "name": "Detectors, Scanners, and Drift Radar",
+  "area": "Owns secret scanning, protocol drift, graph invariants, mirror leakage, and related detector bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-11.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 11,
+  "remaining_items": 4,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 4,
+      "bug_id": "BUG-130",
+      "title": "`node_evolution_diff.py` ignores the canonical `turns[*].eval.next_action` field when linking close turns",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/node_evolution_diff.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 9,
+      "bug_id": "BUG-26",
+      "title": "`protocol_drift_radar.py` has a tail-position blind spot after 4,000 characters",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/protocol_drift_radar.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 10,
+      "bug_id": "BUG-64",
+      "title": "`tools/secret_scanner.py` silently skips large text files",
+      "phase": "6",
+      "severity": "High",
+      "files_hint": [
+        "tools/secret_scanner.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 13,
+      "bug_id": "BUG-73",
+      "title": "`protocol_drift_radar.py` ignores `session_summary.md` in directory scans",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/protocol_drift_radar.py"
+      ]
+    }
+  ]
+}

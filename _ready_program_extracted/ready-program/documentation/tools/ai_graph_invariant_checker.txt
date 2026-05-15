@@ -1,0 +1,15 @@
+graph_invariant_checker
+
+Purpose:
+  Check invariants of runs/<run_id>/knowledge_graph.json.
+
+Usage:
+  python tools/graph_invariant_checker.py --issue ISSUE-YYYYMMDD-NNN runs/<run_id>/
+
+Outputs:
+  runs/<new_run_id>/graph_invariant_report.json
+
+Exit codes:
+  0 PASS
+  1 FAIL
+  2 INCOMPLETE

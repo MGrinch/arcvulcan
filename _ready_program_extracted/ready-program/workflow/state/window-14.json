@@ -1,0 +1,19 @@
+﻿{
+    "last_package_dir":  null,
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  null,
+    "window":  14,
+    "kind":  "worker",
+    "name":  "Fuzzer Core and Coverage Truthfulness",
+    "area":  "Owns property and fuzz harnesses that must report canonical artifacts, real coverage, and replayable failing evidence.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  6,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

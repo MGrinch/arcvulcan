@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schemas/run_meta.schema.json",
+  "title": "RunMeta",
+  "type": "object",
+  "required": [
+    "run_id",
+    "issue_id",
+    "deterministic",
+    "outputs",
+    "exit_codes"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "issue_id": {
+      "type": "string",
+      "pattern": "^ISSUE-[0-9]{8}-[0-9]{3}$"
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exit_codes": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

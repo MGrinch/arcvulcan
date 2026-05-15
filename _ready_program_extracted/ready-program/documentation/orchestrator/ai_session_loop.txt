@@ -1,0 +1,40 @@
+# ai_session_loop
+
+Session orchestration is a **thin state machine** that composes:
+
+- Tutor backend calls (TEACH + EVAL)
+- Optional Mirror prediction
+- Deterministic node selection + closure heuristics
+
+Code surfaces:
+- `xyzgl/orchestrator/session_loop.py` — `run_session(...)`
+- `xyzgl/orchestrator/turn.py` — TEACH/EVAL phase calls
+- `xyzgl/orchestrator/policies.py` — learner state + budget + closure
+
+## Turn semantics
+
+Each orchestrated turn emits a `TurnRecord` containing:
+
+- the selected node
+- TEACH artifacts (teaching block + question + prompt meta)
+- Mirror artifacts (optional)
+- EVAL artifacts (evaluation + gaps + next action)
+
+If EVAL returns `CLOSE_NODE`, the node confidence is bumped and the next turn selects a new node. If EVAL returns `PROBE`, the next turn stays on the same node and asks the pointed question (`next_question`).
+
+## Determinism
+
+The orchestrator is deterministic given:
+
+- `seed`
+- knowledge graph input
+- a deterministic `input_provider`
+
+LLM outputs may vary when using real backends; harnesses use stub backends.
+
+## Protocol + grounding
+
+All Tutor calls are built through `xyzgl.prompting.build_tutor_prompt(...)`, which injects:
+
+- ROLE_PROTOCOL every N turns
+- optional curriculum grounding snippets

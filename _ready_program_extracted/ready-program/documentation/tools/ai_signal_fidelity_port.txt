@@ -1,0 +1,23 @@
+signal_fidelity_port
+
+Purpose:
+  Copy approved files from the shipped Signal Fidelity plugin bank into tools/ or xyzgl/.
+
+Source root:
+  signal_fidelity_src/XYZGL_SIGNAL_FIDELITY_002_ASSEMBLED/
+
+Usage:
+  python tools/signal_fidelity_port.py --list
+  python tools/signal_fidelity_port.py --copy relative/path.py --to tools
+  python tools/signal_fidelity_port.py --plan plan.json
+  python tools/signal_fidelity_port.py --copy relative/path.py --to xyzgl --overwrite
+
+Rules:
+  - destination must stay inside the repo
+  - destination root must be tools or xyzgl
+  - no overwrite unless --overwrite
+
+Outputs:
+  --list prints available files
+  --copy prints the written path
+  --plan prints JSON with applied writes

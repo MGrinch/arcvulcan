@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "session_report.schema.json",
+  "title": "Session Report (Witness Event)",
+  "allOf": [
+    {
+      "$ref": "witness_event.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "payload": {
+          "type": "object",
+          "required": [
+            "session_report"
+          ],
+          "properties": {
+            "session_report": {
+              "type": "object",
+              "required": [
+                "schema_version",
+                "session_id",
+                "max_turns",
+                "turns"
+              ],
+              "properties": {
+                "schema_version": {
+                  "type": "string",
+                  "const": "session_report@1"
+                },
+                "session_id": {
+                  "type": "string"
+                },
+                "seed": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "max_turns": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "turns": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "turn_index",
+                      "node_id",
+                      "node_title",
+                      "user_state",
+                      "teach",
+                      "mirror",
+                      "eval"
+                    ],
+                    "properties": {
+                      "turn_index": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "node_id": {
+                        "type": "string"
+                      },
+                      "node_title": {
+                        "type": "string"
+                      },
+                      "user_state": {
+                        "type": "string"
+                      },
+                      "teach": {
+                        "type": "object",
+                        "required": [
+                          "teaching_block",
+                          "question",
+                          "prompt_meta"
+                        ],
+                        "properties": {
+                          "teaching_block": {
+                            "type": "string"
+                          },
+                          "question": {
+                            "type": "string"
+                          },
+                          "prompt_meta": {
+                            "type": "object",
+                            "properties": {
+                              "persona_injected": {
+                                "type": "boolean"
+                              },
+                              "persona_active": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": true
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "mirror": {
+                        "type": "object",
+                        "required": [
+                          "answer",
+                          "meta"
+                        ],
+                        "properties": {
+                          "answer": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "meta": {
+                            "type": [
+                              "object",
+                              "null"
+                            ]
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "eval": {
+                        "type": "object",
+                        "required": [
+                          "user_answer",
+                          "mirror_answer",
+                          "evaluation",
+                          "gaps",
+                          "next_action",
+                          "next_question",
+                          "prompt_meta"
+                        ],
+                        "properties": {
+                          "user_answer": {
+                            "type": "string"
+                          },
+                          "mirror_answer": {
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "evaluation": {
+                            "type": "string"
+                          },
+                          "gaps": {
+                            "type": "string"
+                          },
+                          "next_action": {
+                            "type": "string"
+                          },
+                          "next_question": {
+                            "type": "string"
+                          },
+                          "prompt_meta": {
+                            "type": "object",
+                            "properties": {
+                              "persona_injected": {
+                                "type": "boolean"
+                              },
+                              "persona_active": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": true
+                          }
+                        },
+                        "additionalProperties": true
+                      },
+                      "resonance": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "mastery": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "text_similarity": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      },
+                      "mastery_delta": {
+                        "type": [
+                          "number",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}

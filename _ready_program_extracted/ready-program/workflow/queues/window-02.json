@@ -1,0 +1,109 @@
+﻿{
+    "window":  2,
+    "name":  "Grounding and Prompt Assembly",
+    "area":  "Owns grounding corpora, prompt assembly, prompt-budget guards, and grounding-path integrity bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Grounding must remain structurally faithful across path formats, paragraph boundaries, and prompt-budget settings.",
+    "queue_intent":  "These fixes defend grounding integrity before corrupted context can poison prompt assembly.",
+    "merge_style":  "Normalize early, clamp once, and make path handling portable across Windows and POSIX.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "xyzgl/grounding/corpus.py",
+                            "xyzgl/prompting.py",
+                            "xyzgl/config.py"
+                        ],
+    "delivery_standard":  [
+                              "Never silently drop valid grounding inputs.",
+                              "Keep prompt budget calculations single-sourced.",
+                              "Use tests that prove both corpus parsing and prompt construction stay aligned."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  8,
+    "remaining_items":  3,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-80",
+                      "title":  "Whitespace-only blank lines are not treated as paragraph breaks in grounding corpora, so poison and clean context can collapse into one oversized paragraph",
+                      "phase":  "2",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "xyzgl/grounding/corpus.py"
+                                     ],
+                      "legacy_window":  2,
+                      "legacy_queue_index":  1,
+                      "mission":  "Preserve paragraph boundaries so poisoned and clean grounding passages cannot collapse together. Keep the split rules simple and portable so commercial grounding packs behave the same way across authoring pipelines and operating systems.",
+                      "implementation_nexus":  [
+                                                   "Treat whitespace-only blank lines as structural paragraph breaks.",
+                                                   "Keep chunking stable after normalization."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Whitespace-only separators still split grounding paragraphs.",
+                                               "Oversized merged paragraphs no longer appear from blank-line-only separators."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-92",
+                      "title":  "`manifest.json` source paths using Windows separators silently drop valid grounding sources on POSIX",
+                      "phase":  "2",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "xyzgl/grounding/corpus.py"
+                                     ],
+                      "legacy_window":  2,
+                      "legacy_queue_index":  2,
+                      "mission":  "Make manifest source path normalization portable across Windows and POSIX. Ensure the normalized path contract is deterministic enough for packaged curriculum assets and customer-provided corpora to round-trip cleanly.",
+                      "implementation_nexus":  [
+                                                   "Normalize separators before manifest lookups.",
+                                                   "Avoid dropping valid sources because of host-specific slash conventions."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Windows-style manifest paths resolve on POSIX.",
+                                               "Grounding source manifests stay intact across platforms."
+                                           ]
+                  },
+                  {
+                      "queue_index":  3,
+                      "original_queue_index":  11,
+                      "bug_id":  "BUG-102",
+                      "title":  "`build_tutor_prompt()` silently re-clamps `grounding_max_snippets` to 64, so injected grounding can disagree with both config and direct grounding output",
+                      "phase":  "2 (via Phase 6 audit)",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/doc_code_link_checker.py",
+                                         "tools/grounding_injection_audit.py",
+                                         "tools/protocol_drift_radar.py",
+                                         "tools/repro_replay_diff.py",
+                                         "tools/repro_session_smoke.py",
+                                         "tools/seed_sweep.py",
+                                         "tools/selfcheck.py",
+                                         "tools/targeted_sweep.py",
+                                         "xyzgl/config.py",
+                                         "xyzgl/prompting.py",
+                                         "xyzgl/protocols.py"
+                                     ],
+                      "legacy_window":  2,
+                      "legacy_queue_index":  3,
+                      "mission":  "Remove the hidden re-clamp so prompt assembly and direct grounding agree on snippet budget. Give operators one trustworthy knob for grounding spend, latency, and answer richness instead of hidden prompt-budget drift.",
+                      "implementation_nexus":  [
+                                                   "Use a single authoritative clamp path for grounding_max_snippets.",
+                                                   "Audit dependent tools so they all observe the same configured ceiling."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Prompt assembly respects the configured snippet cap instead of silently forcing 64.",
+                                               "Audit tools that compare prompt vs grounding outputs remain consistent."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

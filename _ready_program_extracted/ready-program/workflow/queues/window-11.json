@@ -1,0 +1,105 @@
+﻿{
+    "window":  11,
+    "name":  "Workflow Companion and Prompt Governance",
+    "area":  "Owns prompt snapshot guards, citation guards, signal-fidelity tooling, and doc-code workflow contract bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Workflow companion tools must preserve prompt, citation, and doc-code governance instead of drifting into stale or self-contradictory behavior.",
+    "queue_intent":  "This queue modernizes prompt guardrails, citation tooling, signal-fidelity support, and workflow companion contracts.",
+    "merge_style":  "One source of truth per contract: prompt baselines, docs, and companion tooling must agree.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/prompt_snapshot_guard.py",
+                            "tools/grounding_injection_audit.py",
+                            "tools/doc_code_link_checker.py",
+                            "documentation/tools/"
+                        ],
+    "delivery_standard":  [
+                              "Guard tools must reject malformed or missing support assets before claiming success.",
+                              "Docs and code must move together.",
+                              "Environment sensitivity should be isolated behind explicit gates or fixtures."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  9,
+    "remaining_items":  3,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-42",
+                      "title":  "`grounding_injection_audit.py` is environment-sensitive and can misattribute failures",
+                      "phase":  "6",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/grounding_injection_audit.py"
+                                     ],
+                      "legacy_window":  11,
+                      "legacy_queue_index":  1,
+                      "mission":  "Make grounding injection audit results stable across environments. Deterministic audit behavior is what turns the tool from an internal helper into a credible customer-facing assurance check.",
+                      "implementation_nexus":  [
+                                                   "Isolate environment-dependent factors behind explicit setup or fixtures.",
+                                                   "Keep failure attribution tied to the real grounding defect, not host noise."
+                                               ],
+                      "acceptance_focus":  [
+                                               "The same test case yields the same verdict across supported environments.",
+                                               "Failure messages point at the actual cause rather than setup variance."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-53",
+                      "title":  "`tools/signal_fidelity_port.py` is missing required companion docs",
+                      "phase":  "6",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "documentation/tools/ai_",
+                                         "documentation/tools/ai_signal_fidelity_port.md",
+                                         "documentation/tools/ai_signal_fidelity_port.txt",
+                                         "tools/doc_code_link_checker.py",
+                                         "tools/signal_fidelity_port.py"
+                                     ],
+                      "legacy_window":  11,
+                      "legacy_queue_index":  2,
+                      "mission":  "Ship the required companion docs alongside signal_fidelity_port. Treat the docs as part of the sellable feature so operators can adopt the tool without reading source or reverse-engineering hidden assumptions.",
+                      "implementation_nexus":  [
+                                                   "Add or regenerate the missing doc artifacts and wire doc-code checks to them.",
+                                                   "Keep tool help, docs, and doc-link checks in sync."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Required companion docs exist and pass doc-code link checks.",
+                                               "Tool-facing docs describe the real shipped behavior."
+                                           ]
+                  },
+                  {
+                      "queue_index":  3,
+                      "original_queue_index":  10,
+                      "bug_id":  "BUG-77",
+                      "title":  "`tools/apply_signal_fidelity_overlay.py` defaults to an overlay archive that is not actually shipped",
+                      "phase":  "6",
+                      "severity":  "Low",
+                      "files_hint":  [
+                                         "documentation/tools/ai_apply_signal_fidelity_overlay.md",
+                                         "tools/apply_signal_fidelity_overlay.py"
+                                     ],
+                      "legacy_window":  11,
+                      "legacy_queue_index":  3,
+                      "mission":  "Stop defaulting to an overlay archive that the repo does not ship. A first-run experience that works out of the box is critical if the tool is going to feel productized rather than hand-held.",
+                      "implementation_nexus":  [
+                                                   "Point defaults at a shipped asset or require explicit input.",
+                                                   "Make docs and CLI help reflect the real default behavior."
+                                               ],
+                      "acceptance_focus":  [
+                                               "Default execution works without referencing a nonexistent overlay archive.",
+                                               "Documentation matches the actual default path."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

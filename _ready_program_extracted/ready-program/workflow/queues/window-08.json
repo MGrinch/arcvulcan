@@ -1,0 +1,78 @@
+﻿{
+    "window":  8,
+    "name":  "Sweep Orchestration and Repo Safety",
+    "area":  "Owns targeted sweep execution, cadence verification, repo cleanliness, and deterministic run-path orchestration bugs.",
+    "report_file":  "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+    "audited_utc":  "2026-03-21T02:11:36.6750237Z",
+    "audit_basis":  [
+                        "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+                        "Repartitioned the unresolved backlog into the 18-window orchestra while keeping already-implemented work removed from runnable queues.",
+                        "Added stronger window-level and bug-level guidance so each worker can build toward enterprise-grade reliability, operator trust, and monetizable product value instead of narrow patch memory."
+                    ],
+    "true_north":  "Sweep orchestration must be deterministic, repo-safe, and honest about where it wrote or found artifacts.",
+    "queue_intent":  "This queue hardens targeted sweep execution, doctor preflight ordering, and run-path extraction.",
+    "merge_style":  "Keep orchestrators clean-room: do not mutate the repo or erase the child process breadcrumbs needed for audit.",
+    "preflight_reads":  [
+                            "NORTH_STAR.md",
+                            "tools/targeted_sweep.py",
+                            "tools/doctor.py",
+                            "tools/reground_cadence_verifier.py"
+                        ],
+    "delivery_standard":  [
+                              "Forward determinism and path flags all the way into child tools.",
+                              "Do not sanitize away the exact run paths the parent needs.",
+                              "Repo validation must happen before any contaminating writes."
+                          ],
+    "topology_version":  "18-window-orchestra-v2",
+    "completed_items_removed":  6,
+    "remaining_items":  2,
+    "items":  [
+                  {
+                      "queue_index":  1,
+                      "original_queue_index":  8,
+                      "bug_id":  "BUG-45",
+                      "title":  "`targeted_sweep.py` sanitizes child output before extracting run paths",
+                      "phase":  "5",
+                      "severity":  "Medium",
+                      "files_hint":  [
+                                         "tools/targeted_sweep.py"
+                                     ],
+                      "legacy_window":  8,
+                      "legacy_queue_index":  1,
+                      "mission":  "Preserve raw child output long enough to extract the run paths it contains. Keep the safe-output path compatible with production logging while still preserving the audit breadcrumbs that make sweep artifacts commercially supportable.",
+                      "implementation_nexus":  [
+                                                   "Separate path extraction from cosmetic output sanitization.",
+                                                   "Only sanitize after the parent has captured the child bundle location."
+                                               ],
+                      "acceptance_focus":  [
+                                               "targeted_sweep still finds child run paths after sanitization changes.",
+                                               "Diagnostics remain safe without erasing the path signal."
+                                           ]
+                  },
+                  {
+                      "queue_index":  2,
+                      "original_queue_index":  9,
+                      "bug_id":  "BUG-67",
+                      "title":  "`targeted_sweep.py` contaminates the repo before running `doctor`",
+                      "phase":  "5",
+                      "severity":  "High",
+                      "files_hint":  [
+                                         "tools/doctor.py",
+                                         "tools/targeted_sweep.py"
+                                     ],
+                      "legacy_window":  8,
+                      "legacy_queue_index":  2,
+                      "mission":  "Run repo health checks before targeted_sweep contaminates the working tree. This should make the tool safe for premium CI and customer demo environments where false repo dirtiness destroys confidence.",
+                      "implementation_nexus":  [
+                                                   "Move doctor or cleanliness checks ahead of any write-producing step.",
+                                                   "Keep sweep setup from masking the repo state it was supposed to verify."
+                                               ],
+                      "acceptance_focus":  [
+                                               "doctor sees the real pre-sweep repo state.",
+                                               "targeted_sweep no longer dirties the repo before validation."
+                                           ]
+                  }
+              ],
+    "queue_kind":  "active-unresolved",
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

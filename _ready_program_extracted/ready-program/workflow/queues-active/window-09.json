@@ -1,0 +1,85 @@
+{
+  "window": 9,
+  "name": "Artifact Schemas and CI Gates",
+  "area": "Owns canonical artifacts, schema validation, CI outputs, and run-bundle plumbing bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-09.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 7,
+  "remaining_items": 6,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-134",
+      "title": "`artifact_roundtrip.py --fix` cannot rewrite a supported direct JSON file target unless it lives under the repo `runs/` root",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/artifact_roundtrip.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 7,
+      "bug_id": "BUG-112",
+      "title": "`validate_schemas.py` has incomplete shipped-schema coverage in both direct-file and run-directory validation modes",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "schemas/prompt_snapshots.schema.json",
+        "tools/validate_schemas.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 8,
+      "bug_id": "BUG-113",
+      "title": "Repro smoke tools emit other tools' report names and schema versions, and `validate_schemas.py` blesses the mismatch as canonical",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/repro_backends_smoke.py",
+        "tools/repro_grounding_protocol_smoke.py",
+        "tools/validate_schemas.py"
+      ]
+    },
+    {
+      "queue_index": 4,
+      "original_queue_index": 9,
+      "bug_id": "BUG-76",
+      "title": "`tools/ci_gate.py` sanitizes child stdout before extracting the session run dir, so it cannot locate the run bundle it just created",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/ci_gate.py"
+      ]
+    },
+    {
+      "queue_index": 5,
+      "original_queue_index": 11,
+      "bug_id": "BUG-79",
+      "title": "`tools/artifact_roundtrip.py` ignores nested `child_runs/**/*.json` when given a run directory",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/artifact_roundtrip.py"
+      ]
+    },
+    {
+      "queue_index": 6,
+      "original_queue_index": 13,
+      "bug_id": "BUG-94",
+      "title": "`artifact_roundtrip.py --strict` can report process-level `FAIL` while leaving changed files marked `PASS`",
+      "phase": "6",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/artifact_roundtrip.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Latency/Cost Budget Enforcer
+
+Goal: enforce simple performance budgets for the tutor/mirror paths.
+
+Checks:
+- Tutor p95 latency (from tutor_meta.latency_ms).
+- Mirror p95 latency if DAEDALUS_ENABLE_MIRROR=1.
+- Estimated token budget (ceil((prompt_chars+reply_chars)/4)).
+
+Usage:
+  python tools/latency_cost_budget_enforcer.py --issue ISSUE-YYYYMMDD-NNN --p95-ms 2500 --max-est-tokens 4096
+
+Outputs:
+- runs/<run_id>/latency_budget_report.json
+- runs/<run_id>/latency_budget_summary.md
+- runs/<run_id>/run.json
+
+Exit codes:
+- 0 PASS
+- 1 FAIL
+- 2 INCOMPLETE

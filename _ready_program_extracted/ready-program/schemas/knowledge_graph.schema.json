@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "knowledge_graph.schema.json",
+  "title": "Knowledge Graph",
+  "type": "object",
+  "required": ["schema_version", "nodes"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "knowledge_graph@1"},
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["node_id", "title", "summary", "required_keywords", "confidence", "fragility_flags", "last_verified_turn"],
+        "properties": {
+          "node_id": {"type": "string"},
+          "title": {"type": "string"},
+          "summary": {"type": "string"},
+          "required_keywords": {"type": "array", "items": {"type": "string"}},
+          "confidence": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+          "fragility_flags": {"type": "array", "items": {"type": "string"}},
+          "last_verified_turn": {"type": "integer"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

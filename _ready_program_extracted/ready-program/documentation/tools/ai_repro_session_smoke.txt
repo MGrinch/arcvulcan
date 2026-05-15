@@ -1,0 +1,7 @@
+repro_session_smoke
+
+Session-loop smoke test.
+Usage:
+  python tools/repro_session_smoke.py
+
+Exit codes: 0 pass, 1 fail, 2 incomplete

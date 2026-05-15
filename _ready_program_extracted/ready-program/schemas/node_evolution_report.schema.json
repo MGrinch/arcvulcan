@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "node_evolution_report@1",
+  "type": "object",
+  "required": ["schema_version", "run_id", "issue_id", "before", "after"],
+  "properties": {
+    "schema_version": {"const": "node_evolution_report@1"},
+    "run_id": {"type": "string"},
+    "issue_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "before": {"type": "string"},
+    "after": {"type": "string"},
+    "added": {"type": "array", "items": {"type": "string"}},
+    "removed": {"type": "array", "items": {"type": "string"}},
+    "changed": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

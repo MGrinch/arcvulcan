@@ -1,0 +1,64 @@
+﻿{
+    "checked_utc":  "2026-03-21T02:12:38.9107860Z",
+    "workflow_root":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_WORKFLOW_REALIGNED_READY_20260320_221237\\workflow",
+    "ok":  true,
+    "check_count":  11,
+    "failed_count":  0,
+    "checks":  [
+                   {
+                       "name":  "required-files",
+                       "ok":  true,
+                       "details":  "All required workflow files are present."
+                   },
+                   {
+                       "name":  "required-root-files",
+                       "ok":  true,
+                       "details":  "All required root grounding files are present."
+                   },
+                   {
+                       "name":  "window-config-shape",
+                       "ok":  true,
+                       "details":  "windows=18; workers=15; precompilers=2; finals=1"
+                   },
+                   {
+                       "name":  "window-file-references",
+                       "ok":  true,
+                       "details":  "All configured role/state/queue files exist."
+                   },
+                   {
+                       "name":  "queue-file-topology",
+                       "ok":  true,
+                       "details":  "No stale worker queue files remain outside the configured worker topology."
+                   },
+                   {
+                       "name":  "cycle-seed-shape",
+                       "ok":  true,
+                       "details":  "cycle-seed.json contains the required fields."
+                   },
+                   {
+                       "name":  "workflow-start-here-content",
+                       "ok":  true,
+                       "details":  "workflow/START_HERE.md contains the canonical cycle and verification rules."
+                   },
+                   {
+                       "name":  "root-start-content",
+                       "ok":  true,
+                       "details":  "Root operator entrypoint references the canonical workflow files and handoff artifacts."
+                   },
+                   {
+                       "name":  "operating-rules-content",
+                       "ok":  true,
+                       "details":  "Operating rules include package verification and cycle-close validation."
+                   },
+                   {
+                       "name":  "orchestra-content",
+                       "ok":  true,
+                       "details":  "Cycle orchestra sheet includes sync and cycle-close guidance."
+                   },
+                   {
+                       "name":  "window-system-prompts-current",
+                       "ok":  true,
+                       "details":  "WINDOW_SYSTEM_PROMPTS.md matches the generated canonical prompt pack."
+                   }
+               ]
+}

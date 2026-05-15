@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "prompt_snapshots@1",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "cases"],
+  "properties": {
+    "schema_version": {"const": "prompt_snapshots@1"},
+    "generated_at": {"type": "string"},
+    "cases": {"type": "object"}
+  },
+  "additionalProperties": true
+}

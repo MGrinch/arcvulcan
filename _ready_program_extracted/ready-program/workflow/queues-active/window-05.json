@@ -1,0 +1,54 @@
+{
+  "window": 5,
+  "name": "Harness Turn and Artifact Integrity",
+  "area": "Owns harness_turn behavior, turn artifacts, witness event identity, and turn-facing run path bugs.",
+  "report_file": "source/XYZGL_MASTER_BUG_REPORT_FINAL_UNIFIED_v27_20260309_120450.md",
+  "source_queue_file": "queues/window-05.json",
+  "audited_utc": "2026-03-19T16:32:16Z",
+  "audit_basis": [
+    "Matched queued BUG IDs against regression tests in tests/test_bug*.py.",
+    "Included previously merged no-op or patch-only lineage already applied in this workspace thread for BUG-013, BUG-124, BUG-135, and BUG-138."
+  ],
+  "completed_items_removed": 7,
+  "remaining_items": 3,
+  "items": [
+    {
+      "queue_index": 1,
+      "original_queue_index": 3,
+      "bug_id": "BUG-23",
+      "title": "Turn artifacts do not faithfully record the model-facing input",
+      "phase": "4",
+      "severity": "High",
+      "files_hint": [
+        "tools/harness_turn.py",
+        "xyzgl/prompting.py",
+        "xyzgl/router.py"
+      ]
+    },
+    {
+      "queue_index": 2,
+      "original_queue_index": 7,
+      "bug_id": "BUG-86",
+      "title": "`harness_turn.py` can emit unstable `event_id` values for semantically identical deterministic runs",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_turn.py",
+        "witness/core.py"
+      ]
+    },
+    {
+      "queue_index": 3,
+      "original_queue_index": 9,
+      "bug_id": "BUG-62",
+      "title": "`harness_turn.py` artifacts are not self-describing for env-only backend-error exposure and fault-injection runs",
+      "phase": "4",
+      "severity": "Medium",
+      "files_hint": [
+        "tools/harness_turn.py",
+        "xyzgl/backends/fault.py",
+        "xyzgl/router.py"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "generated_at": "2026-02-01T13:54:43Z",
+  "surfaces": [
+    {
+      "contract": "route_turn(user_text, seed=None, cfg=None) -> dict",
+      "path": "xyzgl/router.py"
+    },
+    {
+      "contract": "get_tutor_backend(cfg) / get_mirror_backend(cfg)",
+      "path": "xyzgl/backends/registry.py"
+    },
+    {
+      "contract": "GeminiBackend.generate(prompt, seed, max_tokens) -> BackendResult",
+      "path": "xyzgl/backends/gemini.py"
+    },
+    {
+      "contract": "OllamaBackend.generate(prompt, seed, max_tokens) -> BackendResult",
+      "path": "xyzgl/backends/ollama.py"
+    },
+    {
+      "contract": "post_json(url, payload) -> (dict, latency_ms)",
+      "path": "xyzgl/util_http.py"
+    },
+    {
+      "contract": "tutor_reply(user_text, seed=None) -> str",
+      "path": "xyzgl/welding_tutor.py"
+    },
+    {
+      "contract": "XYZGLConfig dataclass",
+      "path": "xyzgl/config.py"
+    },
+    {
+      "contract": "CLI wrapper: python -m xyzgl.cli; validates --turn-index >= 0 and applies it consistently in one-shot and interactive mode",
+      "path": "xyzgl/cli.py"
+    },
+    {
+      "contract": "make_event(issue_id,payload) -> WitnessEvent; write_event_json",
+      "path": "witness/core.py"
+    },
+    {
+      "contract": "CLI harness producing run bundle (turn)",
+      "path": "tools/harness_turn.py"
+    },
+    {
+      "contract": "lattice helpers: checks/risk/summary",
+      "path": "tools/lattice_lib.py"
+    },
+    {
+      "contract": "CLI harness producing lattice stability matrix",
+      "path": "tools/harness_lattice.py"
+    },
+    {
+      "contract": "CLI validator for harness JSON outputs",
+      "path": "tools/validate_schemas.py"
+    },
+    {
+      "contract": "Repo health check",
+      "path": "tools/doctor.py"
+    },
+    {
+      "contract": "Deterministic backend selection + fallback smoke test",
+      "path": "tools/repro_backends_smoke.py"
+    },
+    {
+      "contract": "Canonical assistant workflow (protocol-first, repro-first)",
+      "path": "STABLE/WORKFLOW_ASSISTANT.md"
+    },
+    {
+      "contract": "How to configure real Gemini/Ollama backends",
+      "path": "documentation/backends/ai_backends.txt"
+    },
+    {
+      "contract": "build_tutor_prompt(user_text,cfg,turn_index)->(prompt,meta)",
+      "path": "xyzgl/prompting.py"
+    },
+    {
+      "contract": "should_reground(turn_index,N); load_protocol_text(repo_root,rel_path)",
+      "path": "xyzgl/protocols.py"
+    },
+    {
+      "contract": "SessionState(session_id,turn_index).new(turn_index>=0).next_turn() preserves non-negative turn indices",
+      "path": "xyzgl/session.py"
+    },
+    {
+      "contract": "load_corpus(grounding_dir)->Corpus(passages)",
+      "path": "xyzgl/grounding/corpus.py"
+    },
+    {
+      "contract": "retrieve_snippets(corpus,query,max_snippets)->[Snippet]",
+      "path": "xyzgl/grounding/retrieval.py"
+    },
+    {
+      "contract": "build_grounding(dir,query)->(text,meta)",
+      "path": "xyzgl/grounding/prompting.py"
+    },
+    {
+      "contract": "Network-free smoke test for grounding+protocol reground",
+      "path": "tools/repro_grounding_protocol_smoke.py"
+    },
+    {
+      "contract": "run_session(session_id,cfg,seed,max_turns,graph,input_provider)->(SessionReport,KnowledgeGraph); carries the latest inferred session user_state across TEACH/PROBE turns and into newly selected nodes; SessionReport preserves/exports all executed turns up to MAX_SESSION_TURNS and records stop_reason/graph_complete/completion_turn_index; session stops early when all nodes reach mastery",
+      "path": "xyzgl/orchestrator/session_loop.py"
+    },
+    {
+      "contract": "re-exports Teach/Eval + tutor/mirror phase functions",
+      "path": "xyzgl/orchestrator/turn.py"
+    },
+    {
+      "contract": "infer_user_state; teaching_budget; required_keywords_satisfied (keyword coverage + explanation-shaped closure gate)",
+      "path": "xyzgl/orchestrator/policies.py"
+    },
+    {
+      "contract": "KnowledgeGraph IO + default_graph",
+      "path": "xyzgl/knowledge/graph.py"
+    },
+    {
+      "contract": "select_next_node(graph,seed,avoid)->Node; prefers lowest confidence, varies tie order by seed, and rotates within tied buckets to avoid immediate repeat/starvation",
+      "path": "xyzgl/knowledge/heuristics.py"
+    },
+    {
+      "contract": "close_node(graph,node_id,turn_index)->KnowledgeGraph",
+      "path": "xyzgl/knowledge/update.py"
+    },
+    {
+      "contract": "CLI harness producing run bundle (session + knowledge graph) and surfacing graph_complete/stop_reason/post_mastery_overrun in artifacts",
+      "path": "tools/harness_session.py"
+    },
+    {
+      "contract": "Network-free smoke test for orchestrated session loop",
+      "path": "tools/repro_session_smoke.py"
+    },
+    {
+      "contract": "TeachPhase / EvalPhase dataclasses",
+      "path": "xyzgl/orchestrator/phases.py"
+    },
+    {
+      "contract": "run_teach_phase / run_probe_phase / run_eval_phase (preserve TEACH/PROBE question contracts and JSON-quote cross-phase EVAL text surfaces)",
+      "path": "xyzgl/orchestrator/tutor_phases.py"
+    },
+    {
+      "contract": "run_mirror_prediction (optional mirror simulation)",
+      "path": "xyzgl/orchestrator/mirror.py"
+    },
+    {
+      "contract": "StubTutorBackend / StubMirrorBackend deterministic local backends; tutor preserves TEACH/PROBE Q: contract and mirror stays learner-shaped/non-imperative",
+      "path": "xyzgl/backends/stub.py"
+    },
+    {
+      "contract": "FaultBackend.generate(prompt, seed, max_tokens) -> BackendResult (or raises)",
+      "path": "xyzgl/backends/fault.py"
+    },
+    {
+      "contract": "CLI: backend_fault_injector (scenario runner)",
+      "path": "tools/backend_fault_injector.py"
+    },
+    {
+      "contract": "CLI: retrieval_eval_bench (recall@k over corpus)",
+      "path": "tools/retrieval_eval_bench.py"
+    },
+    {
+      "contract": "CLI: coverage_gate (enforce coverage thresholds)",
+      "path": "tools/coverage_gate.py"
+    },
+    {
+      "contract": "CLI: mutation_suite (mutation engine wrapper)",
+      "path": "tools/mutation_suite.py"
+    },
+    {
+      "contract": "CLI: protocol_drift_radar (heuristic role-drift scan)",
+      "path": "tools/protocol_drift_radar.py"
+    },
+    {
+      "contract": "CLI sweep: variance across seeds",
+      "path": "tools/seed_sweep.py"
+    },
+    {
+      "contract": "CLI gate: latency + est token budgets",
+      "path": "tools/latency_cost_budget_enforcer.py"
+    },
+    {
+      "contract": "CLI audit: grounding retrieved == injected",
+      "path": "tools/grounding_injection_audit.py"
+    },
+    {
+      "contract": "CLI lint: curriculum manifest + files",
+      "path": "tools/curriculum_corpus_linter.py"
+    },
+    {
+      "contract": "CLI diff: knowledge graph before/after",
+      "path": "tools/node_evolution_diff.py"
+    },
+    {
+      "contract": "Optional fuzz harness for route_turn (atheris)",
+      "path": "tools/atheris_fuzz_router.py"
+    },
+    {
+      "contract": "Tool doc: Seed Sweep",
+      "path": "documentation/tools/ai_seed_sweep.md"
+    },
+    {
+      "contract": "Tool doc: Latency/Cost Budget Enforcer",
+      "path": "documentation/tools/ai_latency_cost_budget_enforcer.md"
+    },
+    {
+      "contract": "Tool doc: Grounding Injection Audit",
+      "path": "documentation/tools/ai_grounding_injection_audit.md"
+    },
+    {
+      "contract": "Tool doc: Curriculum Corpus Linter",
+      "path": "documentation/tools/ai_curriculum_corpus_linter.md"
+    },
+    {
+      "contract": "Tool doc: Node Evolution Diff",
+      "path": "documentation/tools/ai_node_evolution_diff.md"
+    },
+    {
+      "contract": "Tool doc: Atheris Fuzz Router",
+      "path": "documentation/tools/ai_atheris_fuzz_router.md"
+    },
+    {
+      "contract": "CLI probe: Tutor/Mirror backend generate() contract",
+      "path": "tools/backend_contract_probe.py"
+    },
+    {
+      "contract": "CLI check: JSON artifact round-trip stability",
+      "path": "tools/artifact_roundtrip.py"
+    },
+    {
+      "contract": "CLI guard: Ontario/code-specific claims must be grounded",
+      "path": "tools/ontario_claims_citation_guard.py"
+    },
+    {
+      "contract": "CLI bench: mirror prediction vs user answer similarity",
+      "path": "tools/mirror_calibration_bench.py"
+    },
+    {
+      "contract": "CLI detector: mirror role leakage (teaching language)",
+      "path": "tools/mirror_leakage_detector.py"
+    },
+    {
+      "contract": "CLI gate: deterministic multi-tool CI battery",
+      "path": "tools/ci_gate.py"
+    },
+    {
+      "contract": "CLI verifier: protocol re-ground cadence every N turns",
+      "path": "tools/reground_cadence_verifier.py"
+    },
+    {
+      "contract": "CLI guard: hash canonical prompt builds to detect drift",
+      "path": "tools/prompt_snapshot_guard.py"
+    },
+    {
+      "contract": "CLI replay: rerun prior bundles and diff key outputs",
+      "path": "tools/repro_replay_diff.py"
+    },
+    {
+      "contract": "CLI checker: knowledge_graph.json invariants",
+      "path": "tools/graph_invariant_checker.py"
+    },
+    {
+      "contract": "CLI fuzzer: property-style crash finder for route_turn",
+      "path": "tools/property_turn_fuzzer.py"
+    },
+    {
+      "contract": "CLI suite: prompt-injection regression checks",
+      "path": "tools/redteam_injection_suite.py"
+    },
+    {
+      "contract": "CLI suite: poisoned grounding boundary checks",
+      "path": "tools/redteam_rag_poisoning_suite.py"
+    },
+    {
+      "contract": "CLI scan: repository secret pattern detector",
+      "path": "tools/secret_scanner.py"
+    },
+    {
+      "contract": "CLI checker: docs/AI_INDEX paths + tool doc companions",
+      "path": "tools/doc_code_link_checker.py"
+    },
+    {
+      "contract": "CLI profiler: prompt build + backend timing smoke",
+      "path": "tools/stage_timing_profiler.py"
+    },
+    {
+      "contract": "Tool doc: Backend Contract Probe",
+      "path": "documentation/tools/ai_backend_contract_probe.md"
+    },
+    {
+      "contract": "Tool doc: Artifact Round-Trip",
+      "path": "documentation/tools/ai_artifact_roundtrip.md"
+    },
+    {
+      "contract": "Tool doc: Ontario Claims Citation Guard",
+      "path": "documentation/tools/ai_ontario_claims_citation_guard.md"
+    },
+    {
+      "contract": "Tool doc: Mirror Calibration Bench",
+      "path": "documentation/tools/ai_mirror_calibration_bench.md"
+    },
+    {
+      "contract": "Tool doc: Mirror Leakage Detector",
+      "path": "documentation/tools/ai_mirror_leakage_detector.md"
+    },
+    {
+      "contract": "Tool doc: CI Gate",
+      "path": "documentation/tools/ai_ci_gate.md"
+    },
+    {
+      "contract": "Tool doc: Re-ground Cadence Verifier",
+      "path": "documentation/tools/ai_reground_cadence_verifier.md"
+    },
+    {
+      "contract": "Tool doc: Prompt Snapshot Guard",
+      "path": "documentation/tools/ai_prompt_snapshot_guard.md"
+    },
+    {
+      "contract": "Tool doc: Repro Replay Diff",
+      "path": "documentation/tools/ai_repro_replay_diff.md"
+    },
+    {
+      "contract": "Tool doc: Graph Invariant Checker",
+      "path": "documentation/tools/ai_graph_invariant_checker.md"
+    },
+    {
+      "contract": "Tool doc: Property Turn Fuzzer",
+      "path": "documentation/tools/ai_property_turn_fuzzer.md"
+    },
+    {
+      "contract": "Tool doc: Redteam Injection Suite",
+      "path": "documentation/tools/ai_redteam_injection_suite.md"
+    },
+    {
+      "contract": "Tool doc: Redteam RAG Poisoning Suite",
+      "path": "documentation/tools/ai_redteam_rag_poisoning_suite.md"
+    },
+    {
+      "contract": "Tool doc: Secret Scanner",
+      "path": "documentation/tools/ai_secret_scanner.md"
+    },
+    {
+      "contract": "Tool doc: Doc-Code Link Checker",
+      "path": "documentation/tools/ai_doc_code_link_checker.md"
+    },
+    {
+      "contract": "Tool doc: Stage Timing Profiler",
+      "path": "documentation/tools/ai_stage_timing_profiler.md"
+    },
+    {
+      "contract": "write_json(path, obj) -> None",
+      "path": "tools/json_canon.py"
+    },
+    {
+      "contract": "runs_root() / allocate_run_dir(run_id) -> Path",
+      "path": "tools/run_paths.py"
+    },
+    {
+      "contract": "CLI: run all tools once (offline)",
+      "path": "tools/targeted_sweep.py"
+    },
+    {
+      "path": "xyzgl/knowledge/embeddings.py",
+      "surface": "text_to_vector, compute_text_similarity, safe_normalize",
+      "role": "Deterministic text-to-vector embedding generation",
+      "contract": "text_to_vector, compute_text_similarity, safe_normalize"
+    },
+    {
+      "path": "xyzgl/knowledge/lithosphere.py",
+      "surface": "Lithosphere, LithosphereEntry",
+      "role": "Vector embedding store with DNA geometry and resonance computation",
+      "contract": "Lithosphere, LithosphereEntry"
+    },
+    {
+      "path": "xyzgl/persona.py",
+      "surface": "PersonaConfig, build_persona_instruction, persona_from_config",
+      "role": "Persona system for tutor character voice",
+      "contract": "PersonaConfig, build_persona_instruction, persona_from_config"
+    }
+  ]
+}

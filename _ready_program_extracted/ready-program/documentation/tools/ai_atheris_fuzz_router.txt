@@ -1,0 +1,20 @@
+Atheris Fuzz Router
+
+Goal: coverage-guided fuzzing for xyzgl.router.route_turn.
+
+Behavior:
+- If atheris is installed, runs a bounded libFuzzer session.
+- If atheris is missing, exits 2 INCOMPLETE and writes a report.
+
+Usage:
+  python tools/atheris_fuzz_router.py --issue ISSUE-YYYYMMDD-NNN --seconds 10
+
+Outputs:
+- runs/<run_id>/atheris_fuzz_report.json
+- runs/<run_id>/atheris_fuzz_summary.md
+- runs/<run_id>/run.json
+
+Exit codes:
+- 0 PASS
+- 1 FAIL
+- 2 INCOMPLETE

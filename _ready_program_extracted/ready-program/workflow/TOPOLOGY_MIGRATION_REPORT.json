@@ -1,0 +1,151 @@
+﻿{
+    "migrated_utc":  "2026-03-21T02:11:36.6750237Z",
+    "topology":  {
+                     "worker_windows":  [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9,
+                                            10,
+                                            11,
+                                            12,
+                                            13,
+                                            14,
+                                            15
+                                        ],
+                     "precompiler_windows":  [
+                                                 16,
+                                                 17
+                                             ],
+                     "final_window":  18
+                 },
+    "runtime_precompiler":  {
+                                "window":  16,
+                                "upstreams":  [
+                                                  1,
+                                                  2,
+                                                  3,
+                                                  4,
+                                                  5,
+                                                  6,
+                                                  7
+                                              ]
+                            },
+    "tooling_guardrail_precompiler":  {
+                                          "window":  17,
+                                          "upstreams":  [
+                                                            8,
+                                                            9,
+                                                            10,
+                                                            11,
+                                                            12,
+                                                            13,
+                                                            14,
+                                                            15
+                                                        ]
+                                      },
+    "final_compiler":  {
+                           "window":  18,
+                           "upstreams":  [
+                                             16,
+                                             17
+                                         ]
+                       },
+    "worker_backlog":  [
+                           {
+                               "window":  1,
+                               "total_bug_ids":  13,
+                               "completed_items_removed":  9,
+                               "remaining_items":  4
+                           },
+                           {
+                               "window":  2,
+                               "total_bug_ids":  11,
+                               "completed_items_removed":  8,
+                               "remaining_items":  3
+                           },
+                           {
+                               "window":  3,
+                               "total_bug_ids":  10,
+                               "completed_items_removed":  7,
+                               "remaining_items":  3
+                           },
+                           {
+                               "window":  4,
+                               "total_bug_ids":  10,
+                               "completed_items_removed":  9,
+                               "remaining_items":  1
+                           },
+                           {
+                               "window":  5,
+                               "total_bug_ids":  10,
+                               "completed_items_removed":  10,
+                               "remaining_items":  0
+                           },
+                           {
+                               "window":  6,
+                               "total_bug_ids":  12,
+                               "completed_items_removed":  8,
+                               "remaining_items":  4
+                           },
+                           {
+                               "window":  7,
+                               "total_bug_ids":  11,
+                               "completed_items_removed":  9,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  8,
+                               "total_bug_ids":  8,
+                               "completed_items_removed":  6,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  9,
+                               "total_bug_ids":  8,
+                               "completed_items_removed":  6,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  10,
+                               "total_bug_ids":  5,
+                               "completed_items_removed":  3,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  11,
+                               "total_bug_ids":  12,
+                               "completed_items_removed":  9,
+                               "remaining_items":  3
+                           },
+                           {
+                               "window":  12,
+                               "total_bug_ids":  15,
+                               "completed_items_removed":  13,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  13,
+                               "total_bug_ids":  9,
+                               "completed_items_removed":  7,
+                               "remaining_items":  2
+                           },
+                           {
+                               "window":  14,
+                               "total_bug_ids":  10,
+                               "completed_items_removed":  4,
+                               "remaining_items":  6
+                           },
+                           {
+                               "window":  15,
+                               "total_bug_ids":  5,
+                               "completed_items_removed":  3,
+                               "remaining_items":  2
+                           }
+                       ]
+}

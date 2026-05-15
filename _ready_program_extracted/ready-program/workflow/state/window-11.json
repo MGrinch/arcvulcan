@@ -1,0 +1,61 @@
+﻿{
+    "last_package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-11\\round-02__BUG-26",
+    "last_seeded_cycle":  0,
+    "last_seed_package_dir":  null,
+    "archived_history":  [
+                             {
+                                 "archived_utc":  "2026-03-20T16:13:50.5607703Z",
+                                 "reason":  "cycle-rebase",
+                                 "cycle":  1,
+                                 "entries":  [
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T18:23:19.389740Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-130",
+                                                     "round":  1,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-11\\round-01__BUG-130",
+                                                     "files":  [
+                                                                   "tools/node_evolution_diff.py",
+                                                                   "tests/test_bug130_node_evolution_diff_canonical_next_action.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 },
+                                                 {
+                                                     "timestamp_utc":  "2026-03-19T20:25:04.724572Z",
+                                                     "action":  "worker-complete",
+                                                     "item_id":  "BUG-26",
+                                                     "round":  2,
+                                                     "package_dir":  "C:\\Users\\misha\\tutor\\_deliverables\\DAEDALUS_v221_MERGED_R6_PLUS_EXTRA6PATCHES_20260319_120643\\workflow\\out\\window-11\\round-02__BUG-26",
+                                                     "files":  [
+                                                                   "tools/protocol_drift_radar.py",
+                                                                   "tests/test_bug26_protocol_drift_tail_window_scan.py"
+                                                               ],
+                                                     "delete_files":  [
+
+                                                                      ],
+                                                     "source_packages":  [
+
+                                                                         ]
+                                                 }
+                                             ]
+                             }
+                         ],
+    "window":  11,
+    "kind":  "worker",
+    "name":  "Workflow Companion and Prompt Governance",
+    "area":  "Owns prompt snapshot guards, citation guards, signal-fidelity tooling, and doc-code workflow contract bugs.",
+    "status":  "ready",
+    "history":  [
+
+                ],
+    "completed_count":  0,
+    "current_round":  1,
+    "current_item":  null,
+    "total_items":  3,
+    "rebased_utc":  "2026-03-21T02:11:36.6750237Z"
+}

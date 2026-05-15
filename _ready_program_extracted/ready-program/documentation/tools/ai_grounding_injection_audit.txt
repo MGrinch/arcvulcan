@@ -1,0 +1,22 @@
+Grounding Injection Audit
+
+Goal: ensure local curriculum grounding is injected correctly into the tutor prompt.
+
+Checks:
+- Forces grounding_mode=local for the run.
+- Normalizes grounding_dir to a repo-relative shipped source before comparing direct grounding against prompt injection.
+- Compares build_grounding output against the text between prompt markers:
+  <<<DAEDALUS_GROUNDING>>> ... <<<END_DAEDALUS_GROUNDING>>>
+- Verifies snippet labels exist.
+
+Usage:
+  python tools/grounding_injection_audit.py --issue ISSUE-YYYYMMDD-NNN --text "uneven fit-up and tack spacing"
+
+Outputs:
+- runs/<run_id>/grounding_audit_report.json (includes requested vs effective grounding source and normalization notes)
+- runs/<run_id>/grounding_audit_summary.md
+- runs/<run_id>/run.json
+
+Exit codes:
+- 0 PASS
+- 1 FAIL
