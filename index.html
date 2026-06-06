@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ArcVulcan — AI-Powered Welding Training</title>
 <meta name="description" content="ArcVulcan is an AI-powered adaptive tutoring system for Ontario welding certification. Deterministic, inspectable, and learner-first.">
+<meta name="theme-color" content="#0a0a0f">
 <style>
   :root {
     --bg: #0a0a0f;
@@ -19,12 +20,17 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;overflow-x:hidden}
+  main{display:block}
+  a:focus-visible{outline:2px solid var(--accent2);outline-offset:4px;border-radius:6px}
+  .skip-link{position:absolute;top:-3.5rem;left:1rem;z-index:200;background:var(--accent);color:#fff;padding:.6rem 1rem;border-radius:6px;text-decoration:none;font-weight:700;transition:top .2s}
+  .skip-link:focus{top:1rem}
 
   /* Nav */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .logo{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;color:var(--accent)}
   .logo span{color:var(--text)}
-  nav a{color:var(--muted);text-decoration:none;font-size:.875rem;margin-left:2rem;transition:color .2s}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  nav a{color:var(--muted);text-decoration:none;font-size:.875rem;transition:color .2s}
   nav a:hover{color:var(--text)}
   .nav-cta{background:var(--accent);color:#fff!important;padding:.4rem 1rem;border-radius:6px;font-weight:500}
   .nav-cta:hover{background:var(--accent2)!important}
@@ -82,13 +88,31 @@
   footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.875rem}
   footer a{color:var(--muted);text-decoration:none}
   footer a:hover{color:var(--accent)}
+
+  @media (max-width:700px){
+    nav{position:sticky;flex-direction:column;align-items:flex-start;gap:.85rem;padding:.85rem 1rem}
+    .nav-links{width:100%;gap:1rem;overflow-x:auto;padding-bottom:.15rem}
+    nav a{white-space:nowrap}
+    .hero{min-height:auto;padding:4rem 1.25rem 3rem}
+    .stats{gap:1.5rem;padding:1.5rem 1rem}
+    section{padding:4rem 1.25rem}
+    .cta-section{padding:3rem 1.25rem;border-radius:12px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none!important;animation:none!important}
+    .feature:hover,.btn-primary:hover{transform:none}
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav aria-label="Primary navigation">
   <div class="logo">Arc<span>Vulcan</span></div>
-  <div>
+  <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#contact">Contact</a>
@@ -96,6 +120,7 @@
   </div>
 </nav>
 
+<main id="main-content">
 <div class="hero">
   <div class="badge">🔥 AI-Powered Welding Education</div>
   <h1>The <span>Intelligent Tutor</span> for Welding Certification</h1>
@@ -118,32 +143,32 @@
   <p class="section-sub">ArcVulcan makes teaching decisions replayable, auditable, and progressively better — without unbounded AI agency.</p>
   <div class="features">
     <div class="feature">
-      <div class="feature-icon">🧠</div>
+      <div class="feature-icon" aria-hidden="true">🧠</div>
       <h3>Learner Knowledge Graphs</h3>
       <p>Diagnoses individual node gaps and fragility in real time. Every session updates the graph deterministically.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">🎯</div>
+      <div class="feature-icon" aria-hidden="true">🎯</div>
       <h3>Signal-Based Sequencing</h3>
       <p>Selects the optimal next target using measurable performance signals, not vibes or generic curricula.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">🔍</div>
+      <div class="feature-icon" aria-hidden="true">🔍</div>
       <h3>Bedrock Probing</h3>
       <p>Pushes learners until root-level logic is confirmed — not just surface-level recall.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">📋</div>
+      <div class="feature-icon" aria-hidden="true">📋</div>
       <h3>Audit-First Architecture</h3>
       <p>Every tutoring decision is schema-validated, logged, and replayable. Built for accountability.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">🏭</div>
+      <div class="feature-icon" aria-hidden="true">🏭</div>
       <h3>Ontario Red Seal Aligned</h3>
       <p>Content scaffolded to Canadian welding certification standards across GMAW, SMAW, GTAW, and FCAW.</p>
     </div>
     <div class="feature">
-      <div class="feature-icon">⚡</div>
+      <div class="feature-icon" aria-hidden="true">⚡</div>
       <h3>Multi-Agent Workflow</h3>
       <p>18-window autonomous patch farm handles development, validation, and deployment with cycle-locked integrity.</p>
     </div>
@@ -198,6 +223,7 @@
     <a href="mailto:mykhaylogrinchenko30@gmail.com" class="btn-primary">Contact Us</a>
   </div>
 </section>
+</main>
 
 <footer>
   <p>© 2026 ArcVulcan (XYZGL Engine) &nbsp;·&nbsp; <a href="mailto:mykhaylogrinchenko30@gmail.com">mykhaylogrinchenko30@gmail.com</a> &nbsp;·&nbsp; Ontario, Canada</p>
