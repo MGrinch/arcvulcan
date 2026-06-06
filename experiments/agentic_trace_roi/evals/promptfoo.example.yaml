@@ -1,0 +1,16 @@
+description: ArcVulcan trace ROI coding-agent assertion sketch
+prompts:
+  - "{{task}}"
+providers:
+  - id: echo
+tests:
+  - vars:
+      task: "Review a trace fixture and report whether patching happened after inspection."
+    assert:
+      - type: contains-any
+        value:
+          - "read_before_patch"
+          - "patch_before_read"
+      - type: not-contains
+        value: "improvement proven"
+
