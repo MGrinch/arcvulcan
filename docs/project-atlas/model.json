@@ -1,0 +1,61 @@
+[
+  {
+    "name": "arcvulcan",
+    "view": "overview",
+    "kind": "Static landing-page composition",
+    "purpose": "The default gh-pages branch is one static HTML landing page describing the ArcVulcan project.",
+    "nodes": [
+      {
+        "id": "page",
+        "label": "Landing page|index.html",
+        "role": "entry",
+        "source": "index.html"
+      },
+      {
+        "id": "content",
+        "label": "Page sections|Project explanation",
+        "role": "data",
+        "source": "index.html"
+      },
+      {
+        "id": "styles",
+        "label": "Embedded CSS|Layout and appearance",
+        "role": "logic",
+        "source": "index.html"
+      },
+      {
+        "id": "links",
+        "label": "Navigation links|Linked destinations",
+        "role": "external",
+        "source": "index.html"
+      }
+    ],
+    "edges": [
+      {
+        "a": "page",
+        "b": "content",
+        "label": "contains static markup",
+        "source": "index.html"
+      },
+      {
+        "a": "styles",
+        "b": "page",
+        "label": "styles page elements",
+        "source": "index.html"
+      },
+      {
+        "a": "page",
+        "b": "links",
+        "label": "offers navigation",
+        "source": "index.html"
+      }
+    ],
+    "finding": "The current default branch contains only index.html. Marketing descriptions of a tutor do not demonstrate the tutor implementation on this branch.",
+    "revision": "Draw the landing page as static HTML and CSS. Do not infer the full tutoring system from advertised features or older branches.",
+    "exclusions": "Other branches and deployed-site availability are not asserted.",
+    "sha": "fdc952370dac56878f813cd4a6be927bcbabef0e",
+    "files": [
+      "index.html"
+    ]
+  }
+]

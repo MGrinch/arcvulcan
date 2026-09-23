@@ -1,0 +1,22 @@
+---
+title: arcvulcan — Static landing-page composition
+---
+flowchart TB
+accTitle: arcvulcan Static landing-page composition
+accDescr: The default gh-pages branch is one static HTML landing page describing the ArcVulcan project.
+  n_page("Landing page<br/>index.html")
+  n_content["Page sections<br/>Project explanation"]
+  n_styles["Embedded CSS<br/>Layout and appearance"]
+  n_links["Navigation links<br/>Linked destinations"]
+  n_page -->|"contains static markup"| n_content
+  n_styles -->|"styles page elements"| n_page
+  n_page -->|"offers navigation"| n_links
+  classDef entry fill:#E0F2FE,stroke:#0369A1,stroke-width:1.5px,color:#172033
+  class n_page entry
+  classDef logic fill:#EDE9FE,stroke:#6D28D9,stroke-width:1.5px,color:#172033
+  class n_styles logic
+  classDef data fill:#DCFCE7,stroke:#15803D,stroke-width:1.5px,color:#172033
+  class n_content data
+  classDef check fill:#FEF3C7,stroke:#B45309,stroke-width:1.5px,color:#172033
+  classDef external fill:#F1F5F9,stroke:#475569,stroke-width:1.5px,color:#172033
+  class n_links external
