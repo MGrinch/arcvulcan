@@ -1,61 +1,242 @@
 [
   {
-    "name": "arcvulcan",
+    "repo": "arcvulcan",
     "view": "overview",
-    "kind": "Static landing-page composition",
-    "purpose": "The default gh-pages branch is one static HTML landing page describing the ArcVulcan project.",
+    "title": "A welding tutor that follows your reasoning",
+    "summary": "The tutor chooses a welding topic, teaches and asks a question, then uses your answer to decide whether to probe further or move on.",
+    "status": "Working code",
+    "statusNote": "Tutor prototype on master; default replies are simulated. Live teaching and learning benefit were not tested.",
     "nodes": [
       {
-        "id": "page",
-        "label": "Landing page|index.html",
-        "role": "entry",
-        "source": "index.html"
+        "id": "memory",
+        "title": "Your current skill map",
+        "detail": "Saved topic progress helps choose the next focus.",
+        "kind": "memory",
+        "evidence": [
+          "E1",
+          "E2"
+        ],
+        "planned": false
       },
       {
-        "id": "content",
-        "label": "Page sections|Project explanation",
-        "role": "data",
-        "source": "index.html"
+        "id": "choose",
+        "title": "Choose a welding topic",
+        "detail": "Focus on a topic that needs attention.",
+        "kind": "action",
+        "evidence": [
+          "E1",
+          "E2"
+        ],
+        "planned": false
       },
       {
-        "id": "styles",
-        "label": "Embedded CSS|Layout and appearance",
-        "role": "logic",
-        "source": "index.html"
+        "id": "teach",
+        "title": "Explain and ask",
+        "detail": "Give a teaching passage and one question.",
+        "kind": "action",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "planned": false
       },
       {
-        "id": "links",
-        "label": "Navigation links|Linked destinations",
-        "role": "external",
-        "source": "index.html"
+        "id": "predict",
+        "title": "Predict a possible answer",
+        "detail": "Optional helper estimates what the learner might say.",
+        "kind": "action",
+        "evidence": [
+          "E1",
+          "E2",
+          "E3"
+        ],
+        "planned": false
+      },
+      {
+        "id": "you",
+        "title": "Your actual answer",
+        "detail": "Your reply stays separate from the prediction.",
+        "kind": "person",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "planned": false
+      },
+      {
+        "id": "check",
+        "title": "Probe further or move on?",
+        "detail": "Compare the reply with the topic’s required ideas.",
+        "kind": "decision",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "planned": false
+      },
+      {
+        "id": "probe",
+        "title": "Ask a focused follow-up",
+        "detail": "Address the same topic with a shorter prompt.",
+        "kind": "action",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "planned": false
+      },
+      {
+        "id": "record",
+        "title": "A record of the lesson",
+        "detail": "Keep teaching, answers and why the tutor continued.",
+        "kind": "result",
+        "evidence": [
+          "E2"
+        ],
+        "planned": false
       }
     ],
     "edges": [
       {
-        "a": "page",
-        "b": "content",
-        "label": "contains static markup",
-        "source": "index.html"
+        "to": "choose",
+        "label": "Topic progress",
+        "kind": "recall",
+        "evidence": [
+          "E2"
+        ],
+        "from": "memory"
       },
       {
-        "a": "styles",
-        "b": "page",
-        "label": "styles page elements",
-        "source": "index.html"
+        "to": "teach",
+        "label": "The topic to teach",
+        "kind": "flow",
+        "evidence": [
+          "E2"
+        ],
+        "from": "choose"
       },
       {
-        "a": "page",
-        "b": "links",
-        "label": "offers navigation",
-        "source": "index.html"
+        "to": "you",
+        "label": "Teaching and a question",
+        "kind": "flow",
+        "evidence": [
+          "E2"
+        ],
+        "from": "teach"
+      },
+      {
+        "to": "predict",
+        "label": "The same question",
+        "kind": "flow",
+        "evidence": [
+          "E2"
+        ],
+        "from": "teach"
+      },
+      {
+        "to": "check",
+        "label": "Optional predicted answer",
+        "kind": "flow",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "from": "predict"
+      },
+      {
+        "to": "check",
+        "label": "The real answer",
+        "kind": "flow",
+        "evidence": [
+          "E2"
+        ],
+        "from": "you"
+      },
+      {
+        "to": "probe",
+        "label": "More reasoning needed",
+        "kind": "choice",
+        "evidence": [
+          "E2",
+          "E3"
+        ],
+        "from": "check"
+      },
+      {
+        "to": "you",
+        "label": "A focused next question",
+        "kind": "flow",
+        "evidence": [
+          "E2"
+        ],
+        "from": "probe"
+      },
+      {
+        "to": "memory",
+        "label": "Updated topic progress",
+        "kind": "recall",
+        "evidence": [
+          "E2"
+        ],
+        "from": "check"
+      },
+      {
+        "to": "record",
+        "label": "Teaching and decision history",
+        "kind": "outcome",
+        "evidence": [
+          "E2"
+        ],
+        "from": "check"
       }
     ],
-    "finding": "The current default branch contains only index.html. Marketing descriptions of a tutor do not demonstrate the tutor implementation on this branch.",
-    "revision": "Draw the landing page as static HTML and CSS. Do not infer the full tutoring system from advertised features or older branches.",
-    "exclusions": "Other branches and deployed-site availability are not asserted.",
-    "sha": "fdc952370dac56878f813cd4a6be927bcbabef0e",
-    "files": [
-      "index.html"
-    ]
+    "spine": [
+      "choose",
+      "teach",
+      "you",
+      "check",
+      "memory"
+    ],
+    "walkthrough": [
+      "ArcVulcan is a welding-tutor project, not merely its public landing page. A fuller implementation is preserved on the master branch.",
+      "The session code chooses a topic, produces teaching and a question, and collects the learner’s real reply.",
+      "An optional helper predicts an answer for comparison; it is not the learner and does not supply evidence that the learner understands.",
+      "Follow-up questions stay on the topic until the programmed rule allows moving on. Required-word checks and heuristic progress values are software decisions, not validated proof of mastery."
+    ],
+    "evidence": [
+      {
+        "id": "E1",
+        "path": "MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/NORTH_STAR.md",
+        "supports": "Describes Ontario welding tutor purpose and roles; explicitly states default deterministic tutor stub and intended real-backend replacement.",
+        "sha256": "3a4bf4ec806e73ff41751d6ac32079958b62cfa930a11d21bd06da24863cccc4",
+        "sourceCommit": "de128d8ec2af7c69cf6ea38fb8d69745a5eee149",
+        "url": "https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/NORTH_STAR.md",
+        "member": null
+      },
+      {
+        "id": "E2",
+        "path": "MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/xyzgl/orchestrator/session_loop.py",
+        "supports": "Actual session selects topics, teaches, optionally predicts, receives real answers, probes, checks required keywords and records topic updates.",
+        "lines": "174-475",
+        "sha256": "cb84ccce3951be7f802ef4881eb00a3fdf7bad4a89ee4201aaff4111ac55f065",
+        "sourceCommit": "de128d8ec2af7c69cf6ea38fb8d69745a5eee149",
+        "url": "https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/xyzgl/orchestrator/session_loop.py",
+        "member": null
+      },
+      {
+        "id": "E3",
+        "path": "MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/documentation/orchestrator/ai_session_loop.md",
+        "supports": "Describes teaching, optional prediction, real user reply and evaluation; actual source is used where older docs differ.",
+        "sha256": "28cec55c3186a42a40cba0df284a7ca10589886a7fb0361bb271c77868074ac0",
+        "sourceCommit": "de128d8ec2af7c69cf6ea38fb8d69745a5eee149",
+        "url": "https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/documentation/orchestrator/ai_session_loop.md",
+        "member": null
+      }
+    ],
+    "review": {
+      "wrongAssumption": "Because the default branch has a landing page, the project itself is only a website.",
+      "correction": "Branch inspection found preserved implementation on master. This view uses pinned product code rather than HTML structure or unsupported marketing claims.",
+      "remainingUnknown": "The current master snapshot has not been executed here. Real-model readiness, certification alignment and learning benefit are unverified."
+    }
   }
 ]

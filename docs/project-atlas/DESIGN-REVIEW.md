@@ -1,63 +1,40 @@
-# arcvulcan — diagram brief and adversarial review
+# What these pictures are based on
 
-Inspected default branch: `gh-pages`. Source baseline: `fdc952370dac56878f813cd4a6be927bcbabef0e`. Review date: 2026-09-23.
+Read against `gh-pages` at `b7e67d20948d293005a97140bf98e4e33969ba10` on 23 September 2026. The previous pictures focused too heavily on repository mechanics; these replacements follow the project's work and useful results.
 
-Review method: an explicit adversarial self-review followed by targeted source inspection. This is not represented as an independent reviewer verdict.
+Fresh reading challenged what the project actually does, what is only intended, what it remembers, and which claimed results are supported. Separate agents reviewed selected weak claims. The evidence links below pin the source used; an archived member is named separately because GitHub cannot browse inside its ZIP.
 
-The brief and review were written before rendering. Shared design instructions are in [STYLE.md](STYLE.md).
+## A welding tutor that follows your reasoning
 
-## Overview — initial brief
+**Mistaken assumption challenged:** Because the default branch has a landing page, the project itself is only a website.
 
-Create a basic map for Misha showing the major responsibilities and how a task or piece of information moves between them. Candidate view: **Static landing-page composition**.
+**What rereading changed:** Branch inspection found preserved implementation on master. This view uses pinned product code rather than HTML structure or unsupported marketing claims.
 
-The default gh-pages branch is one static HTML landing page describing the ArcVulcan project.
+**Still uncertain:** The current master snapshot has not been executed here. Real-model readiness, certification alignment and learning benefit are unverified.
 
-Proposed responsibility groups: Landing page — index.html, Page sections — Project explanation, Embedded CSS — Layout and appearance, Navigation links — Linked destinations.
-
-### Challenge the weakest assumption
-
-**Challenge:** Could this picture imply more implementation, automation, authority, or runtime certainty than the repository proves?
-
-**Finding after targeted reading:** The current default branch contains only index.html. Marketing descriptions of a tutor do not demonstrate the tutor implementation on this branch.
-
-**Revised creation instructions:** Draw the landing page as static HTML and CSS. Do not infer the full tutoring system from advertised features or older branches.
-
-### Connection review
-
-Every relationship below has a named supporting file or the complete tree. Source relationships establish static architecture; documented agent steps establish a workflow contract. Neither proves a running service.
-
-| From → to | Intended meaning | Evidence |
+| Evidence | Source | What it supports |
 | --- | --- | --- |
-| Landing page → Page sections | contains static markup | [index.html](https://github.com/MGrinch/arcvulcan/blob/fdc952370dac56878f813cd4a6be927bcbabef0e/index.html) |
-| Embedded CSS → Landing page | styles page elements | [index.html](https://github.com/MGrinch/arcvulcan/blob/fdc952370dac56878f813cd4a6be927bcbabef0e/index.html) |
-| Landing page → Navigation links | offers navigation | [index.html](https://github.com/MGrinch/arcvulcan/blob/fdc952370dac56878f813cd4a6be927bcbabef0e/index.html) |
+| E1 | [MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/NORTH_STAR.md](https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/NORTH_STAR.md) | Describes Ontario welding tutor purpose and roles; explicitly states default deterministic tutor stub and intended real-backend replacement. |
+| E2 | [MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/xyzgl/orchestrator/session_loop.py](https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/xyzgl/orchestrator/session_loop.py) | Actual session selects topics, teaches, optionally predicts, receives real answers, probes, checks required keywords and records topic updates. |
+| E3 | [MGrinch/arcvulcan@de128d8ec2af7c69cf6ea38fb8d69745a5eee149:_ready_program_extracted/ready-program/documentation/orchestrator/ai_session_loop.md](https://github.com/MGrinch/arcvulcan/blob/de128d8ec2af7c69cf6ea38fb8d69745a5eee149/_ready_program_extracted/ready-program/documentation/orchestrator/ai_session_loop.md) | Describes teaching, optional prediction, real user reply and evaluation; actual source is used where older docs differ. |
 
-### Final scope and residual uncertainty
+### Connections
 
-Other branches and deployed-site availability are not asserted.
+| From → to | What passes or happens | Source |
+| --- | --- | --- |
+| Your current skill map → Choose a welding topic | Topic progress | E2 |
+| Choose a welding topic → Explain and ask | The topic to teach | E2 |
+| Explain and ask → Your actual answer | Teaching and a question | E2 |
+| Explain and ask → Predict a possible answer | The same question | E2 |
+| Predict a possible answer → Probe further or move on? | Optional predicted answer | E2, E3 |
+| Your actual answer → Probe further or move on? | The real answer | E2 |
+| Probe further or move on? → Ask a focused follow-up | More reasoning needed | E2, E3 |
+| Ask a focused follow-up → Your actual answer | A focused next question | E2 |
+| Probe further or move on? → Your current skill map | Updated topic progress | E2 |
+| Probe further or move on? → A record of the lesson | Teaching and decision history | E2 |
 
-The overview groups related files. It does not assert that every internal function call is drawn. Runtime health and user acceptance of the visual remain unverified by source inspection.
+## Verification and rollback
 
-## Evidence traversal
+Every source input has its SHA-256 and source commit in [model.json](model.json). The diagram check covers source references, relationships, standalone SVG, layout and the documentation diff. It does not establish live operation or product effectiveness.
 
-Pass 1: freeze branch and commit; inspect the tracked tree, project entrypoints and instructions; classify the repository.
-
-Pass 2: inspect the source/contract behind disputed connections; inspect ZIP members where present; revise the diagram model. Hashes below make those exact inputs recoverable.
-
-| Evidence input | SHA-256 |
-| --- | --- |
-| [index.html](https://github.com/MGrinch/arcvulcan/blob/fdc952370dac56878f813cd4a6be927bcbabef0e/index.html) | `557ed3ae334bea4b7ea880d9f0042fd912d86a7ead6b4ad8872e8db82d86e68f` |
-
-## Repository coverage
-
-All tracked top-level surfaces were inventoried. The responsibility diagrams focus on the workflows stated above; the counts below preserve visibility of supporting and historical material without inventing runtime edges. ZIP member inventories appear separately when relevant.
-
-| Surface | Tracked files |
-| --- | ---: |
-| `(root files)` | 1 |
-
-## Publication and rollback
-
-The authorized publication is a documentation-only commit on the verified default branch. Refresh the remote head before push and verify the published bytes afterward. Revert that single commit to remove the atlas; never force-push or reset shared history.
-
-Repository instructions and existing full guides are not rewritten. This package adapts repo-docs evidence and review rules to the requested diagram deliverable; it does not claim the full-guide validator passed.
+Revert this documentation commit to restore the previous pictures. Do not reset shared history.

@@ -1,13 +1,18 @@
-# Diagram verification
+# What was checked
 
-Source baseline: `fdc952370dac56878f813cd4a6be927bcbabef0e`. Checked 23 September 2026.
+Source snapshot: `b7e67d20948d293005a97140bf98e4e33969ba10`. Checked 23 September 2026.
 
-1 diagram view(s) rendered using Mermaid 11.12.0 and the installed Edge engine. All node/edge counts match the reviewed model. No component-box or relationship-label overlaps were detected. SVG is standalone XML with accessible titles, no scripts and no HTML foreignObject.
+1 product picture(s) were rendered locally with Mermaid 11.12.0 and the installed Edge engine. The supplied SVG images keep labels as text and the person symbol as inline vector paths; they need no scripts or remote icon service.
 
-Local documentation links resolve. Generated text passed a credential-pattern screen. The diff is restricted to the diagram package, a README navigation link, and the pipeline publication record where required.
+- All node and relationship counts match the reviewed model.
+- Source references resolve against the frozen source; SHA-256 fingerprints are recorded in model.json.
+- No overlapping shapes, relationship-label collisions, relationship labels over shapes, or text extending past shape bounds were found by the focused geometry checks.
+- SVG files parse as standalone XML with accessible titles and descriptions. No scripts, external image links, or HTML foreignObject are included.
+- Local documentation links resolve. Generated content is screened for credential-like strings.
+- Individual pictures received a visual review; selected source claims received an independent challenge. User acceptance is not assumed.
 
-No repository runtime was executed; this documentation-only change passed the diagram-package checks.
+No product service or learning session was started. This documentation-only task uses the diagram checks below.
 
-Rendering and structural checks do not verify running services or all possible internal interactions. Dense diagrams were also visually sampled. Source-backed interpretation and the scope limits are in DESIGN-REVIEW.md.
+These checks do not establish running services, learning effectiveness, or that every internal function call is pictured. Some projects describe intended or archived behavior; the status and source notes explain which.
 
-The publisher requires an unchanged remote baseline and a non-force push. It then verifies remote HEAD and every changed Git blob identity; the central delivery receipt records the resulting commit. Rollback is a normal revert of this documentation commit.
+Publication requires an unchanged remote baseline, a documentation-only staged diff, and a normal non-force push. The publisher then checks the remote commit and each changed file identity. Rollback is a normal revert of that documentation commit.

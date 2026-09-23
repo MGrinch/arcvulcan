@@ -1,22 +1,45 @@
----
-title: arcvulcan — Static landing-page composition
----
+%% A welding tutor that follows your reasoning
+%% Working code: Tutor prototype on master; default replies are simulated. Live teaching and learning benefit were not tested.
 flowchart TB
-accTitle: arcvulcan Static landing-page composition
-accDescr: The default gh-pages branch is one static HTML landing page describing the ArcVulcan project.
-  n_page("Landing page<br/>index.html")
-  n_content["Page sections<br/>Project explanation"]
-  n_styles["Embedded CSS<br/>Layout and appearance"]
-  n_links["Navigation links<br/>Linked destinations"]
-  n_page -->|"contains static markup"| n_content
-  n_styles -->|"styles page elements"| n_page
-  n_page -->|"offers navigation"| n_links
-  classDef entry fill:#E0F2FE,stroke:#0369A1,stroke-width:1.5px,color:#172033
-  class n_page entry
-  classDef logic fill:#EDE9FE,stroke:#6D28D9,stroke-width:1.5px,color:#172033
-  class n_styles logic
-  classDef data fill:#DCFCE7,stroke:#15803D,stroke-width:1.5px,color:#172033
-  class n_content data
-  classDef check fill:#FEF3C7,stroke:#B45309,stroke-width:1.5px,color:#172033
-  classDef external fill:#F1F5F9,stroke:#475569,stroke-width:1.5px,color:#172033
-  class n_links external
+n_memory@{ shape: cyl, label: "Your current skill map<br/>Saved topic progress helps<br/>choose the next focus." }
+n_choose@{ shape: rounded, label: "Choose a welding topic<br/>Focus on a topic that needs<br/>attention." }
+n_teach@{ shape: rounded, label: "Explain and ask<br/>Give a teaching passage and<br/>one question." }
+n_predict@{ shape: rounded, label: "Predict a possible answer<br/>Optional helper estimates<br/>what the learner might say." }
+n_you@{ icon: "lucide:user-round", form: "circle", label: "Your actual answer<br/>Your reply stays separate<br/>from the prediction.", pos: "b", h: 40 }
+n_check@{ shape: diam, label: "Probe further or move<br/>on?" }
+n_probe@{ shape: rounded, label: "Ask a focused follow-up<br/>Address the same topic with a<br/>shorter prompt." }
+n_record@{ shape: doc, label: "A record of the lesson<br/>Keep teaching, answers and<br/>why the tutor continued." }
+n_memory -->|"Topic progress"| n_choose
+n_choose -->|"The topic to teach"| n_teach
+n_teach -->|"Teaching and a question"| n_you
+n_teach -->|"The same question"| n_predict
+n_predict -->|"Optional predicted answer"| n_check
+n_you -->|"The real answer"| n_check
+n_check -->|"More reasoning needed"| n_probe
+n_probe -->|"A focused next question"| n_you
+n_check -->|"Updated topic progress"| n_memory
+n_check -->|"Teaching and decision history"| n_record
+classDef person fill:#E8EDF5,stroke:#334766,color:#1D2F48,stroke-width:2px;
+classDef source fill:#F2F4F7,stroke:#66778A,color:#283D50,stroke-width:2px;
+classDef action fill:#EAF3FF,stroke:#2866AC,color:#172E49,stroke-width:2px;
+classDef decision fill:#FFF2D8,stroke:#986200,color:#5B3B06,stroke-width:2px;
+classDef memory fill:#F2ECFF,stroke:#7951AE,color:#422760,stroke-width:2px;
+classDef result fill:#E7F6EC,stroke:#247A4C,color:#14482F,stroke-width:2px;
+class n_memory memory;
+class n_choose action;
+class n_teach action;
+class n_predict action;
+class n_you person;
+class n_check decision;
+class n_probe action;
+class n_record result;
+linkStyle 0 stroke:#7951AE,stroke-width:2.5px,color:#7951AE,opacity:1;
+linkStyle 1 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 2 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 3 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 4 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 5 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 6 stroke:#986200,stroke-width:2.5px,color:#986200,opacity:1;
+linkStyle 7 stroke:#2866AC,stroke-width:2.5px,color:#2866AC,opacity:1;
+linkStyle 8 stroke:#7951AE,stroke-width:2.5px,color:#7951AE,opacity:1;
+linkStyle 9 stroke:#247A4C,stroke-width:2.5px,color:#247A4C,opacity:1;

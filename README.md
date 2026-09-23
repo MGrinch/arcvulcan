@@ -1,3 +1,3 @@
 # arcvulcan
 
-[Open the Project Atlas: components, connections and evidence](docs/project-atlas/README.md).
+[See what the project does and how it works](docs/project-atlas/README.md).
